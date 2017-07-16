@@ -1,0 +1,33 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"4fccc837df98e71ea045fa1c483452c1"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones/513937?per_page=100
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Date: ['Thu, 24 May 2018 13:37:54 GMT']
+      Etag: [W/"4fccc837df98e71ea045fa1c483452c1"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1527169134']
+      RateLimit-ResetTime: ['Fri, 24 May 2018 13:38:54 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [dcfcc2f7-81de-402b-a52e-4bf959be393a]
+      X-Runtime: ['0.093330']
+    status: {code: 304, message: Not Modified}
+version: 1

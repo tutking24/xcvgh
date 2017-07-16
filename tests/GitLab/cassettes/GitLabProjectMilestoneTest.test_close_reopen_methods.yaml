@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: '{"state_event": "close"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['24']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: PUT
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones/513937
+  response:
+    body: {string: '{"id":513937,"iid":1,"project_id":3439658,"title":"Permanent IGitt
+        test milestone. DO NOT DELETE.","description":null,"state":"closed","created_at":"2018-04-25T09:11:00.029Z","updated_at":"2018-04-26T08:44:18.544Z","due_date":null,"start_date":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['249']
+      Content-Type: [application/json]
+      Date: ['Thu, 26 Apr 2018 08:44:18 GMT']
+      Etag: [W/"d6562b61259fb2823b2a1ab16eba4838"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1524732318']
+      RateLimit-ResetTime: ['Fri, 26 Apr 2018 08:45:18 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [a7ea2549-6ba1-4803-9669-7c0b2823194e]
+      X-Runtime: ['0.648877']
+    status: {code: 200, message: OK}
+- request:
+    body: '{"state_event": "activate"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['27']
+      Content-Type: [application/json]
+      If-None-Match: [W/"d6562b61259fb2823b2a1ab16eba4838"]
+      User-Agent: [IGitt]
+    method: PUT
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones/513937
+  response:
+    body: {string: '{"id":513937,"iid":1,"project_id":3439658,"title":"Permanent IGitt
+        test milestone. DO NOT DELETE.","description":null,"state":"active","created_at":"2018-04-25T09:11:00.029Z","updated_at":"2018-04-26T08:45:19.470Z","due_date":null,"start_date":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['249']
+      Content-Type: [application/json]
+      Date: ['Thu, 26 Apr 2018 08:45:19 GMT']
+      Etag: [W/"77ba37a3de87d81f806f9b6effab241e"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1524732379']
+      RateLimit-ResetTime: ['Fri, 26 Apr 2018 08:46:19 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [e5ed719f-ff32-4d90-8b35-1606c72df4c4]
+      X-Runtime: ['0.563331']
+    status: {code: 200, message: OK}
+version: 1
