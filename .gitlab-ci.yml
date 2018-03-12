@@ -6,6 +6,11 @@ before_script:
   - pip install -r requirements.txt
   - pip install -r test-requirements.txt
 
+.script: &script |
+  python .ci/adjust_version.py IGitt/VERSION -b `date --utc +%Y%m%d%H%M%S`
+  python setup.py sdist bdist_wheel
+  twine upload dist/* -u "$PYPIUSER" -p "$PYPIPW"
+
 run_tests:
   script:
   - python3 -m pytest
@@ -25,14 +30,20 @@ cache:
   paths:
   - /root/.cache/pip
 
-release:
+release_master: &release_master
   # twine 1.12 indirectly depends on cmarkgfm to render README,
   # which requires a compiler
   before_script:
-  - pip install 'twine<1.12'
+    - pip install 'twine<1.2'
   script:
-  - python .ci/adjust_version.py IGitt/VERSION -b `date --utc +%Y%m%d%H%M%S`
-  - python setup.py sdist bdist_wheel
-  - twine upload dist/* -u "$PYPIUSER" -p "$PYPIPW"
+    - *script
   only:
   - master@gitmate/open-source/IGitt
+
+release:
+  <<: *release_master
+  script:
+  - *script
+  - ./.ci/push_tags.sh
+  only:
+  - /^release\/.*$/@gitmate/open-source/IGitt
