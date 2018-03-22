@@ -85,7 +85,7 @@ class GitLabMilestone(GitLabMixin, Milestone):
 
         :param new_title: The new title.
         """
-        self.data['title'] = new_title
+        self.data = put(self._token, self.url, {'title': new_title})
 
     @property
     def state(self):
