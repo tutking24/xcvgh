@@ -6,8 +6,8 @@ from urllib.parse import quote_plus
 
 from IGitt.GitLab import GitLabMixin
 #from IGitt.GitLab import get
-from IGitt.GitLab import put
-from IGitt.GitLab import post
+from IGitt.Interfaces import put
+from IGitt.Interfaces import post
 from IGitt.GitLab import GitLabOAuthToken, GitLabPrivateToken
 #from IGitt.Interfaces.Issue import Issue
 from IGitt.Interfaces.Milestone import Milestone
@@ -60,7 +60,7 @@ class GitLabMilestone(GitLabMixin, Milestone):
         :return: GitLabMilestone object of the newly created milestone.
         """
         url = '/projects/{scope}/milestones'.format(scope=quote_plus(scope))
-        milestone = post(token, url, {'title': title, 'description': description})
+        milestone = post(token, GitLabMilestone.absolute_url(url), {'title': title, 'description': description})
 
         return GitLabMilestone(token, scope, milestone['id'])
 
@@ -113,7 +113,7 @@ class GitLabMilestone(GitLabMixin, Milestone):
 
         :raises RuntimeError: If something goes wrong (network, auth...).
         """
-        self.data = put(self._token, self._url, {'state_event': 'close'})
+        self.data = put(self._token, self.url, {'state_event': 'close'})
 
 
     def reopen(self):
@@ -122,4 +122,4 @@ class GitLabMilestone(GitLabMixin, Milestone):
 
         :raises RuntimeError: If something goes wrong (network, auth...).
         """
-        self.data = put(self._token, self._url, {'state_event': 'activate'})
+        self.data = put(self._token, self.url, {'state_event': 'activate'})
