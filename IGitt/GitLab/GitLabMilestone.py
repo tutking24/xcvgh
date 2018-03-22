@@ -65,6 +65,13 @@ class GitLabMilestone(GitLabMixin, Milestone):
         return GitLabMilestone(token, scope, milestone['id'])
 
     @property
+    def number(self) -> int:
+        """
+        Returns the milestone "number" or id.
+        """
+        return self._id
+
+    @property
     def title(self) -> str:
         """
         Retrieves the title of the milestone.
