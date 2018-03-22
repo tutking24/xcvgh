@@ -1,7 +1,7 @@
 """
 This contains the Milestone implementation for GitLab
 """
-#from datetime import datetime
+from datetime import datetime
 from urllib.parse import quote_plus
 
 from IGitt.GitLab import GitLabMixin
@@ -146,3 +146,10 @@ class GitLabMilestone(GitLabMixin, Milestone):
         :raises RuntimeError: If something goes wrong (network, auth...).
         """
         self.data = put(self._token, self.url, {'state_event': 'activate'})
+
+    @property
+    def created(self) -> datetime:
+        """
+        Retrieves a timestamp on when the milestone was created.
+        """
+        return self.data['created_at']
