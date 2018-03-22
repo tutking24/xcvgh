@@ -88,6 +88,22 @@ class GitLabMilestone(GitLabMixin, Milestone):
         self.data = put(self._token, self.url, {'title': new_title})
 
     @property
+    def description(self) -> str:
+        """
+        Retrieves the main description of the milestone.
+        """
+        return self.data['description']
+
+    @description.setter
+    def description(self, new_description):
+        """
+        Sets the description of the milestone
+
+        :param new_description: The new description .
+        """
+        self.data = put(self._token, self.url, {'description': new_description})
+
+    @property
     def state(self):
         """
         Get's the state of the milestone.
