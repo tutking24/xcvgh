@@ -65,6 +65,22 @@ class GitLabMilestone(GitLabMixin, Milestone):
         return GitLabMilestone(token, scope, milestone['id'])
 
     @property
+    def title(self) -> str:
+        """
+        Retrieves the title of the milestone.
+        """
+        return self.data['title']
+
+    @title.setter
+    def title(self, new_title):
+        """
+        Sets the title of the milestone.
+
+        :param new_title: The new title.
+        """
+        self.data['tile'] = new_title
+
+    @property
     def state(self):
         """
         Get's the state of the milestone.
