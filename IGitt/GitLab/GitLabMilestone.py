@@ -160,3 +160,20 @@ class GitLabMilestone(GitLabMixin, Milestone):
         Retrieves a timestamp on when the milestone was updated the last time.
         """
         return self.data['updated_at']
+
+    @property
+    def start_date(self) -> datetime:
+        """
+        Retrieves a timestamp on when the milestone was started.
+        """
+        return self.data['start_date']
+
+    @start_date.setter
+    def start_date(self, new_date: datetime):
+        """
+        Sets the start date of the milestone.
+
+        :param new_date: The new start date.
+        """
+        self.data = put(self._token, self.url, {'start_date': new_date, 'due_date': '2018-03-21T16:42:27.143Z'
+})
