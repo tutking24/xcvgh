@@ -177,3 +177,17 @@ class GitLabMilestone(GitLabMixin, Milestone):
         """
         self.data = put(self._token, self.url, {'start_date': new_date, 'due_date': '2018-03-21T16:42:27.143Z'
 })
+
+    @property
+    def issues(self) -> datetime:
+        """
+        Retrieves all issues assigned to a single project milestone
+        """
+        raise NotImplementedError
+
+    @property
+    def issues(self) -> datetime: # Which type?
+        """
+        Retrieves all issues assigned to a single project milestone
+        """
+        return get(self._token, self.url, "issues")
