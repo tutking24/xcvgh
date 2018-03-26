@@ -153,3 +153,10 @@ class GitLabMilestone(GitLabMixin, Milestone):
         Retrieves a timestamp on when the milestone was created.
         """
         return self.data['created_at']
+
+    @property
+    def updated(self) -> datetime:
+        """
+        Retrieves a timestamp on when the milestone was updated the last time.
+        """
+        return self.data['updated_at']
