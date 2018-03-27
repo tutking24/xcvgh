@@ -5,12 +5,13 @@ from datetime import datetime
 from urllib.parse import quote_plus
 
 from IGitt.GitLab import GitLabMixin
-#from IGitt.GitLab import get
+from IGitt.GitLab import get
 from IGitt.Interfaces import put
 from IGitt.Interfaces import post
 from IGitt.GitLab import GitLabOAuthToken, GitLabPrivateToken
 #from IGitt.Interfaces.Issue import Issue
 from IGitt.Interfaces.Milestone import Milestone
+from IGitt.GitLab.GitLabIssue import GitLabIssue
 
 class GitLabMilestone(GitLabMixin, Milestone):
     """
@@ -198,8 +199,11 @@ class GitLabMilestone(GitLabMixin, Milestone):
                                                 # The title is only set because the GitLab APIV4 requires this.
 
     @property
-    def issues(self) -> datetime: # Which type?
+    def issues(self) -> set:
         """
-        Retrieves all issues assigned to a single project milestone
+        Retrieves a set of issue objects.
         """
-        raise NotImplementedError
+        return {GitLabIssue.from_data(res, self._token,
+                                      extract_repo_full_name(res['web_url']), res['iid'])
+                for res in get(self._token,
+                               self.url + '/issues')}
