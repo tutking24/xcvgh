@@ -180,11 +180,22 @@ class GitLabMilestone(GitLabMixin, Milestone):
                                                 # The title is only set because the GitLab APIV4 requires this. An issue regarding this has been opened:
 
     @property
-    def issues(self) -> datetime:
+    def due_date(self) -> datetime:
         """
-        Retrieves all issues assigned to a single project milestone
+        Retrieves a timestamp on when the milestone is due.
         """
-        raise NotImplementedError
+        return self.data['due_date']
+
+    @due_date.setter
+    def due_date(self, new_date: datetime):
+        """
+        Sets the due date of the milestone.
+
+        :param new_date: The new due date.
+        """
+        self.data = put(self._token, self.url, {'due_date': new_date
+                                                , 'title': self.title})
+                                                # The title is only set because the GitLab APIV4 requires this.
 
     @property
     def issues(self) -> datetime: # Which type?
