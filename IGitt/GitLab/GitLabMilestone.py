@@ -175,8 +175,9 @@ class GitLabMilestone(GitLabMixin, Milestone):
 
         :param new_date: The new start date.
         """
-        self.data = put(self._token, self.url, {'start_date': new_date, 'due_date': '2018-03-21T16:42:27.143Z'
-})
+        self.data = put(self._token, self.url, {'start_date': new_date
+                                                , 'title': self.title})
+                                                # The title is only set because the GitLab APIV4 requires this. An issue regarding this has been opened:
 
     @property
     def issues(self) -> datetime:
