@@ -198,6 +198,12 @@ class GitLabMilestone(GitLabMixin, Milestone):
                                                 , 'title': self.title})
                                                 # The title is only set because the GitLab APIV4 requires this.
 
+    def extract_repo_full_name(web_url: string):
+        """
+        Extracts the repository name from the web_url of the issue
+        """
+        return web_url.
+
     @property
     def issues(self) -> set:
         """
