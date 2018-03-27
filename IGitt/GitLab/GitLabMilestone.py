@@ -177,7 +177,7 @@ class GitLabMilestone(GitLabMixin, Milestone):
         """
         self.data = put(self._token, self.url, {'start_date': new_date
                                                 , 'title': self.title})
-                                                # The title is only set because the GitLab APIV4 requires this. An issue regarding this has been opened:
+                                                # The title is only set because the GitLab APIV4 requires this.
 
     @property
     def due_date(self) -> datetime:
@@ -202,4 +202,4 @@ class GitLabMilestone(GitLabMixin, Milestone):
         """
         Retrieves all issues assigned to a single project milestone
         """
-        return get(self._token, self.url, "issues")
+        raise NotImplementedError
