@@ -12,6 +12,7 @@ from IGitt.GitLab import GitLabOAuthToken, GitLabPrivateToken
 #from IGitt.Interfaces.Issue import Issue
 from IGitt.Interfaces.Milestone import Milestone
 from IGitt.GitLab.GitLabIssue import GitLabIssue
+from IGitt.GitLab.GitLabMergeRequest import GitLabMergeRequest
 import re
 
 class GitLabMilestone(GitLabMixin, Milestone):
@@ -214,3 +215,14 @@ class GitLabMilestone(GitLabMixin, Milestone):
                                       self.extract_repo_full_name(res['web_url']), res['iid'])
                 for res in get(self._token,
                                self.url + '/issues')}
+
+    @property
+    def merge_requests(self) -> set:
+        """
+        Retrieves a set of merge request objects that are assigned to this
+        milestone.
+        """
+        return {GitLabMergeRequest.from_data(res, self._token,
+                                      self.extract_repo_full_name(res['web_url']), res['iid'])
+                for res in get(self._token,
+                               self.url + '/merge_requests')}
