@@ -36,6 +36,16 @@ rate limiting issues from hosting providers. IGitt uses an in-memory cache
 store by default. To provide your own cache store, refer
 `here </using_cache.html>`_.
 
+The User Guide
+--------------
+
+This part of the documentation shows how to use all IGitt interfaces with detailed examples.
+
+.. toctree::
+   :maxdepth: 2
+
+   user/quickstart
+
 API Documentation
 -----------------
 
