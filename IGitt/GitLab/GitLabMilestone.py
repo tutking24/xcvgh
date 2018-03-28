@@ -12,6 +12,7 @@ from IGitt.GitLab import GitLabOAuthToken, GitLabPrivateToken
 #from IGitt.Interfaces.Issue import Issue
 from IGitt.Interfaces.Milestone import Milestone
 from IGitt.GitLab.GitLabIssue import GitLabIssue
+import re
 
 class GitLabMilestone(GitLabMixin, Milestone):
     """
@@ -198,11 +199,11 @@ class GitLabMilestone(GitLabMixin, Milestone):
                                                 , 'title': self.title})
                                                 # The title is only set because the GitLab APIV4 requires this.
 
-    def extract_repo_full_name(web_url: string):
+    def extract_repo_full_name(self, web_url):
         """
         Extracts the repository name from the web_url of the issue
         """
-        return web_url.
+        return re.sub('https*://gitlab.com/|/issues/\d','',web_url)
 
     @property
     def issues(self) -> set:
