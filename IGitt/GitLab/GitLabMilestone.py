@@ -208,9 +208,9 @@ class GitLabMilestone(GitLabMixin, Milestone):
     @property
     def issues(self) -> set:
         """
-        Retrieves a set of issue objects.
+        Retrieves a set of issue objects that are assigned to this milestone.
         """
         return {GitLabIssue.from_data(res, self._token,
-                                      extract_repo_full_name(res['web_url']), res['iid'])
+                                      self.extract_repo_full_name(res['web_url']), res['iid'])
                 for res in get(self._token,
                                self.url + '/issues')}
