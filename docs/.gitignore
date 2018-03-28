@@ -3,3 +3,4 @@
 # …except for index and using_cache
 !index.rst
 !using_cache.rst
+!user/*
