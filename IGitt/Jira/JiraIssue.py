@@ -3,6 +3,7 @@ This contains the Issue implementation for Jira.
 """
 from datetime import datetime
 from typing import List
+from typing import Optional
 from typing import Set
 from typing import Union
 from urllib.parse import urljoin
@@ -264,9 +265,9 @@ class JiraIssue(JiraMixin, Issue):
     @staticmethod
     def create(token: JiraOAuth1Token,
                project: str,
-               issue_type: str,
                title: str,
-               body: str):
+               body: str='',
+               issue_type: Optional[str]=None):
         """
         Creates a new issue with the given title and body on the specified
         project.
@@ -284,6 +285,8 @@ class JiraIssue(JiraMixin, Issue):
         :return:
             A new JiraIssue object.
         """
+        if not issue_type:
+            raise TypeError('`issue_type` cannot be empty.')
         post_url = '/issue/'
         data = {
             'description': body,

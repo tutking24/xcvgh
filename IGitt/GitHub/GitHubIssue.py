@@ -2,6 +2,7 @@
 This contains the Issue implementation for GitHub.
 """
 from datetime import datetime
+from typing import Optional
 from typing import Set
 import re
 
@@ -394,7 +395,7 @@ class GitHubIssue(GitHubMixin, Issue):
 
     @staticmethod
     def create(token: str, repository: str,
-               title: str, body: str=''):
+               title: str, body: str='', issue_type: Optional[str]=None):
         """
         Create a new issue with given title and body.
 

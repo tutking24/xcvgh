@@ -3,6 +3,7 @@ This contains the Issue implementation for GitLab.
 """
 from datetime import datetime
 from typing import List
+from typing import Optional
 from typing import Set
 from typing import Union
 from urllib.parse import quote_plus
@@ -399,7 +400,9 @@ class GitLabIssue(GitLabMixin, Issue):
     @staticmethod
     def create(token: Union[GitLabOAuthToken, GitLabPrivateToken],
                repository: str,
-               title: str, body: str=''):
+               title: str,
+               body: str='',
+               issue_type: Optional[str]=None):
         """
         Create a new issue with given title and body.
 

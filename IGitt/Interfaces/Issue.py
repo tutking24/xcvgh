@@ -201,7 +201,7 @@ class Issue(IGittObject):
         raise NotImplementedError
 
     @staticmethod
-    def create(token, repository, title, body=''):
+    def create(token, repository, title, body='', issue_type=None):
         """
         Create a new issue in repository.
         """

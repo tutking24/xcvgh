@@ -71,8 +71,10 @@ class JiraIssueTest(IGittTestCase):
             self.iss.reopen()
 
     def test_issue_create(self):
+        with self.assertRaises(TypeError):
+            iss = JiraIssue.create(self.token, 10001, 'title', 'body')
         iss = JiraIssue.create(
-            self.token, 10001, 'Task', 'test title', 'test body')
+            self.token, 10001, 'test title', 'test body', 'Task')
         self.assertEqual(iss.state, IssueStates.OPEN)
         self.assertEqual(iss.title, 'test title')
 
