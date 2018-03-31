@@ -9,7 +9,6 @@ import logging
 
 from requests_oauthlib import OAuth2
 import jwt
-import requests
 
 from IGitt.Interfaces import Token, get, post
 from IGitt.Utils import CachedDataMixin
