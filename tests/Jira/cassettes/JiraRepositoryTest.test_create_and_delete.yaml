@@ -1,0 +1,132 @@
+interactions:
+- request:
+    body: '{"key": "TEX", "name": "Test", "projectTypeKey": "software", "lead": "nkprince007"}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['83']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: POST
+    uri: https://jira.gitmate.io/rest/api/2/project
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAKpWKk7NSVOyUsooKSkottLXz8osStRLzyzJTSxJ1cvM1y9KLS7RTyzI1DfSLyjK
+        z0pNLtE3NDAwMFbSUcpMUbICs3WUslMrgWaEuEYo1QIAAAD//wMAYTwj8FIAAAA=
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['104']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 13:21:41 GMT']
+      Location: ['https://jira.gitmate.io/rest/api/2/project/10003']
+      Set-Cookie: [JSESSIONID=EFC5B0D6879491F82F691103A162AA02;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|d321e3226aa77d2f2cbd8e563c2ead764d10f5bd|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [801x9107x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [r69954]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 201, message: Created}
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: DELETE
+    uri: https://jira.gitmate.io/rest/api/2/project/10003
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 13:21:43 GMT']
+      Set-Cookie: [JSESSIONID=A3168A22DD044938F0F2F524898B7059;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|cedf65f91ae2bfbc26a049efd5ce3a0a0193d999|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      X-Arequestid: [801x9108x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [azxax6]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 204, message: No Content}
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: GET
+    uri: https://jira.gitmate.io/rest/api/2/project/10003?per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAKpWSi0qyi/yTS0uTkxPLVayilbyy1coKMrPSk0uUUjOL81JUUhKVUjLL81LUSjP
+        LMlQyExRUDc0MDAwVtdTitWBaAfqq66tBQAAAP//AwA5m9JxTAAAAA==
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['97']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 13:21:44 GMT']
+      Set-Cookie: [JSESSIONID=CDFC4C9049412EB1C1932186CE5E3B3E;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|83c752dda597b36f11583920892240c9d481a68b|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [801x9109x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [kz5qwi]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 404, message: Not Found}
+version: 1

@@ -1,0 +1,425 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: GET
+    uri: https://jira.gitmate.io/rest/api/2/project/LTK?per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAALRWTW/iMBD9K1YOPVHyxaIKqarYbbViqXpY6Knag0kG4jaxI4/Dx1b89x0nKU0L
+        KlC6lyjjeN5M3ryx59mBZc5l7PScGDDSIjdCyVYKPG4VOm3lWj1CZIawQqflIKRT2pkYk2PPdR+F
+        5u2ZMBk30BbK1YDG5blwA7f2c33P83zyFDbCi/EEK7Jux0N6b0SlNVqwoZ3e8xGxCgR9ZR+SZ3CJ
+        IsVNjNqwH14tPueG63tNBsXpXCw7Fx8EQogKDWWQyvFKLSToQVxGOqvWyPK9b55H6EFnGXSOwkPx
+        l9LOeJqefQztd5d+93jo5SHYYbAMg+OxM4hFkX2IvaYiC8xTvrqrynDLEYGNoqQQOuNS2pJERszp
+        m9EF0P5IZbmSIA1V6OEPqQexgPEqB2sfI43S0ZBjKcSgKcRgS3x9Zjg+MZNwwyRAjMwoNgEWUypt
+        6xopSarZT9JcwGJHARq8hP5Fbdq/utyk+arVMaViO66Y2KSc3pSnCC/aHdBPlCDr1ufZCJtshFts
+        jBNgFP285ERNiRZgJcBXM9Hdw8SoTqLJhtXJezK6p5CxdUa9JeOHBkKI2WTFfg1+99lITc2Ca2Dn
+        pA4mlWHUB4YpzWJIgWKxgYVnFp9NaZkz2zkMjdKrw7QkMj4DdO1GfE0W3QoC57MGQ3ZpSyyn0NFp
+        0tHZ0Sl0vk9SyNgiEVHCRJZzodH+f65hbhu31Mu0kJF1wRcBkVtcROaru8kL92joezHb10xeeAph
+        XpMw73/oZyJmDQ1tn1ITrZ5AEtxCniYwyEX0Vl83tLItLzqX6SAXM0rC0k777u/6o9Hg593NNe2e
+        g0Zb+iNP7Nptd1PW+fhtyzDXUUKXRrwppybqONqF6nioZ5CqvgRgM5bNK2hMYdmQywm3d5BWKZQT
+        wTUpOFU5JfKJWce1MPTqlyrox5mQAo3mVLRT4Ox9tf7k6FID1j3U7Jugc/jA8halMbNsAR44puwA
+        3NHaJeKBw8kOxHo+eYe43ojDKndYjYp1SzrrfwAAAP//AwBrbb4qFAsAAA==
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['784']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 22:48:05 GMT']
+      Set-Cookie: [JSESSIONID=6A5AE9F5F56C89550E2B6BB60C3495E9;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|6caa05aee7844862dde0af865cb485da156d1610|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [1368x9110x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [1i867dk]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: GET
+    uri: https://jira.gitmate.io/rest/webhooks/1.0/webhook?jqlFilter=project+%3D+LTK&per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAIqOBQAAAP//AwApu0wNAgAAAA==
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['28']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 22:48:07 GMT']
+      Set-Cookie: [JSESSIONID=46E7066D1606138487B6E9EA7DB5D57F;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|d41be8acb10dd6e5a6fdaca1da0c80969a654022|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [1368x9111x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [a243uk]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: GET
+    uri: https://jira.gitmate.io/rest/webhooks/1.0/webhook?jqlFilter=project+%3D+LTK&per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAIqOBQAAAP//AwApu0wNAgAAAA==
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['28']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 22:48:08 GMT']
+      Set-Cookie: [JSESSIONID=9BB3B2E36E22B13AA95403817FEC2601;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|e330b179480d6479133bd69e76fd864d449d8873|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [1368x9112x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [1mljxzq]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"name": "An IGitt webhook", "url": "https://www.example.com", "events":
+      ["jira:issue_created", "jira:issue_updated", "jira:issue_deleted", "jira:worklog_updated"],
+      "jqlFilter": "project = LTK", "excludeIssueDetails": false}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['224']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: POST
+    uri: https://jira.gitmate.io/rest/webhooks/1.0/webhook
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAGSQzW7CMBCEXyXaM4mTSP3BN6pKVS9cKk5VVZlkE9xs7Mi7ISDEu9dAW4F6s2d2
+        vvH6AM70CBoWLnl9sSLJhOuN9x3MYAwUjY3IwFqpaZoy3Jl+IMwq30cfdxWNNT75eg+6McQ4g8aS
+        YGDQB7DMI6YByQjWKW7RCaeMlVjvIheOkXAWQb/Dlw1GnxOf41CfErHgSqwC/hdrJLwSJx868u0f
+        4CMWOLOmeNQSxvg6RmquVjqlstZKH8cz61VAFvWzP6siy38vah47yLCsLugVY4gc1w3Bugrz/OHW
+        f7Y8kNkvL1+7NFtEl7wZ19rbOdDFXVnel+XjPC/z4vgNAAD//wMA1QuiWo4BAAA=
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['275']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 22:48:10 GMT']
+      Location: ['https://jira.gitmate.io/rest/webhooks/1.0/webhook/9']
+      Set-Cookie: [JSESSIONID=5F78AE758A48F630E8F65A514B149248;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|9679bb8a83f48163d31af5999f13f7b5abc13aec|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [1368x9113x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [1ij4pun]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 201, message: Created}
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: GET
+    uri: https://jira.gitmate.io/rest/webhooks/1.0/webhook?jqlFilter=project+%3D+LTK&per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAGSQS2/CMBCE/0q0Z/KU+sA3qkpVL1wqTghVJtkENxs78m4ICPHfa6CtgnqzZ3a+
+        8Xp9Aqs7BAULG72/GZFoxO3OuRZmMHgKxk6kZ5Wm4zgmeNBdT5iUrgs+HkoaKnxx1RFUrYlxBrUh
+        Qc+gTmCYB4w9khasYtyjFY4ZSzHOBi6cA+EqglrDl/FaXROfQ19dEqFgIpYe/4sVEk7E0fmWXPMH
+        2IQCq7cUjkr8EF7HSPVkpUsqaYx0YTwxLvXIkv7sz2meZL+XdB46SLOsbugVow8c2/be2BKz7One
+        fzXckz4ub1+71HtEG31o25j7OVD5Q1E8FsXzPCuy/Lz5BgAA//8DANqE/8eQAQAA
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['276']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 22:48:12 GMT']
+      Set-Cookie: [JSESSIONID=249771844B94B4CE39F534D9C3097029;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|550a2ac64b304296b72afde646f5f1a3c71b8e76|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [1368x9114x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [15un5xx]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: GET
+    uri: https://jira.gitmate.io/rest/webhooks/1.0/webhook?jqlFilter=project+%3D+LTK&per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAGSQS2/CMBCE/0q0Z/KU+sA3qkpVL1wqTghVJtkENxs78m4ICPHfa6CtgnqzZ3a+
+        8Xp9Aqs7BAULG72/GZFoxO3OuRZmMHgKxk6kZ5Wm4zgmeNBdT5iUrgs+HkoaKnxx1RFUrYlxBrUh
+        Qc+gTmCYB4w9khasYtyjFY4ZSzHOBi6cA+EqglrDl/FaXROfQ19dEqFgIpYe/4sVEk7E0fmWXPMH
+        2IQCq7cUjkr8EF7HSPVkpUsqaYx0YTwxLvXIkv7sz2meZL+XdB46SLOsbugVow8c2/be2BKz7One
+        fzXckz4ub1+71HtEG31o25j7OVD5Q1E8FsXzPCuy/Lz5BgAA//8DANqE/8eQAQAA
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['276']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 22:48:14 GMT']
+      Set-Cookie: [JSESSIONID=1BE24224DBB5000DE066088E38B767C1;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|0f44f4789867af3e2b7307480cc9bb0e666053b7|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [1368x9115x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [17p0x25]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: GET
+    uri: https://jira.gitmate.io/rest/webhooks/1.0/webhook?per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAGSQS2/CMBCE/0q0Z/KU+sA3qkpVL1wqTghVJtkENxs78m4ICPHfa6CtgnqzZ3a+
+        8Xp9Aqs7BAULG72/GZFoxO3OuRZmMHgKxk6kZ5Wm4zgmeNBdT5iUrgs+HkoaKnxx1RFUrYlxBrUh
+        Qc+gTmCYB4w9khasYtyjFY4ZSzHOBi6cA+EqglrDl/FaXROfQ19dEqFgIpYe/4sVEk7E0fmWXPMH
+        2IQCq7cUjkr8EF7HSPVkpUsqaYx0YTwxLvXIkv7sz2meZL+XdB46SLOsbugVow8c2/be2BKz7One
+        fzXckz4ub1+71HtEG31o25j7OVD5Q1E8FsXzPCuy/Lz5BgAA//8DANqE/8eQAQAA
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['276']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 22:48:16 GMT']
+      Set-Cookie: [JSESSIONID=E4ECEF5C6C9EFD7749F87ECEDDCCC94E;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|149bf21adf78adb31b8d31691e54e2ac6466b4e3|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [1368x9116x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [7r0iho]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: DELETE
+    uri: https://jira.gitmate.io/rest/webhooks/1.0/webhook/9
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 22:48:17 GMT']
+      Set-Cookie: [JSESSIONID=7698B7EF7B0A327259F9461E79484DC5;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|c3ba9012f82cb1ff38f78949d905aceb304da071|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      X-Arequestid: [1368x9117x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [1fu1u6b]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 204, message: No Content}
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: GET
+    uri: https://jira.gitmate.io/rest/webhooks/1.0/webhook?jqlFilter=project+%3D+LTK&per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAIqOBQAAAP//AwApu0wNAgAAAA==
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['28']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 22:48:19 GMT']
+      Set-Cookie: [JSESSIONID=A04B08A75DFB56B7B38A2E5F790FE396;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|539dbf21fd5f15ddec8ee8f5c44d989fba8cdc46|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [1368x9118x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [1quyzcw]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

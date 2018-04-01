@@ -1,0 +1,59 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: GET
+    uri: https://jira.gitmate.io/rest/api/2/project/LTK?per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAALRWTW/iMBD9K1YOPVHyxaIKqarYbbViqXpY6Knag0kG4jaxI4/Dx1b89x0nKU0L
+        KlC6lyjjeN5M3ryx59mBZc5l7PScGDDSIjdCyVYKPG4VOm3lWj1CZIawQqflIKRT2pkYk2PPdR+F
+        5u2ZMBk30BbK1YDG5blwA7f2c33P83zyFDbCi/EEK7Jux0N6b0SlNVqwoZ3e8xGxCgR9ZR+SZ3CJ
+        IsVNjNqwH14tPueG63tNBsXpXCw7Fx8EQogKDWWQyvFKLSToQVxGOqvWyPK9b55H6EFnGXSOwkPx
+        l9LOeJqefQztd5d+93jo5SHYYbAMg+OxM4hFkX2IvaYiC8xTvrqrynDLEYGNoqQQOuNS2pJERszp
+        m9EF0P5IZbmSIA1V6OEPqQexgPEqB2sfI43S0ZBjKcSgKcRgS3x9Zjg+MZNwwyRAjMwoNgEWUypt
+        6xopSarZT9JcwGJHARq8hP5Fbdq/utyk+arVMaViO66Y2KSc3pSnCC/aHdBPlCDr1ufZCJtshFts
+        jBNgFP285ERNiRZgJcBXM9Hdw8SoTqLJhtXJezK6p5CxdUa9JeOHBkKI2WTFfg1+99lITc2Ca2Dn
+        pA4mlWHUB4YpzWJIgWKxgYVnFp9NaZkz2zkMjdKrw7QkMj4DdO1GfE0W3QoC57MGQ3ZpSyyn0NFp
+        0tHZ0Sl0vk9SyNgiEVHCRJZzodH+f65hbhu31Mu0kJF1wRcBkVtcROaru8kL92joezHb10xeeAph
+        XpMw73/oZyJmDQ1tn1ITrZ5AEtxCniYwyEX0Vl83tLItLzqX6SAXM0rC0k777u/6o9Hg593NNe2e
+        g0Zb+iNP7Nptd1PW+fhtyzDXUUKXRrwppybqONqF6nioZ5CqvgRgM5bNK2hMYdmQywm3d5BWKZQT
+        wTUpOFU5JfKJWce1MPTqlyrox5mQAo3mVLRT4Ox9tf7k6FID1j3U7Jugc/jA8halMbNsAR44puwA
+        3NHaJeKBw8kOxHo+eYe43ojDKndYjYp1SzrrfwAAAP//AwBrbb4qFAsAAA==
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['784']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sat, 31 Mar 2018 21:42:24 GMT']
+      Set-Cookie: [JSESSIONID=07A971AE1A9E3EC5CCD7D1C3FD770B56;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|2cd02f385087359252afbbfcbe19ca500bc1279f|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [1302x8879x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [10p73gl]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
