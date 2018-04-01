@@ -117,4 +117,74 @@ interactions:
       X-Seraph-Loginreason: [OK]
       X-Xss-Protection: [1; mode=block, 1; mode=block]
     status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: DELETE
+    uri: https://jira.gitmate.io/rest/api/2/issue/10034
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sun, 01 Apr 2018 12:24:19 GMT']
+      Set-Cookie: [JSESSIONID=F815CDE9F32BA98317F839ED968298FC;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|b576a872f218d15d4e3c2e975b8aae11ddec60c8|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      X-Arequestid: [744x8899x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [1xns46y]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [DENY, SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block, 1; mode=block]
+    status: {code: 204, message: No Content}
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: GET
+    uri: https://jira.gitmate.io/rest/api/2/issue/10034?per_page=100
+  response:
+    body: {string: oauth_problem=token_rejected}
+    headers:
+      Content-Length: ['28']
+      Content-Type: [application/x-www-form-urlencoded;charset=UTF-8]
+      Date: ['Sat, 07 Apr 2018 04:50:38 GMT']
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Www-Authenticate: [OAuth realm="https%3A%2F%2Fjira.gitmate.io", 'OAuth realm="https%3A%2F%2Fjira.gitmate.io",
+          oauth_problem="token_rejected"']
+    status: {code: 401, message: Unauthorized}
 version: 1

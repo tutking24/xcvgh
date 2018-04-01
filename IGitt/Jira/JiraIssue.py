@@ -8,6 +8,7 @@ from typing import Set
 from typing import Union
 from urllib.parse import urljoin
 
+from IGitt.Interfaces import delete
 from IGitt.Interfaces import get
 from IGitt.Interfaces import post
 from IGitt.Interfaces import put
@@ -261,6 +262,12 @@ class JiraIssue(JiraMixin, Issue):
         Returns the merge requests that close this issue.
         """
         raise NotImplementedError
+
+    def delete(self):
+        """
+        Deletes the issue.
+        """
+        delete(self._token, self.url)
 
     @staticmethod
     def create(token: JiraOAuth1Token,

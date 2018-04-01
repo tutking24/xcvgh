@@ -77,6 +77,9 @@ class JiraIssueTest(IGittTestCase):
             self.token, 10001, 'test title', 'test body', 'Task')
         self.assertEqual(iss.state, IssueStates.OPEN)
         self.assertEqual(iss.title, 'test title')
+        iss.delete()
+        with self.assertRaises(RuntimeError):
+            iss.refresh()
 
     def test_reactions(self):
         with self.assertRaises(NotImplementedError):
