@@ -16,7 +16,8 @@ preferred_quotation = '
 # ignore C0103 to allow CamelCase module names
 # ignore R1710 to allow returns which are not an expression
 # ignore R0914 to allow lots of local variables
-pylint_disable = R0903, C0326, C1801, W0231, R0913, C0301, E0401, R0911, C0103, R1710, R0914
+# ignore W0613 to allow unused arguments like args, kwargs
+pylint_disable = R0903, C0326, C1801, W0231, R0913, C0301, E0401, R0911, C0103, R1710, R0914, W0613
 
 [all.python.code]
 bears += LineLengthBear
