@@ -2,6 +2,7 @@
 Contains the GitLab Repository implementation.
 """
 from datetime import datetime
+from typing import List
 from typing import Optional
 from typing import Set
 from typing import Union
@@ -13,6 +14,7 @@ from IGitt.GitLab import GitLabOAuthToken, GitLabPrivateToken
 from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.GitLab.GitLabOrganization import GitLabOrganization
 from IGitt.Interfaces import delete, get, post
+from IGitt.Interfaces import BasicAuthorizationToken
 from IGitt.Interfaces import AccessLevel
 from IGitt.Interfaces import IssueStates
 from IGitt.Interfaces import MergeRequestStates
@@ -174,7 +176,7 @@ class GitLabRepository(GitLabMixin, Repository):
         return {label['name']
                 for label in get(self._token, self.url + '/labels')}
 
-    def create_label(self, name: str, color: str):
+    def create_label(self, name: str, color: str='', **kwargs):
         """
         Creates a new label with the given color. For an example,
         see delete_label.
@@ -561,3 +563,142 @@ class GitLabRepository(GitLabMixin, Repository):
                 self.data['forked_from_project']['id'])
         except KeyError:
             return None
+
+    @staticmethod
+    def create(token: Union[BasicAuthorizationToken,
+                            GitLabPrivateToken,
+                            GitLabOAuthToken],
+               name: str,
+               path: Optional[str]=None,
+               visibility: str='public',
+               namespace_id: Optional[int]=None,
+               default_branch: Optional[str]='master',
+               description: Optional[str]=None,
+               has_issues: bool=True,
+               has_merge_requests: bool=True,
+               has_jobs: bool=True,
+               has_wiki: bool=True,
+               has_snippets: bool=True,
+               has_container_registry: bool=True,
+               has_shared_runners: bool=True,
+               has_lfs: bool=False,
+               resolve_outdated_diff_discussions: bool=False,
+               import_url: Optional[str]=None,
+               public_jobs: bool=False,
+               only_allow_merge_if_pipeline_succeeds: bool=False,
+               only_allow_merge_if_all_discussions_are_resolved: bool=False,
+               allow_request_access: bool=True,
+               allow_printing_merge_request_link: bool=True,
+               tag_list: Optional[List[str]]=None,
+               avatar: Optional[object]=None,
+               ci_config_path: Optional[str]=None,
+               repository_storage: Optional[str]=None,
+               approvals_before_merge: Optional[int]=None,
+               **kwargs):
+        """
+        Creates a new repository and returns the associated GitLabRepository
+        instance.
+
+        :param token:
+            The credentials to be used for authentication.
+        :param name:
+            The name of the new project. Equals ``path`` if not provided.
+        :param path:
+            Repository name for new project. Generated based on name if not
+            provided (generated lowercased with dashes).
+        :param visibility:
+            Either of ``private``, ``public`` or ``internal``.
+            Reference: https://docs.gitlab.com/ee/api/projects.html#project-visibility-level
+        :param namespace_id:
+            Namespace for the new project (defaults to the current user's
+            namespace)
+        :param default_branch:
+            The default branch to be used.
+        :param description:
+            A short description of the repository.
+        :param has_issues:
+            Either ``True`` to enable issues for this project or ``False`` to
+            disable them.
+        :param has_merge_requests:
+            Either ``True`` to enable merge requests for this project or
+            ``False`` to disable them.
+        :param has_jobs:
+            Either ``True`` to enable jobs for this project or ``False`` to
+            disable them.
+        :param has_wiki:
+            Either ``True`` to enable wiki for this project or ``False`` to
+            disable it.
+        :param has_snippets:
+            Either ``True`` to enable snippets for this project or ``False`` to
+            disable them.
+        :param has_container_registry:
+            Either ``True`` to enable container registry or ``False`` to
+            disable it.
+        :param has_lfs:
+            Either ``True`` to enable Git Large File Sharing or ``False`` to
+            disable it.
+        :param resolve_outdated_diff_discussions:
+            Either ``True`` to automatically resolve merge request diff
+            discussions on lines changed with a push of ``False`` to disable
+            it.
+        :param import_url:
+            URL to import repository from.
+        :param public_jobs:
+            If ``True``, jobs can be viewed by non-project-members.
+        :param only_allow_merge_if_pipeline_succeeds:
+            Set whether merge requests can only be merged with successful jobs.
+        :param only_allow_merge_if_all_discussions_are_resolved:
+            Set whether merge requests can only be merged when all the
+            discussions are resolved.
+        :param allow_request_access:
+            Allow users to request member access.
+        :param allow_printing_merge_request_link:
+            Show link to create/view merge request when pushing from the
+            command line.
+        :param tag_list:
+            The list of tags for a project that should be finally assigned to a
+            project.
+        :param avatar:
+            Image file for avatar of the project (base64 encoded png).
+        :param ci_config_path:
+            The path to CI config file.
+        :param repository_storage:
+            Which storage shard the repository is on. Available only to admins.
+        :param approvals_before_merge:
+            How many approvers should approve merge request by default before
+            allowing it to be merged.
+        """
+        data = eliminate_none({
+            'name': name,
+            'path': path,
+            'visibility': visibility,
+            'namespace_id': namespace_id,
+            'default_branch': default_branch,
+            'description': description,
+            'has_issues': has_issues,
+            'has_merge_requests': has_merge_requests,
+            'has_jobs': has_jobs,
+            'has_wiki': has_wiki,
+            'has_snippets': has_snippets,
+            'has_container_registry': has_container_registry,
+            'has_shared_runners': has_shared_runners,
+            'has_lfs': has_lfs,
+            'resolve_outdated_diff_discussions':
+                resolve_outdated_diff_discussions,
+            'import_url': import_url,
+            'public_jobs': public_jobs,
+            'only_allow_merge_if_pipeline_succeeds':
+                only_allow_merge_if_pipeline_succeeds,
+            'only_allow_merge_if_all_discussions_are_resolved':
+                only_allow_merge_if_all_discussions_are_resolved,
+            'allow_request_access': allow_request_access,
+            'allow_printing_merge_request_link':
+                allow_printing_merge_request_link,
+            'tag_list': tag_list,
+            'avatar': avatar,
+            'ci_config_path': ci_config_path,
+            'repository_storage': repository_storage,
+            'approvals_before_merge': approvals_before_merge
+        })
+        repo = post(token, GitLabRepository.absolute_url('/projects'), data)
+        return GitLabRepository.from_data(repo, token, repo['id'])

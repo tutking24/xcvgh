@@ -105,9 +105,12 @@ class GitHubRepositoryTest(IGittTestCase):
     def test_create_fork(self):
         self.assertIsInstance(self.fork_repo.create_fork(), GitHubRepository)
 
-    def test_repo_delete(self):
-        fork = self.fork_repo.create_fork()
-        self.assertIsNone(fork.delete())
+    def test_repo_create_and_delete(self):
+        repo = GitHubRepository.create(self.token, 'test-repo')
+        self.assertEqual(repo.full_name, 'nkprince007/test-repo')
+        self.assertIsNone(repo.delete())
+        with self.assertRaises(RuntimeError):
+            repo.refresh()
 
     def test_create_mr(self):
         fork = self.fork_repo.create_fork()

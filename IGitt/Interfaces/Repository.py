@@ -6,6 +6,7 @@ from datetime import datetime
 from enum import Enum
 from os import chdir, getcwd
 from tempfile import mkdtemp
+from typing import List
 from typing import Optional
 from typing import Set
 from typing import Union
@@ -16,6 +17,7 @@ from IGitt.Interfaces import AccessLevel
 from IGitt.Interfaces import IGittObject
 from IGitt.Interfaces import MergeRequestStates
 from IGitt.Interfaces import IssueStates
+from IGitt.Interfaces import Token
 
 
 class WebhookEvents(Enum):
@@ -108,14 +110,26 @@ class Repository(IGittObject):
         """
         raise NotImplementedError
 
-    def create_label(self, name: str, color: str):
+    def create_label(self,
+                     name: str,
+                     color: Optional[str]=None,
+                     description: Optional[str]=None,
+                     label_type: Optional[str]=None):
         """
         Creates a new label.
 
-        :param name: The name of the label to create.
-        :param color: A HTML color value with a leading #.
-        :raises ElementAlreadyExistsError: If the label name already exists.
-        :raises RuntimeError: If something goes wrong (network, auth...).
+        :param name:
+            The name of the label to create.
+        :param color:
+            A HTML color value with a leading #.
+        :param description:
+            The description of the label to be created.
+        :param label_type:
+            The type of the label to be created.
+        :raises ElementAlreadyExistsError:
+            If the label name already exists.
+        :raises RuntimeError:
+            If something goes wrong (network, auth...).
         """
         raise NotImplementedError
 
@@ -302,5 +316,50 @@ class Repository(IGittObject):
         """
         Returns the repository from which this repository is forked from.
         Returns `None` if it has no fork relationship.
+        """
+        raise NotImplementedError
+
+    @staticmethod
+    def create(token: Token,
+               name: str,
+               path: Optional[str]=None,
+               namespace_id: Optional[int]=None,
+               default_branch: Optional[str]='master',
+               resolve_outdated_diff_discussions: bool=False,
+               import_url: Optional[str]=None,
+               public_jobs: bool=False,
+               tag_list: Optional[List[str]]=None,
+               avatar: Optional[object]=None,
+               ci_config_path: Optional[str]=None,
+               repository_storage: Optional[str]=None,
+               approvals_before_merge: Optional[int]=None,
+               org_name: Optional[str]=None,
+               description: Optional[str]=None,
+               homepage: Optional[str]=None,
+               visibility: str='public',
+               has_issues: bool=True,
+               has_merge_requests: bool=True,
+               has_jobs: bool=True,
+               has_snippets: bool=True,
+               has_projects: bool=True,
+               has_wiki: bool=True,
+               has_container_registry: bool=True,
+               has_shared_runners: bool=True,
+               has_lfs: bool=False,
+               team_id: Optional[int]=None,
+               auto_init: bool=False,
+               gitignore_template: Optional[str]=None,
+               license_template: Optional[str]=None,
+               allow_request_access: bool=True,
+               allow_squash_merge: bool=True,
+               allow_merge_commit: bool=True,
+               allow_rebase_merge: bool=True,
+               allow_printing_merge_request_link: bool=True,
+               only_allow_merge_if_pipeline_succeeds: bool=False,
+               project_type: Optional[str]=None,
+               project_key: Optional[str]=None,
+               project_lead: Optional[str]=None):
+        """
+        Creates a new repository and returns it.
         """
         raise NotImplementedError

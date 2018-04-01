@@ -14,6 +14,7 @@ from IGitt.GitHub import GitHubInstallationToken
 from IGitt.GitHub.GitHubIssue import GitHubIssue
 from IGitt.GitHub.GitHubOrganization import GitHubOrganization
 from IGitt.Interfaces import get, post, put, delete
+from IGitt.Interfaces import BasicAuthorizationToken
 from IGitt.Interfaces import AccessLevel
 from IGitt.Interfaces import IssueStates
 from IGitt.Interfaces import MergeRequestStates
@@ -155,7 +156,7 @@ class GitHubRepository(GitHubMixin, Repository):
         return {label['name']
                 for label in get(self._token, self.url + '/labels')}
 
-    def create_label(self, name: str, color: str):
+    def create_label(self, name: str, color: str='', **kwargs):
         """
         Creates a new label with the given color. For an example,
         see delete_label.
@@ -553,3 +554,95 @@ class GitHubRepository(GitHubMixin, Repository):
         if self.data['fork'] is True:
             return GitHubRepository.from_data(
                 self.data['parent'], self._token, self.data['parent']['id'])
+
+    @staticmethod
+    def create(token: Union[GitHubToken,
+                            BasicAuthorizationToken,
+                            GitHubInstallationToken],
+               name: str,
+               org_name: Optional[str]=None,
+               description: Optional[str]=None,
+               homepage: Optional[str]=None,
+               visibility: str='public',
+               has_issues: bool=True,
+               has_projects: bool=True,
+               has_wiki: bool=True,
+               team_id: Optional[int]=None,
+               auto_init: bool=False,
+               gitignore_template: Optional[str]=None,
+               license_template: Optional[str]=None,
+               allow_squash_merge: bool=True,
+               allow_merge_commit: bool=True,
+               allow_rebase_merge: bool=True,
+               **kwargs):
+        """
+        Creates a new repository and returns associated GitHubRepository
+        instance.
+
+        :param token:
+            The token to be used for authentication.
+        :param name:
+            The name of the repository.
+        :param org_name:
+            The name of the organization this repository is to be created in.
+            Pass ``None`` if it is a user repository.
+        :param description:
+            A short description of the repository.
+        :param homepage:
+            A URL with more information about the repository.
+        :param visibility:
+            Either ``private`` to create a private repository or ``public`` to
+            create a public one.
+        :param has_issues:
+            Either ``True`` to enable issues for this repository or ``False``
+            to disable them.
+        :param has_projects:
+            Either ``True`` to enable projects for this repository or ``False``
+            to disable them.
+            Note: If you're creating a repository in an organization that has
+            disabled repository projects, the default is false, and if you pass
+            true, the API returns an error.
+        :param has_wiki:
+            Either ``True`` to enable a wiki for this repository or ``False``
+            to disable it.
+        :param team_id:
+            The id of the team that will be granted access to this repository.
+            This is only valid when creating a repository in an organization.
+        :param auto_init:
+            Pass ``True`` to create an initial commit with empty README.
+        :param gitignore_template:
+            Desired language or platform .gitignore template to apply.
+            Use the name of the template without the extension. For example,
+            "Haskell".
+            Reference: https://github.com/github/gitignore
+        :param license_template:
+            Choose an open source license template that best suits your needs,
+            and then use the license keyword as the license_template string.
+            For example, "mit" or "mpl-2.0".
+            Reference: https://help.github.com/articles/licensing-a-repository/#searching-github-by-license-type
+        :param allow_squash_merge:
+            Pass ``True`` to allow squash merging pull requests.
+        :param allow_merge_commit:
+            Pass ``True`` to allow merging pull requests with a merge commit.
+        :param allow_rebase_merge:
+            Pass ``True`` to allow rebase-merging pull requests.
+        """
+        data = eliminate_none({
+            'name': name,
+            'description': description,
+            'homepage': homepage,
+            'private': True if visibility == 'private' else False,
+            'has_issues': has_issues,
+            'has_projects': has_projects,
+            'has_wiki': has_wiki,
+            'team_id': team_id,
+            'auto_init': auto_init,
+            'gitignore_template': gitignore_template,
+            'license_template': license_template,
+            'allow_squash_merge': allow_squash_merge,
+            'allow_merge_commit': allow_merge_commit,
+            'allow_rebase_merge': allow_rebase_merge
+        })
+        url = '/orgs/{}/repos'.format(org_name) if org_name else '/user/repos'
+        repo = post(token, GitHubRepository.absolute_url(url), data)
+        return GitHubRepository.from_data(repo, token, repo['id'])

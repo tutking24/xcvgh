@@ -214,3 +214,10 @@ class GitLabRepositoryTest(IGittTestCase):
         repo = GitLabRepository(self.token, 'nkprince007/test')
         self.assertEqual(repo.parent.full_name, 'gitmate-test-user/test')
         self.assertEqual(repo.parent.parent, None)
+
+    def test_repo_create_and_delete(self):
+        repo = GitLabRepository.create(self.token, 'test-repo')
+        self.assertEqual(repo.full_name, 'gitmate-test-user/test-repo')
+        self.assertIsNone(repo.delete())
+        with self.assertRaises(RuntimeError):
+            repo.refresh()
