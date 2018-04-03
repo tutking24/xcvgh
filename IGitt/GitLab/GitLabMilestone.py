@@ -16,39 +16,40 @@ from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.GitLab.GitLabMergeRequest import GitLabMergeRequest
 import re
 
-class GitLabMilestone(GitLabMixin, Milestone):
+class GitLabProjectMilestone(GitLabMixin, Milestone):
     """
-    This class represents a milestone on GitLab.
+    This class represents a project level milestone on GitLab.
+    This class does not support group level milestones.
     """
 
     def __init__(self, token: (GitLabOAuthToken, GitLabPrivateToken),
-                 scope, number: int):
+                 project, number: int):
         """
-        Creates a new GitLabMilestone with the given credentials.
+        Creates a new GitLabProjectMilestone with the given credentials.
 
         :param token: A Token object to be used for authentication.
-        :param scope: The full name of the scope.
-                           e.g. ``sils/baritone``.
+        :param project: The full name of the project. Including the owner
+                        e.g. ``owner/project``.
         :param number: The milestones identification number (id).
                         Not The clear text number given on the Web UI
         :raises RuntimeError: If something goes wrong (network, auth, ...)
         """
         self._token = token
-        self._scope = scope
+        self._project = project
         self._id = number
-        self._url = '/projects/{scope}/milestones/{milestone_id}'.format(
-            scope=quote_plus(scope), milestone_id=number)
+        self._url = '/projects/{project}/milestones/{milestone_id}'.format(
+            project=quote_plus(project), milestone_id=number)
 
 
 
     @staticmethod
-    def create(token: (GitLabOAuthToken, GitLabPrivateToken), scope,
+    def create(token: (GitLabOAuthToken, GitLabPrivateToken), project,
                title: str, description: str='',): # TODO: Add start_date and due_date
         """
         Create a new milestone with given title and body.
 
         >>> from os import environ
-        >>> milestone = GitLabMilestone.create(
+        >>> milestone = GitLabProjectMilestone.create(
         ...     GitLabOAuthToken(environ['GITLAB_TEST_TOKEN']),
         ...     'gitmate-test-user/test',
         ...     'test milestone title',
@@ -61,12 +62,12 @@ class GitLabMilestone(GitLabMixin, Milestone):
 
         >>> milestone.close()
 
-        :return: GitLabMilestone object of the newly created milestone.
+        :return: GitLabProjectMilestone object of the newly created milestone.
         """
-        url = '/projects/{scope}/milestones'.format(scope=quote_plus(scope))
-        milestone = post(token, GitLabMilestone.absolute_url(url), {'title': title, 'description': description})
+        url = '/projects/{project}/milestones'.format(project=quote_plus(project))
+        milestone = post(token, GitLabProjectMilestone.absolute_url(url), {'title': title, 'description': description})
 
-        return GitLabMilestone(token, scope, milestone['id'])
+        return GitLabProjectMilestone(token, project, milestone['id'])
 
     @property
     def number(self) -> int:
@@ -113,7 +114,7 @@ class GitLabMilestone(GitLabMixin, Milestone):
         Get's the state of the milestone.
 
         >>> from os import environ
-        >>> milestone = GitLabMilestone(GitLabOAuthToken(environ['GITLAB_TEST_TOKEN']),
+        >>> milestone = GitLabProjectMilestone(GitLabOAuthToken(environ['GITLAB_TEST_TOKEN']),
         ...                     'gitmate-test-user/test', 1)
         >>> milestone.state
         'active'
