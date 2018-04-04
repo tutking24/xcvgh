@@ -1,10 +1,12 @@
 """
 This contains the Milestone implementation for GitHub
 """
+from datetime import datetime
 
 from IGitt.GitHub import GitHubMixin
 from IGitt.Interfaces.Milestone import Milestone
 from IGitt.GitHub import GitHubToken
+from IGitt.Interfaces import post
 
 class GitHubMilestone(GitHubMixin, Milestone):
     """
@@ -28,3 +30,17 @@ class GitHubMilestone(GitHubMixin, Milestone):
         self._number = number
         self._url = '/repos/{owner}/{project}/milestones/{milestone_number}'.format(owner=owner,
             project=project, milestone_number=number)
+
+    @staticmethod
+    def create(token: GitHubToken, owner: str, project: str,
+                title: str, state: str='open', description: str=None,
+                 due_on: datetime=None):
+        """
+        Create a new milestone with given title
+        :return: GitHubMilestone object of the newly created milestone.
+        """
+        url = '/repos/{owner}/{project}/milestones'.format(owner=owner,
+                project=project)
+        milestone = post(token, GitHubMilestone.absolute_url(url), {'title': title, 'state': state, 'description': description, 'due_on': due_on})
+        return GitHubMilestone.from_data(milestone, token, owner, project, milestone['number'])
+        # TODO Understand whats different now
