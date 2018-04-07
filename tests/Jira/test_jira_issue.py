@@ -50,10 +50,11 @@ class JiraIssueTest(IGittTestCase):
         self.assertEqual(comment.body, 'I am a robot.')
 
     def test_issue_labels(self):
-        with self.assertRaises(NotImplementedError):
-            self.iss.labels = set()
-        with self.assertRaises(NotImplementedError):
-            self.assertEqual(self.iss.labels, set())
+        self.assertEqual(self.iss.labels, set())
+        self.iss.labels = {'test'}
+        self.assertEqual(self.iss.labels, {'test'})
+        self.iss.labels = set()
+        self.assertEqual(self.iss.labels, set())
 
     def test_time(self):
         self.assertEqual(self.iss.created,

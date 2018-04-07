@@ -138,7 +138,7 @@ class JiraIssue(JiraMixin, Issue):
 
         :return: The set of labels.
         """
-        raise NotImplementedError
+        return set(self.data['fields'].get('labels', []))
 
     @labels.setter
     def labels(self, value: Set[str]):
@@ -150,7 +150,9 @@ class JiraIssue(JiraMixin, Issue):
 
         :param value: The new set of labels.
         """
-        raise NotImplementedError
+        data = {'update': {'labels': [{'set': list(value)}]}}
+        put(self._token, self.url, data)
+        self.data['fields']['labels'] = value
 
     @property
     def available_labels(self) -> Set[str]:

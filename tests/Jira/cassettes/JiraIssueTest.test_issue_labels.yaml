@@ -1,0 +1,154 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['2']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: GET
+    uri: https://jira.gitmate.io/rest/api/2/issue/10002?per_page=100
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Encoding: [gzip]
+      Content-Length: ['1765']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sat, 07 Apr 2018 05:11:26 GMT']
+      Set-Cookie: [JSESSIONID=A8070A064FA98A376D171DCF8B73B938;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|5ccdbc20575550d825ba2cfb67df463a211ebe9e|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      Vary: [User-Agent]
+      X-Arequestid: [311x263x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [tzjjvj]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"update": {"labels": [{"set": ["test"]}]}}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['43']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: PUT
+    uri: https://jira.gitmate.io/rest/api/2/issue/10002
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sat, 07 Apr 2018 05:11:29 GMT']
+      Set-Cookie: [JSESSIONID=71B432FB9DAEF79D48827C235E2B8EF9;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|453948061db1b6e5b3cd4eca348e9f5668dc575e|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      X-Arequestid: [311x264x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [7kjzwz]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block]
+    status: {code: 204, message: No Content}
+- request:
+    body: '{"update": {"labels": [{"set": []}]}}'
+    headers:
+      Accept:
+      - !!binary |
+        Ki8q
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length: ['37']
+      Content-Type:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      User-Agent:
+      - !!binary |
+        SUdpdHQ=
+    method: PUT
+    uri: https://jira.gitmate.io/rest/api/2/issue/10002
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform']
+      Content-Security-Policy: [frame-ancestors 'self']
+      Content-Type: [application/json;charset=UTF-8]
+      Date: ['Sat, 07 Apr 2018 05:11:32 GMT']
+      Set-Cookie: [JSESSIONID=0BB525CA86681973798C16BF67093F1E;path=/;HttpOnly, atlassian.xsrf.token=B15V-IRV7-Q0YS-ZCZZ|a0fcfea9b1d2cfcf7c50aecd56d3594fe5216193|lin;path=/]
+      Strict-Transport-Security: [max-age=315569260; preload]
+      X-Arequestid: [311x265x1]
+      X-Asen: [SEN-L11373089]
+      X-Asessionid: [1q9uo1d]
+      X-Ausername: [nkprince007]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Seraph-Loginreason: [OK]
+      X-Xss-Protection: [1; mode=block]
+    status: {code: 204, message: No Content}
+version: 1
