@@ -75,3 +75,14 @@ class GitHubMilestone(GitHubMixin, Milestone):
         Retrieves the main description of the milestone.
         """
         return self.data['description']
+
+    @description.setter
+    def description(self, new_description):
+        """
+        Sets the description of the milestone
+
+        :param new_description: The new description .
+        """
+        self.data = patch(self._token, self.url, {'description': new_description})
+
+# TODO Rausfinden, was ich noch alles implementieren muss. Wie habe ich das bei GitLab gemacht? Mischun zwischen API Doku, Milestone Parametern und Interface?
