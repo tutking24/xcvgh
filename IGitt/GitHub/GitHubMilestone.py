@@ -44,3 +44,10 @@ class GitHubMilestone(GitHubMixin, Milestone):
         milestone = post(token, GitHubMilestone.absolute_url(url), {'title': title, 'state': state, 'description': description, 'due_on': due_on})
         return GitHubMilestone.from_data(milestone, token, owner, project, milestone['number'])
         # TODO Understand whats different now
+
+    @property
+    def number(self) -> int:
+        """
+        Returns the milestone "number" or id.
+        """
+        return self._number
