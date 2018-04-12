@@ -51,3 +51,10 @@ class GitHubMilestone(GitHubMixin, Milestone):
         Returns the milestone "number" or id.
         """
         return self._number
+
+    @property
+    def title(self) -> str:
+        """
+        Retrieves the title of the milestone.
+        """
+        return self.data['title']
