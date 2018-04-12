@@ -7,6 +7,7 @@ from IGitt.GitHub import GitHubMixin
 from IGitt.Interfaces.Milestone import Milestone
 from IGitt.GitHub import GitHubToken
 from IGitt.Interfaces import post
+from IGitt.Interfaces import patch
 
 class GitHubMilestone(GitHubMixin, Milestone):
     """
@@ -58,3 +59,12 @@ class GitHubMilestone(GitHubMixin, Milestone):
         Retrieves the title of the milestone.
         """
         return self.data['title']
+
+    @title.setter
+    def title(self, new_title):
+        """
+        Sets the title of the milestone.
+
+        :param new_title: The new title.
+        """
+        self.data = patch(self._token, self.url, {'title': new_title})
