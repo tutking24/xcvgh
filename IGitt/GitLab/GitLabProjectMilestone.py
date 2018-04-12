@@ -67,7 +67,8 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         url = '/projects/{project}/milestones'.format(project=quote_plus(project))
         milestone = post(token, GitLabProjectMilestone.absolute_url(url), {'title': title, 'description': description})
 
-        return GitLabProjectMilestone(token, project, milestone['id'])
+        return GitLabProjectMilestone.from_data(milestone, token, project, milestone['id'])
+        # TODO Commit and understand whats different now
 
     @property
     def number(self) -> int:
