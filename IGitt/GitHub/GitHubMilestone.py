@@ -68,3 +68,10 @@ class GitHubMilestone(GitHubMixin, Milestone):
         :param new_title: The new title.
         """
         self.data = patch(self._token, self.url, {'title': new_title})
+
+    @property
+    def description(self) -> str:
+        """
+        Retrieves the main description of the milestone.
+        """
+        return self.data['description']
