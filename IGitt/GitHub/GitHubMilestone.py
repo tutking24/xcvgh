@@ -8,6 +8,7 @@ from IGitt.Interfaces.Milestone import Milestone
 from IGitt.GitHub import GitHubToken
 from IGitt.Interfaces import post
 from IGitt.Interfaces import patch
+from IGitt.Interfaces import delete
 
 class GitHubMilestone(GitHubMixin, Milestone):
     """
@@ -138,3 +139,12 @@ class GitHubMilestone(GitHubMixin, Milestone):
         :param new_date: The new due date.
         """
         self.data = patch(self._token, self.url, {'due_on': new_date})
+
+    def delete(self):
+        """
+        Deletes the milestone.
+        This is not possible with GitLab api v4.
+
+        :raises RuntimeError: If something goes wrong (network, auth...).
+        """
+        self.data = delete(self._token, self.url)
