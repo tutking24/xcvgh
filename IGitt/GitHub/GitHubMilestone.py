@@ -11,6 +11,7 @@ from IGitt.Interfaces import patch
 from IGitt.Interfaces import delete
 from IGitt.Interfaces import get
 from IGitt.GitHub.GitHubIssue import GitHubIssue
+from IGitt.GitHub.GitHubMergeRequest import GitHubMergeRequest
 
 class GitHubMilestone(GitHubMixin, Milestone):
     """
@@ -168,3 +169,14 @@ class GitHubMilestone(GitHubMixin, Milestone):
         return {GitHubIssue.from_data(res, self._token, self._project, res['number'])
                             for res in get(self._token,
                                self._issues_url, {'milestone': self._number}) if 'pull_request' not in res}
+
+    @property
+    def merge_requests(self) -> set:
+        """
+        Retrieves a set of merge_request objects that are assigned to this milestone.
+        """
+        self._issues_url = GitHubMixin.absolute_url('/repos/{owner}/{project}/issues'.format(owner=self._owner,
+            project=self._project))
+        return {GitHubMergeRequest.from_data(res, self._token, self._project, res['number'])
+                            for res in get(self._token,
+                               self._issues_url, {'milestone': self._number}) if 'pull_request' in res}
