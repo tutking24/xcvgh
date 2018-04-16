@@ -204,3 +204,10 @@ class GitHubMilestone(GitHubMixin, Milestone):
                            {'milestone': self._number})
             if 'pull_request' in res
         }
+
+    @property
+    def start_date(self) -> datetime:
+        """
+        Retrieves a timestamp on when the milestone was started.
+        """
+        return None
