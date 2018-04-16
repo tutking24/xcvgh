@@ -253,4 +253,4 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :raises RuntimeError: If something goes wrong (network, auth...).
         """
-        self.data = delete(self._token, self.url, self._id)
+        self.data = delete(self._token, self.url)
