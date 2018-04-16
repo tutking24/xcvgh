@@ -16,14 +16,15 @@ from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.GitLab.GitLabMergeRequest import GitLabMergeRequest
 import re
 
+
 class GitLabProjectMilestone(GitLabMixin, Milestone):
     """
     This class represents a project level milestone on GitLab.
     This class does not support group level milestones.
     """
 
-    def __init__(self, token: (GitLabOAuthToken, GitLabPrivateToken),
-                 project, number: int):
+    def __init__(self, token: (GitLabOAuthToken, GitLabPrivateToken), project,
+                 number: int):
         """
         Creates a new GitLabProjectMilestone with the given credentials.
 
@@ -40,11 +41,13 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         self._url = '/projects/{project}/milestones/{milestone_id}'.format(
             project=quote_plus(project), milestone_id=number)
 
-
-
     @staticmethod
-    def create(token: (GitLabOAuthToken, GitLabPrivateToken), project,
-               title: str, description: str='',): # TODO: Add start_date and due_date
+    def create(
+            token: (GitLabOAuthToken, GitLabPrivateToken),
+            project,
+            title: str,
+            description: str = '',
+    ):  # TODO: Add start_date and due_date
         """
         Create a new milestone with given title and body.
 
@@ -64,10 +67,15 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :return: GitLabProjectMilestone object of the newly created milestone.
         """
-        url = '/projects/{project}/milestones'.format(project=quote_plus(project))
-        milestone = post(token, GitLabProjectMilestone.absolute_url(url), {'title': title, 'description': description})
+        url = '/projects/{project}/milestones'.format(
+            project=quote_plus(project))
+        milestone = post(token, GitLabProjectMilestone.absolute_url(url), {
+            'title': title,
+            'description': description
+        })
 
-        return GitLabProjectMilestone.from_data(milestone, token, project, milestone['id'])
+        return GitLabProjectMilestone.from_data(milestone, token, project,
+                                                milestone['id'])
         # TODO Commit and understand whats different now
 
     @property
@@ -107,7 +115,8 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :param new_description: The new description .
         """
-        self.data = put(self._token, self.url, {'description': new_description})
+        self.data = put(self._token, self.url,
+                        {'description': new_description})
 
     @property
     def state(self):
@@ -143,7 +152,6 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         :raises RuntimeError: If something goes wrong (network, auth...).
         """
         self.data = put(self._token, self.url, {'state_event': 'close'})
-
 
     def reopen(self):
         """
@@ -181,9 +189,11 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :param new_date: The new start date.
         """
-        self.data = put(self._token, self.url, {'start_date': new_date
-                                                , 'title': self.title})
-                                                # The title is only set because the GitLab APIV4 requires this.
+        self.data = put(self._token, self.url, {
+            'start_date': new_date,
+            'title': self.title
+        })
+        # The title is only set because the GitLab APIV4 requires this.
 
     @property
     def due_date(self) -> datetime:
@@ -199,25 +209,29 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :param new_date: The new due date.
         """
-        self.data = put(self._token, self.url, {'due_date': new_date
-                                                , 'title': self.title})
-                                                # The title is only set because the GitLab APIV4 requires this.
+        self.data = put(self._token, self.url, {
+            'due_date': new_date,
+            'title': self.title
+        })
+        # The title is only set because the GitLab APIV4 requires this.
 
     def extract_repo_full_name(self, web_url):
         """
         Extracts the repository name from the web_url of the issue
         """
-        return re.sub('https*://gitlab.com/|/issues/\d','',web_url)
+        return re.sub('https*://gitlab.com/|/issues/\d', '', web_url)
 
     @property
     def issues(self) -> set:
         """
         Retrieves a set of issue objects that are assigned to this milestone.
         """
-        return {GitLabIssue.from_data(res, self._token,
-                                      self.extract_repo_full_name(res['web_url']), res['iid'])
-                for res in get(self._token,
-                               self.url + '/issues')}
+        return {
+            GitLabIssue.from_data(res, self._token,
+                                  self.extract_repo_full_name(res['web_url']),
+                                  res['iid'])
+            for res in get(self._token, self.url + '/issues')
+        }
 
     @property
     def merge_requests(self) -> set:
@@ -225,10 +239,12 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         Retrieves a set of merge request objects that are assigned to this
         milestone.
         """
-        return {GitLabMergeRequest.from_data(res, self._token,
-                                      self.extract_repo_full_name(res['web_url']), res['iid'])
-                for res in get(self._token,
-                               self.url + '/merge_requests')}
+        return {
+            GitLabMergeRequest.from_data(res, self._token,
+                                         self.extract_repo_full_name(
+                                             res['web_url']), res['iid'])
+            for res in get(self._token, self.url + '/merge_requests')
+        }
 
     def delete(self):
         """

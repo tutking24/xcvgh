@@ -13,13 +13,14 @@ from IGitt.Interfaces import get
 from IGitt.GitHub.GitHubIssue import GitHubIssue
 from IGitt.GitHub.GitHubMergeRequest import GitHubMergeRequest
 
+
 class GitHubMilestone(GitHubMixin, Milestone):
     """
     This class represents a milestone on GitHub.
     """
 
     def __init__(self, token: GitHubToken, owner: str, project: str,
-                    number: int):
+                 number: int):
         """
         Creates a new GitHubMilestone object with the given credentials.
 
@@ -33,21 +34,32 @@ class GitHubMilestone(GitHubMixin, Milestone):
         self._owner = owner
         self._project = project
         self._number = number
-        self._url = '/repos/{owner}/{project}/milestones/{milestone_number}'.format(owner=owner,
-            project=project, milestone_number=number)
+        self._url = '/repos/{owner}/{project}/milestones/{milestone_number}'\
+            .format(owner=owner, project=project, milestone_number=number)
 
     @staticmethod
-    def create(token: GitHubToken, owner: str, project: str,
-                title: str, state: str='open', description: str=None,
-                 due_on: datetime=None):
+    def create(token: GitHubToken,
+               owner: str,
+               project: str,
+               title: str,
+               state: str = 'open',
+               description: str = None,
+               due_on: datetime = None):
         """
         Create a new milestone with given title
         :return: GitHubMilestone object of the newly created milestone.
         """
-        url = '/repos/{owner}/{project}/milestones'.format(owner=owner,
-                project=project)
-        milestone = post(token, GitHubMilestone.absolute_url(url), {'title': title, 'state': state, 'description': description, 'due_on': due_on})
-        return GitHubMilestone.from_data(milestone, token, owner, project, milestone['number'])
+        url = '/repos/{owner}/{project}/milestones'.format(
+            owner=owner, project=project)
+        milestone = post(
+            token, GitHubMilestone.absolute_url(url), {
+                'title': title,
+                'state': state,
+                'description': description,
+                'due_on': due_on
+            })
+        return GitHubMilestone.from_data(milestone, token, owner, project,
+                                         milestone['number'])
 
     @property
     def number(self) -> int:
@@ -86,7 +98,8 @@ class GitHubMilestone(GitHubMixin, Milestone):
 
         :param new_description: The new description .
         """
-        self.data = patch(self._token, self.url, {'description': new_description})
+        self.data = patch(self._token, self.url,
+                          {'description': new_description})
 
     @property
     def state(self):
@@ -164,19 +177,30 @@ class GitHubMilestone(GitHubMixin, Milestone):
         """
         Retrieves a set of issue objects that are assigned to this milestone.
         """
-        self._issues_url = GitHubMixin.absolute_url('/repos/{owner}/{project}/issues'.format(owner=self._owner,
-            project=self._project))
-        return {GitHubIssue.from_data(res, self._token, self._project, res['number'])
-                            for res in get(self._token,
-                               self._issues_url, {'milestone': self._number}) if 'pull_request' not in res}
+        self._issues_url = GitHubMixin.absolute_url(
+            '/repos/{owner}/{project}/issues'.format(
+                owner=self._owner, project=self._project))
+        return {
+            GitHubIssue.from_data(res, self._token, self._project,
+                                  res['number'])
+            for res in get(self._token, self._issues_url,
+                           {'milestone': self._number})
+            if 'pull_request' not in res
+        }
 
     @property
     def merge_requests(self) -> set:
         """
-        Retrieves a set of merge_request objects that are assigned to this milestone.
+        Retrieves a set of merge_request
+        objects that are assigned to this milestone.
         """
-        self._issues_url = GitHubMixin.absolute_url('/repos/{owner}/{project}/issues'.format(owner=self._owner,
-            project=self._project))
-        return {GitHubMergeRequest.from_data(res, self._token, self._project, res['number'])
-                            for res in get(self._token,
-                               self._issues_url, {'milestone': self._number}) if 'pull_request' in res}
+        self._issues_url = GitHubMixin.absolute_url(
+            '/repos/{owner}/{project}/issues'.format(
+                owner=self._owner, project=self._project))
+        return {
+            GitHubMergeRequest.from_data(res, self._token, self._project,
+                                         res['number'])
+            for res in get(self._token, self._issues_url,
+                           {'milestone': self._number})
+            if 'pull_request' in res
+        }
