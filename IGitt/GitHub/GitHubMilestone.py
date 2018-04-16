@@ -9,6 +9,8 @@ from IGitt.GitHub import GitHubToken
 from IGitt.Interfaces import post
 from IGitt.Interfaces import patch
 from IGitt.Interfaces import delete
+from IGitt.Interfaces import get
+from IGitt.GitHub.GitHubIssue import GitHubIssue
 
 class GitHubMilestone(GitHubMixin, Milestone):
     """
@@ -155,3 +157,14 @@ class GitHubMilestone(GitHubMixin, Milestone):
         Retrieves the group this milestone belongs to.
         """
         return self._owner
+
+    @property
+    def issues(self) -> set:
+        """
+        Retrieves a set of issue objects that are assigned to this milestone.
+        """
+        self._issues_url = GitHubMixin.absolute_url('/repos/{owner}/{project}/issues'.format(owner=self._owner,
+            project=self._project))
+        return {GitHubIssue.from_data(res, self._token, self._project, res['number'])
+                            for res in get(self._token,
+                               self._issues_url, {'milestone': self._number}) if 'pull_request' not in res}
