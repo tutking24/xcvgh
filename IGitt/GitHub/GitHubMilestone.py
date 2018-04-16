@@ -44,7 +44,6 @@ class GitHubMilestone(GitHubMixin, Milestone):
                 project=project)
         milestone = post(token, GitHubMilestone.absolute_url(url), {'title': title, 'state': state, 'description': description, 'due_on': due_on})
         return GitHubMilestone.from_data(milestone, token, owner, project, milestone['number'])
-        # TODO Understand whats different now
 
     @property
     def number(self) -> int:
@@ -85,4 +84,27 @@ class GitHubMilestone(GitHubMixin, Milestone):
         """
         self.data = patch(self._token, self.url, {'description': new_description})
 
-# TODO Rausfinden, was ich noch alles implementieren muss. Wie habe ich das bei GitLab gemacht? Mischun zwischen API Doku, Milestone Parametern und Interface?
+    @property
+    def state(self):
+        """
+        Get's the state of the milestone.
+
+        :return: Either IssueStates.OPEN or IssueStates.CLOSED.
+        """
+        return self.data['state']
+
+    def close(self):
+        """
+        Closes the milestone.
+
+        :raises RuntimeError: If something goes wrong (network, auth...).
+        """
+        self.data = patch(self._token, self.url, {'state': 'closed'})
+
+    def reopen(self):
+        """
+        Reopens the milestone.
+
+        :raises RuntimeError: If something goes wrong (network, auth...).
+        """
+        self.data = patch(self._token, self.url, {'state': 'open'})
