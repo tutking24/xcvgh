@@ -148,3 +148,10 @@ class GitHubMilestone(GitHubMixin, Milestone):
         :raises RuntimeError: If something goes wrong (network, auth...).
         """
         self.data = delete(self._token, self.url)
+
+    @property
+    def group(self) -> str:
+        """
+        Retrieves the group this milestone belongs to.
+        """
+        return self._owner
