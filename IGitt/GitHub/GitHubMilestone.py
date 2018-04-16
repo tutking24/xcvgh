@@ -108,3 +108,17 @@ class GitHubMilestone(GitHubMixin, Milestone):
         :raises RuntimeError: If something goes wrong (network, auth...).
         """
         self.data = patch(self._token, self.url, {'state': 'open'})
+
+    @property
+    def created(self) -> datetime:
+        """
+        Retrieves a timestamp on when the milestone was created.
+        """
+        return self.data['created_at']
+
+    @property
+    def updated(self) -> datetime:
+        """
+        Retrieves a timestamp on when the milestone was updated the last time.
+        """
+        return self.data['updated_at']
