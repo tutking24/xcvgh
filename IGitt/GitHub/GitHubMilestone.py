@@ -122,3 +122,19 @@ class GitHubMilestone(GitHubMixin, Milestone):
         Retrieves a timestamp on when the milestone was updated the last time.
         """
         return self.data['updated_at']
+
+    @property
+    def due_date(self) -> datetime:
+        """
+        Retrieves a timestamp on when the milestone is due.
+        """
+        return self.data['due_on']
+
+    @due_date.setter
+    def due_date(self, new_date: datetime):
+        """
+        Sets the due date of the milestone.
+
+        :param new_date: The new due date.
+        """
+        self.data = patch(self._token, self.url, {'due_on': new_date})
