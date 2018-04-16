@@ -22,7 +22,7 @@ class Milestone(IGittObject):
         raise NotImplementedError
 
     @property
-    def scope(self) -> Union[Repository, Organization]:
+    def project(self) -> Repository:
         """
         Returns the repository this milestone is linked with.
         """
