@@ -21,6 +21,8 @@ class GitHubMilestoneTest(IGittTestCase):
     def test_number(self):
         self.assertEqual(self.milestone.number, 1)
 
+    def test_title_getter(self):
+        self.assertEqual(self.milestone.title, 'IGitt Created Test Milestone')
 
 
     def tearDown(self):
