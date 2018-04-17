@@ -18,6 +18,11 @@ class GitHubMilestoneTest(IGittTestCase):
     def test_setUp(self):
         assert(isinstance(self.milestone, GitHubMilestone))
 
+    def test_number(self):
+        self.assertEqual(self.milestone.number, 1)
+
+
+
     def tearDown(self):
         self.milestone.delete()
 
