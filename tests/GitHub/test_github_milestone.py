@@ -24,6 +24,9 @@ class GitHubMilestoneTest(IGittTestCase):
     def test_title_getter(self):
         self.assertEqual(self.milestone.title, 'IGitt Created Test Milestone')
 
+    def test_title_setter(self):
+        self.milestone.title = 'Updated Title'
+        self.assertEqual(self.milestone.title, 'Updated Title')
 
     def tearDown(self):
         self.milestone.delete()
