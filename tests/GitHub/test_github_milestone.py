@@ -15,6 +15,9 @@ class GitHubMilestoneTest(IGittTestCase):
         self.milestone = GitHubMilestone.create(self.token, 'gitmate-test-user', 'test', 'IGitt Created Test Milestone')
         #self.milestone = GitHubMilestone(self.token, 'gitmate-test-user', 'test', 1)
 
+    def test_setUp(self):
+        assert(isinstance(self.milestone, GitHubMilestone))
+
     def tearDown(self):
         self.milestone.delete()
 
