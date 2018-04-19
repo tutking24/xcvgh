@@ -35,5 +35,9 @@ class GitHubMilestoneTest(IGittTestCase):
     def test_state_getter(self):
         self.assertEqual(self.milestone.state, 'open')
 
+    def test_close_method(self):
+        self.milestone.close()
+        self.assertEqual(self.milestone.state, 'closed')
+
     def tearDown(self):
         self.milestone.delete()
