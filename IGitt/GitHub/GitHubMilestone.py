@@ -147,7 +147,8 @@ class GitHubMilestone(GitHubMixin, Milestone):
         """
         Retrieves a timestamp on when the milestone is due.
         """
-        return self.data['due_on']
+        return datetime.strptime(self.data['due_on'],
+                                 '%Y-%m-%dT%H:%M:%SZ')
 
     @due_date.setter
     def due_date(self, new_date: datetime):
