@@ -139,7 +139,8 @@ class GitHubMilestone(GitHubMixin, Milestone):
         """
         Retrieves a timestamp on when the milestone was updated the last time.
         """
-        return self.data['updated_at']
+        return datetime.strptime(self.data['updated_at'],
+                                 '%Y-%m-%dT%H:%M:%SZ')
 
     @property
     def due_date(self) -> datetime:
