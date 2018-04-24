@@ -4,7 +4,7 @@ import os
 from IGitt.GitHub import GitHubToken
 from IGitt.GitHub.GitHubMilestone import GitHubMilestone
 #from IGitt.GitHub.GitHubUser import GitHubUser
-#from IGitt.Interfaces import IssueStates
+from IGitt.Interfaces import MilestoneStates
 
 from tests import IGittTestCase
 
@@ -33,7 +33,7 @@ class GitHubMilestoneTest(IGittTestCase):
         self.assertEqual(self.milestone.description, 'Test Milestone Description')
 
     def test_state_getter(self):
-        self.assertEqual(self.milestone.state, 'open')
+        self.assertEqual(self.milestone.state, MilestoneStates.OPEN)
 
     def test_close_method(self):
         self.milestone.close()
