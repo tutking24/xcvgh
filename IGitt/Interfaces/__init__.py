@@ -372,3 +372,17 @@ class IssueStates(Enum):
 
     OPEN = 'open'
     CLOSED = 'closed'
+
+class MilestoneStates(Enum):
+    """
+    This class depicts the milestone states that can are present in any hosting
+    service providers like GitHub or GitLab.
+    """
+    def __str__(self):
+        """
+        Make behaviour of object as similar to a string as possible.
+        """
+        return str(self.value)
+
+    OPEN = 'open'
+    CLOSED = 'closed'

@@ -5,7 +5,7 @@ and actions related to milestones.
 from datetime import datetime
 from IGitt.Interfaces.Repository import Repository
 from IGitt.Interfaces import IGittObject
-from IGitt.Interfaces import IssueStates
+from IGitt.Interfaces import MilestoneStates
 from IGitt.Interfaces.Organization import Organization
 from typing import Union
 
@@ -61,11 +61,11 @@ class Milestone(IGittObject):
         raise NotImplementedError
 
     @property
-    def state(self) -> IssueStates:
+    def state(self) -> MilestoneStates:
         """
         Get's the state of the milestone.
 
-        :return: Either IssueStates.OPEN or IssueStates.CLOSED.
+        :return: Either MilestoneStates.OPEN or MilestoneStates.CLOSED.
         """
         raise NotImplementedError
 
