@@ -16,6 +16,7 @@ from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.GitLab.GitLabMergeRequest import GitLabMergeRequest
 import re
 from IGitt.Interfaces import MilestoneStates
+from IGitt.GitLab.GitLabRepository import GitLabRepository
 
 
 class GitLabProjectMilestone(GitLabMixin, Milestone):
@@ -231,6 +232,13 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
                                              res['web_url']), res['iid'])
             for res in get(self._token, self.url + '/merge_requests')
         }
+
+    @property
+    def project(self) -> GitLabRepository:
+        """
+        Returns the repository this milestone is linked with.
+        """
+        return GitLabRepository(self._token, self._project)
 
     def delete(self):
         """

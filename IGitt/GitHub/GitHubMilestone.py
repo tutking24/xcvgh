@@ -13,6 +13,7 @@ from IGitt.Interfaces import delete
 from IGitt.Interfaces import get
 from IGitt.GitHub.GitHubIssue import GitHubIssue
 from IGitt.GitHub.GitHubMergeRequest import GitHubMergeRequest
+from IGitt.GitHub.GitHubRepository import GitHubRepository
 
 
 class GitHubMilestone(GitHubMixin, Milestone):
@@ -208,6 +209,13 @@ class GitHubMilestone(GitHubMixin, Milestone):
                            {'milestone': self._number})
             if 'pull_request' in res
         }
+
+    @property
+    def project(self) -> GitHubRepository:
+        """
+        Returns the repository this milestone is linked with.
+        """
+        return GitHubRepository(self._token, self._project)
 
     @property
     def start_date(self) -> datetime:

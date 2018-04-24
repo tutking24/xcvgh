@@ -4,6 +4,7 @@ import datetime
 from IGitt.GitLab import GitLabOAuthToken
 from IGitt.GitLab.GitLabProjectMilestone import GitLabProjectMilestone
 from IGitt.Interfaces import MilestoneStates
+from IGitt.GitLab.GitLabRepository import GitLabRepository
 
 from tests import IGittTestCase
 
@@ -39,6 +40,8 @@ class GitLabProjectMilestoneTest(IGittTestCase):
         self.milestone.description = 'Description update to test updated getter'
         self.assertEqual(self.milestone.updated.day, datetime.datetime.utcnow().day)
 
+    def test_project_getter(self):
+        self.assertEqual(self.milestone.project, GitLabRepository(self.token, 'gitmate-test-user/test'))
 
     def tearDown(self):
         self.milestone.delete()

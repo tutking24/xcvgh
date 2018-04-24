@@ -5,6 +5,7 @@ from IGitt.GitHub import GitHubToken
 from IGitt.GitHub.GitHubMilestone import GitHubMilestone
 #from IGitt.GitHub.GitHubUser import GitHubUser
 from IGitt.Interfaces import MilestoneStates
+from IGitt.GitHub.GitHubRepository import GitHubRepository
 
 from tests import IGittTestCase
 
@@ -38,6 +39,9 @@ class GitHubMilestoneTest(IGittTestCase):
     def test_close_method(self):
         self.milestone.close()
         self.assertEqual(self.milestone.state, 'closed')
+
+    def test_project_getter(self):
+        assert(isinstance(self.milestone.project, GitHubRepository))
 
     def tearDown(self):
         self.milestone.delete()
