@@ -5,6 +5,7 @@ from datetime import datetime
 
 from IGitt.GitHub import GitHubMixin
 from IGitt.Interfaces.Milestone import Milestone
+from IGitt.Interfaces import MilestoneStates
 from IGitt.GitHub import GitHubToken
 from IGitt.Interfaces import post
 from IGitt.Interfaces import patch
@@ -42,7 +43,7 @@ class GitHubMilestone(GitHubMixin, Milestone):
                owner: str,
                project: str,
                title: str,
-               state: str = 'open',
+               state: MilestoneStates = MilestoneStates.OPEN,
                description: str = None,
                due_on: datetime = None):
         """
@@ -54,7 +55,7 @@ class GitHubMilestone(GitHubMixin, Milestone):
         milestone = post(
             token, GitHubMilestone.absolute_url(url), {
                 'title': title,
-                'state': state,
+                'state': str(state),
                 'description': description,
                 'due_on': due_on
             })
@@ -102,13 +103,13 @@ class GitHubMilestone(GitHubMixin, Milestone):
                           {'description': new_description})
 
     @property
-    def state(self):
+    def state(self) -> MilestoneStates:
         """
         Get's the state of the milestone.
 
-        :return: Either IssueStates.OPEN or IssueStates.CLOSED.
+        :return: Either MilestoneStates.OPEN or MilestoneStates.CLOSED.
         """
-        return self.data['state']
+        return MilestoneStates[self.data['state'].upper()]
 
     def close(self):
         """
