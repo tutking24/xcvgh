@@ -15,6 +15,7 @@ from IGitt.Interfaces.Milestone import Milestone
 from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.GitLab.GitLabMergeRequest import GitLabMergeRequest
 import re
+from IGitt.Interfaces import MilestoneStates
 
 
 class GitLabProjectMilestone(GitLabMixin, Milestone):
@@ -119,31 +120,16 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
                         {'description': new_description})
 
     @property
-    def state(self):
+    def state(self) -> MilestoneStates:
         """
         Get's the state of the milestone.
 
-        >>> from os import environ
-        >>> milestone = GitLabProjectMilestone(GitLabOAuthToken(environ['GITLAB_TEST_TOKEN']),
-        ...                     'gitmate-test-user/test', 1)
-        >>> milestone.state
-        'active'
-#TODO create milestone to test against
-        So if we close it:
-
-        >>> milestone.close()
-        >>> milestone.state
-        'closed'
-
-        And reopen it:
-
-        >>> milestone.reopen()
-        >>> milestone.state
-        'active'
-
-        :return: Either 'active' or 'closed'.
+        :return: Either MilestoneStates.OPEN or MilestoneStates.CLOSED.
         """
-        return self.data['state']
+        if self.data['state'] == 'active':
+            self.data['state'] = 'open'
+
+        return MilestoneStates[self.data['state'].upper()]
 
     def close(self):
         """
