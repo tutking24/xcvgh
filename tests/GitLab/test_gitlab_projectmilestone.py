@@ -16,6 +16,10 @@ class GitLabProjectMilestoneTest(IGittTestCase):
     def test_setUp(self):
         assert(isinstance(self.milestone, GitLabProjectMilestone))
 
+    def test_number_getter(self):
+        self.preset_milestone = GitLabProjectMilestone(self.token, 'gitmate-test-user/test', 345808)
+        self.assertEqual(self.preset_milestone.number, 345808)
+
 
     def tearDown(self):
         self.milestone.delete()
