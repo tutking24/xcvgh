@@ -3,6 +3,7 @@ import datetime
 
 from IGitt.GitLab import GitLabOAuthToken
 from IGitt.GitLab.GitLabProjectMilestone import GitLabProjectMilestone
+from IGitt.Interfaces import MilestoneStates
 
 from tests import IGittTestCase
 
@@ -27,6 +28,9 @@ class GitLabProjectMilestoneTest(IGittTestCase):
     def test_description_setter(self):
         self.milestone.description = 'Test description in test_description_setter'
         self.assertEqual(self.milestone.description, 'Test description in test_description_setter')
+
+    def test_state_getter(self):
+        self.assertEqual(self.milestone.state, MilestoneStates.OPEN)
 
 
     def tearDown(self):
