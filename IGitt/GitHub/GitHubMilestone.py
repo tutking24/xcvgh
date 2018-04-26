@@ -171,13 +171,6 @@ class GitHubMilestone(GitHubMixin, Milestone):
         self.data = delete(self._token, self.url)
 
     @property
-    def group(self) -> str:
-        """
-        Retrieves the group this milestone belongs to.
-        """
-        return self._owner
-
-    @property
     def issues(self) -> set:
         """
         Retrieves a set of issue objects that are assigned to this milestone.

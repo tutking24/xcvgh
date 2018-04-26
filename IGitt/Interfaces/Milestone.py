@@ -131,13 +131,6 @@ class Milestone(IGittObject):
         """
         raise NotImplementedError
 
-    @property
-    def group(self) -> int:
-        """
-        Retrieves the group this milestone belongs to.
-        """
-        raise NotImplementedError
-
     def delete(self):
         """
         Deletes the milestone.
