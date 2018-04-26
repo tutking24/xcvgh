@@ -10,7 +10,6 @@ from IGitt.Interfaces import put
 from IGitt.Interfaces import post
 from IGitt.Interfaces import delete
 from IGitt.GitLab import GitLabOAuthToken, GitLabPrivateToken
-#from IGitt.Interfaces.Issue import Issue
 from IGitt.Interfaces.Milestone import Milestone
 from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.GitLab.GitLabMergeRequest import GitLabMergeRequest
