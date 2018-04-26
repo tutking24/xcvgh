@@ -74,3 +74,13 @@ class GitHubMilestoneTest(IGittTestCase):
     def test_project_getter(self):
         assert(isinstance(self.milestone.project, GitHubRepository))
 
+    def test_create_delete_methods(self):
+        self.minimal_data_milestone = GitHubMilestone.create(self.token, 'gitmate-test-user', 'test', 'Temporary created test milestone.')
+        assert(isinstance(self.minimal_data_milestone, GitHubMilestone))
+        self.assertEqual(self.minimal_data_milestone.title, 'Temporary created test milestone.')
+        self.minimal_data_milestone.delete()
+
+        self.full_data_milestone = GitHubMilestone.create(self.token, 'gitmate-test-user', 'test', 'Temporary created test milestone.', MilestoneStates.OPEN, 'Test Description', datetime.datetime(2050, 4, 23, 7))
+        assert(isinstance(self.full_data_milestone, GitHubMilestone))
+        self.assertEqual(self.full_data_milestone.state, MilestoneStates.OPEN)
+        self.full_data_milestone.delete()
