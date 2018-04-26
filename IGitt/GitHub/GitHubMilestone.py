@@ -149,7 +149,10 @@ class GitHubMilestone(GitHubMixin, Milestone):
         """
         Retrieves a timestamp on when the milestone is due.
         """
-        return datetime.strptime(self.data['due_on'],
+        if self.data['due_on'] == None:
+            return None
+        else:
+            return datetime.strptime(self.data['due_on'],
                                  '%Y-%m-%dT%H:%M:%SZ')
 
     @due_date.setter
