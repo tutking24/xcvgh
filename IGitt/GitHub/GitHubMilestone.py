@@ -53,6 +53,8 @@ class GitHubMilestone(GitHubMixin, Milestone):
         """
         url = '/repos/{owner}/{project}/milestones'.format(
             owner=owner, project=project)
+        if due_on != None:
+            due_on = datetime.strftime(due_on, '%Y-%m-%dT%H:%M:%SZ')
         milestone = post(
             token, GitHubMilestone.absolute_url(url), {
                 'title': title,
