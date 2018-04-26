@@ -1,0 +1,109 @@
+interactions:
+- request:
+    body: '{"state": "closed"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['19']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: PATCH
+    uri: https://api.github.com/repos/gitmate-test-user/test/milestones/1
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6WUwYrbMBCGX8XonES24yQbQellQymUbg/pZS9GsWcTgSwZaexla/LuHSnZ0KTb
+        lnrBYDPWfPr/mZEG1jnNBDsgtl5wLls12ys8dLtZZRvuoLWeU6CRCFMEj9POg+PhizdK08sa8Dxj
+        E0I0urym/UL6FyMitNyB9jeQsZL4iUZYVTMxz9f5YrWaMNM1O3BMZBOGCjWQ+W/gGmnAYPL5k0JM
+        grvk4m6W3D8kXx+2yf3my2a7mRGwBl851aKyhgnTaT1hlQOJlrgD03avKM5+s3yWki2Xd1k6TydM
+        9hKlu/Ubg35+7kOod2UNkrzYko6/5n/sPxSE3LszJthkFPhrRwPujY7+f/8o48lqbZ+Jd+vgeoj+
+        sCW/pF9Qyuzfg6L0gVs8AJWUbB5DcZTHkfJi6kDD77FUdYB56ouDepzEczIJfDakbYhnK1K73WWa
+        Rkq9QhDSur006ocMAzoSSQhPpHgBjDMcUwkBPY3uSMYpd+CtU72sXkK5HFSgeurCe7g3EMLiSxuu
+        gu80N6EnCqGUdRPO8ZPUHo5U1BZMqbzvwDNR0InX1pOM1wgdZ2oxBsjpD2HipUBrJFI0T7O7aVpM
+        82Kb5SJbi2L9SGu6tn5jzWKbZWK+EHkR1tQdlOGqIcYijYz5Nl2JNKUn/D9Lud4mInLaZvnIjj8B
+        5AzCTegFAAA=
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
+          X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+          X-Poll-Interval']
+      Cache-Control: ['private, max-age=60, s-maxage=60']
+      Content-Encoding: [gzip]
+      Content-Security-Policy: [default-src 'none']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Wed, 25 Apr 2018 11:35:24 GMT']
+      ETag: [W/"615fa829a6f7ddc0aa08f85d04f9d67f"]
+      Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
+      Server: [GitHub.com]
+      Status: [200 OK]
+      Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
+      Vary: ['Accept, Authorization, Cookie, X-GitHub-OTP']
+      X-Accepted-OAuth-Scopes: ['']
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [deny]
+      X-GitHub-Media-Type: [github.v3; format=json]
+      X-GitHub-Request-Id: ['D086:6181:EBCD4B:1F0602A:5AE067FB']
+      X-OAuth-Scopes: ['admin:gpg_key, admin:org, admin:org_hook, admin:public_key,
+          admin:repo_hook, gist, notifications, repo, user']
+      X-RateLimit-Limit: ['5000']
+      X-RateLimit-Remaining: ['4996']
+      X-RateLimit-Reset: ['1524659386']
+      X-Runtime-rack: ['0.055663']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"state": "open"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['17']
+      Content-Type: [application/json]
+      If-None-Match: [W/"615fa829a6f7ddc0aa08f85d04f9d67f"]
+      User-Agent: [IGitt]
+    method: PATCH
+    uri: https://api.github.com/repos/gitmate-test-user/test/milestones/1
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6WU32vbMBDH/xWj5ySyHadJBGUvDWMw1j1kL3sxin11BLJkpLNLZ/K/7+S6ocm6
+        jbpgsDnfffS9H7qetU4zwY6IjRecy0YtKoXH9rAobM0dNNZzMtQSYY7gcd56cDx88VppelkDnids
+        Roha55e0V6T/MQaElgfQ/goyVRJ/phFWlUws0226Wq9nzLT1ARwTyYyhQg2U/HdwtTRgMPryWSFG
+        IbvonN0iuruPvt3vo7vd191+tyBgCb5wqkFlDROm1XrGCgcSLXF7pm2lyM7+SHmUktzcbJJ4Gc+Y
+        7CRKd53vYPTLsQ+h3oU1SPKGlrT8Jf5Td5sRsnIjJqTJyPDPjgbcGx19f/8o4sFqbR+Jd53B5RD9
+        5Uh+Dj+jlKk+gqLwnls8ApWU0jyF4iiPE+UNoT0Nv8dclQHmqS8OymkSx2AS+GhIWz/crYHaHs7T
+        NFHqBYKQ1lXSqF8yDOhEJCE8kYYFMC3hIZQQ0NHoTmQ8x/a8caqTxVMol4MCVEdd+Aj3CkJYfGrC
+        KvhBcxN6ohByWdbhHj9I7eFERW3A5Mr7FjwTGd14bT3JeLHQdaYWY4AET4IMK4E8JJItjZPNPM7m
+        abZPUpFsRbb9ST5tU77hs9onicg2Il0Fn7KFPCwaYqzigbHcx2sRx/SE/6OQcEzYRaffTywiFdQF
+        AAA=
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
+          X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+          X-Poll-Interval']
+      Cache-Control: ['private, max-age=60, s-maxage=60']
+      Content-Encoding: [gzip]
+      Content-Security-Policy: [default-src 'none']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Wed, 25 Apr 2018 11:48:25 GMT']
+      ETag: [W/"8b1336928a7b5d1aa5fc3033a768ed6d"]
+      Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
+      Server: [GitHub.com]
+      Status: [200 OK]
+      Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
+      Vary: ['Accept, Authorization, Cookie, X-GitHub-OTP']
+      X-Accepted-OAuth-Scopes: ['']
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [deny]
+      X-GitHub-Media-Type: [github.v3; format=json]
+      X-GitHub-Request-Id: ['D0EA:617F:7C378D:12F6B34:5AE06B08']
+      X-OAuth-Scopes: ['admin:gpg_key, admin:org, admin:org_hook, admin:public_key,
+          admin:repo_hook, gist, notifications, repo, user']
+      X-RateLimit-Limit: ['5000']
+      X-RateLimit-Remaining: ['4962']
+      X-RateLimit-Reset: ['1524659386']
+      X-Runtime-rack: ['0.060437']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

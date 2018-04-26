@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"9f7059be43562b786e3fd5202fbcc0c5"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://api.github.com/repos/gitmate-test-user/test/milestones/1?per_page=100
+  response:
+    body: {string: ''}
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
+          X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+          X-Poll-Interval']
+      Cache-Control: ['private, max-age=60, s-maxage=60']
+      Content-Security-Policy: [default-src 'none']
+      Content-Type: [application/octet-stream]
+      Date: ['Wed, 25 Apr 2018 08:29:42 GMT']
+      ETag: ['"9f7059be43562b786e3fd5202fbcc0c5"']
+      Last-Modified: ['Wed, 25 Apr 2018 08:29:39 GMT']
+      Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
+      Server: [GitHub.com]
+      Status: [304 Not Modified]
+      Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
+      Vary: ['Accept, Authorization, Cookie, X-GitHub-OTP']
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [deny]
+      X-GitHub-Request-Id: ['B702:617F:71C7C2:115AE4E:5AE03C75']
+      X-RateLimit-Limit: ['5000']
+      X-RateLimit-Remaining: ['4981']
+      X-RateLimit-Reset: ['1524648029']
+      X-Runtime-rack: ['0.046499']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 304, message: Not Modified}
+version: 1
