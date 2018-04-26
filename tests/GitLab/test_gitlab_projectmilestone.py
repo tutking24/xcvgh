@@ -3,6 +3,7 @@ import datetime
 
 from IGitt.GitLab import GitLabOAuthToken
 from IGitt.GitLab.GitLabProjectMilestone import GitLabProjectMilestone
+#from IGitt.GitLab.GitLabUser import GitLabUser
 from IGitt.Interfaces import MilestoneStates
 from IGitt.GitLab.GitLabRepository import GitLabRepository
 
