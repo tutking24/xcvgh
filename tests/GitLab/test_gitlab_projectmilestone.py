@@ -52,8 +52,6 @@ class GitLabProjectMilestoneTest(IGittTestCase):
         self.assertEqual(self.milestone.updated.date(), datetime.datetime(2018, 4, 26).date())
         self.milestone.description = None
 
-    def test_project_getter(self):
-        self.assertEqual(self.milestone.project, GitLabRepository(self.token, 'gitmate-test-user/test'))
     def test_due_date_setter(self):
         self.milestone.due_date = datetime.datetime(2050, 4, 23, 0, 0)
         self.assertEqual(self.milestone.due_date, datetime.datetime(2050, 4, 23, 0, 0))
@@ -73,4 +71,7 @@ class GitLabProjectMilestoneTest(IGittTestCase):
     def test_merge_requests_getter(self):
         self.assertEqual({int(merge_request.number) for merge_request in self.milestone.merge_requests},
                          {76})
+
+    def test_project_getter(self):
+        assert(isinstance(self.milestone.project, GitLabRepository))
 
