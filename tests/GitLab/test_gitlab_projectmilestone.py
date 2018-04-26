@@ -66,6 +66,13 @@ class GitLabProjectMilestoneTest(IGittTestCase):
         self.milestone.start_date = None
         self.assertEqual(self.milestone.start_date, None)
 
+    def test_issues_getter(self):
+        self.assertEqual({int(issue.number) for issue in self.milestone.issues},
+                         {37, 38, 39}) # Prüft nicht, ob ein set zurück kommt?
+
+    def test_merge_requests_getter(self):
+        self.assertEqual({int(merge_request.number) for merge_request in self.milestone.merge_requests},
+                         {76})
 
     def tearDown(self):
         self.milestone.delete()
