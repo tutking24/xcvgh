@@ -45,6 +45,24 @@ class GitHubMilestoneTest(IGittTestCase):
         self.milestone.reopen()
         self.assertEqual(self.milestone.state, MilestoneStates.OPEN)
 
+    def test_created_getter(self):
+        self.assertEqual(self.milestone.created, datetime.datetime(2018, 4, 24, 12, 19, 49))
+
+
+    def test_updated_getter(self):
+        self.milestone.description = 'Description update to test updated getter'
+        self.assertEqual(self.milestone.updated.date(), datetime.datetime(2018, 4, 25).date())
+        self.milestone.description = None
+
+    def test_due_date_setter(self):
+        self.milestone.due_date = datetime.datetime(2050, 4, 23, 7)
+        self.assertEqual(self.milestone.due_date, datetime.datetime(2050, 4, 23, 7))
+        self.milestone.due_date = None
+        self.assertEqual(self.milestone.due_date, None)
+
+
+    def test_start_date_getter(self):
+        self.assertEqual(self.milestone.start_date, None)
 
     def test_project_getter(self):
         assert(isinstance(self.milestone.project, GitHubRepository))
