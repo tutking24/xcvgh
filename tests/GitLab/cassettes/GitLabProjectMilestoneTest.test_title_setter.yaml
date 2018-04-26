@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: '{"title": "Updated Title"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['26']
+      Content-Type: [application/json]
+      If-None-Match: [W/"013d10c13414458595639826a529c8d7"]
+      User-Agent: [IGitt]
+    method: PUT
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones/513937
+  response:
+    body: {string: '{"id":513937,"iid":1,"project_id":3439658,"title":"Updated Title","description":null,"state":"active","created_at":"2018-04-25T09:11:00.029Z","updated_at":"2018-04-26T08:52:49.777Z","due_date":null,"start_date":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['216']
+      Content-Type: [application/json]
+      Date: ['Thu, 26 Apr 2018 08:52:49 GMT']
+      Etag: [W/"8b19268e8972fc3c89f8fb0ede971ee1"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1524732829']
+      RateLimit-ResetTime: ['Fri, 26 Apr 2018 08:53:49 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [e5fda3bd-1a33-4cda-8ce4-4f4958a76daf]
+      X-Runtime: ['0.654372']
+    status: {code: 200, message: OK}
+- request:
+    body: '{"title": "Permanent IGitt test milestone. DO NOT DELETE."}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['59']
+      Content-Type: [application/json]
+      If-None-Match: [W/"8b19268e8972fc3c89f8fb0ede971ee1"]
+      User-Agent: [IGitt]
+    method: PUT
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones/513937
+  response:
+    body: {string: '{"id":513937,"iid":1,"project_id":3439658,"title":"Permanent IGitt
+        test milestone. DO NOT DELETE.","description":null,"state":"active","created_at":"2018-04-25T09:11:00.029Z","updated_at":"2018-04-26T08:53:11.099Z","due_date":null,"start_date":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['249']
+      Content-Type: [application/json]
+      Date: ['Thu, 26 Apr 2018 08:53:11 GMT']
+      Etag: [W/"99f95e30a952c2e37f8934f30b4d4c1d"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1524732851']
+      RateLimit-ResetTime: ['Fri, 26 Apr 2018 08:54:11 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [507e9ee8-674c-4bf3-9e75-528ae8e426e8]
+      X-Runtime: ['0.764057']
+    status: {code: 200, message: OK}
+version: 1

@@ -1,0 +1,129 @@
+interactions:
+- request:
+    body: '{"title": "Temporary created minimal data test milestone.", "description":
+      null, "due_date": null, "start_date": null}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['118']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: POST
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones
+  response:
+    body: {string: '{"id":514652,"iid":2,"project_id":3439658,"title":"Temporary created
+        minimal data test milestone.","description":null,"state":"active","created_at":"2018-04-26T08:46:20.846Z","updated_at":"2018-04-26T08:46:20.846Z","due_date":null,"start_date":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['249']
+      Content-Type: [application/json]
+      Date: ['Thu, 26 Apr 2018 08:46:21 GMT']
+      Etag: [W/"53f31bb2a6723382fbc2a3aec2555751"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1524732441']
+      RateLimit-ResetTime: ['Fri, 26 Apr 2018 08:47:21 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [270bc67f-88d7-44cb-9236-188f922cb7ae]
+      X-Runtime: ['0.674912']
+    status: {code: 201, message: Created}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: DELETE
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones/514652
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: [no-cache]
+      Date: ['Thu, 26 Apr 2018 08:56:49 GMT']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1524733069']
+      RateLimit-ResetTime: ['Fri, 26 Apr 2018 08:57:49 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [93cb982a-3be5-4c9b-bcbf-006ccf6775ae]
+      X-Runtime: ['0.498574']
+    status: {code: 204, message: No Content}
+- request:
+    body: '{"title": "Temporary created full data test milestone.", "description":
+      "Test Description", "due_date": "2050-04-23", "start_date": "2040-04-23"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['145']
+      Content-Type: [application/json]
+      If-None-Match: [W/"53f31bb2a6723382fbc2a3aec2555751"]
+      User-Agent: [IGitt]
+    method: POST
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones
+  response:
+    body: {string: '{"id":514659,"iid":2,"project_id":3439658,"title":"Temporary created
+        full data test milestone.","description":"Test Description","state":"active","created_at":"2018-04-26T09:01:37.408Z","updated_at":"2018-04-26T09:01:37.408Z","due_date":"2050-04-23","start_date":"2040-04-23"}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['276']
+      Content-Type: [application/json]
+      Date: ['Thu, 26 Apr 2018 09:01:37 GMT']
+      Etag: [W/"292a42f7b3e7c5ba15262aca154e0d15"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['0']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1524733357']
+      RateLimit-ResetTime: ['Fri, 26 Apr 2018 09:02:37 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [6ed9061e-764a-4fdc-a4d2-68304383c491]
+      X-Runtime: ['1.082404']
+    status: {code: 201, message: Created}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: DELETE
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones/514659
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: [no-cache]
+      Date: ['Thu, 26 Apr 2018 09:05:50 GMT']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1524733610']
+      RateLimit-ResetTime: ['Fri, 26 Apr 2018 09:06:50 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [ccff3bf1-0bf7-4e7e-bc77-021f1e9bc316]
+      X-Runtime: ['1.030521']
+    status: {code: 204, message: No Content}
+version: 1

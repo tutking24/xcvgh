@@ -1,0 +1,102 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"4474ffa37ce7b5dd24d4861e05488248"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones/513937?per_page=100
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Date: ['Thu, 26 Apr 2018 08:48:22 GMT']
+      Etag: [W/"4474ffa37ce7b5dd24d4861e05488248"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1524732562']
+      RateLimit-ResetTime: ['Fri, 26 Apr 2018 08:49:22 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [39c18c7a-0cb1-433f-92a6-c9fe85fec709]
+      X-Runtime: ['0.428392']
+    status: {code: 304, message: Not Modified}
+- request:
+    body: '{"due_date": "2050-04-23", "title": "Permanent IGitt test milestone. DO
+      NOT DELETE."}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['85']
+      Content-Type: [application/json]
+      If-None-Match: [W/"4474ffa37ce7b5dd24d4861e05488248"]
+      User-Agent: [IGitt]
+    method: PUT
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones/513937
+  response:
+    body: {string: '{"id":513937,"iid":1,"project_id":3439658,"title":"Permanent IGitt
+        test milestone. DO NOT DELETE.","description":null,"state":"active","created_at":"2018-04-25T09:11:00.029Z","updated_at":"2018-04-26T08:48:41.070Z","due_date":"2050-04-23","start_date":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['257']
+      Content-Type: [application/json]
+      Date: ['Thu, 26 Apr 2018 08:48:41 GMT']
+      Etag: [W/"600474f3e8fe99ebebb5f8fbce9cb07f"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1524732581']
+      RateLimit-ResetTime: ['Fri, 26 Apr 2018 08:49:41 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [1c05b972-3cfd-4361-a19a-de28173ed610]
+      X-Runtime: ['0.448083']
+    status: {code: 200, message: OK}
+- request:
+    body: '{"due_date": null, "title": "Permanent IGitt test milestone. DO NOT DELETE."}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['77']
+      Content-Type: [application/json]
+      If-None-Match: [W/"600474f3e8fe99ebebb5f8fbce9cb07f"]
+      User-Agent: [IGitt]
+    method: PUT
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones/513937
+  response:
+    body: {string: '{"id":513937,"iid":1,"project_id":3439658,"title":"Permanent IGitt
+        test milestone. DO NOT DELETE.","description":null,"state":"active","created_at":"2018-04-25T09:11:00.029Z","updated_at":"2018-04-26T08:49:22.203Z","due_date":null,"start_date":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['249']
+      Content-Type: [application/json]
+      Date: ['Thu, 26 Apr 2018 08:49:22 GMT']
+      Etag: [W/"2d97fe91699c84c5b417538ab829ef49"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1524732622']
+      RateLimit-ResetTime: ['Fri, 26 Apr 2018 08:50:22 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [a3ed2110-3171-432b-ad1b-7670e9634526]
+      X-Runtime: ['0.651703']
+    status: {code: 200, message: OK}
+version: 1
