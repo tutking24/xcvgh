@@ -159,10 +159,14 @@ class GitHubMilestone(GitHubMixin, Milestone):
     def due_date(self, new_date: datetime):
         """
         Sets the due date of the milestone.
+        It is not possible to set the time. GitHub will always set the time on the due date to 07:00:00
 
         :param new_date: The new due date.
         """
-        self.data = patch(self._token, self.url, {'due_on': new_date})
+        if new_date == None: # In case auf deleting the due_date
+            self.data = patch(self._token, self.url, {'due_on': None})
+        else:
+            self.data = patch(self._token, self.url, {'due_on': datetime.strftime(new_date, '%Y-%m-%dT%H:%M:%SZ')})
 
     def delete(self):
         """
