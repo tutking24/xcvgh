@@ -176,7 +176,11 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         """
         Retrieves a timestamp on when the milestone was started.
         """
-        return self.data['start_date']
+        if self.data['start_date'] == None:
+            return None
+        else:
+            return datetime.strptime(self.data['start_date'],
+                                 '%Y-%m-%d')
 
     @start_date.setter
     def start_date(self, new_date: datetime):
