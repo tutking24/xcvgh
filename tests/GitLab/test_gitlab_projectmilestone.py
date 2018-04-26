@@ -74,5 +74,3 @@ class GitLabProjectMilestoneTest(IGittTestCase):
         self.assertEqual({int(merge_request.number) for merge_request in self.milestone.merge_requests},
                          {76})
 
-    def tearDown(self):
-        self.milestone.delete()
