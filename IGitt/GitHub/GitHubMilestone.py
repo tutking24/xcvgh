@@ -221,5 +221,6 @@ class GitHubMilestone(GitHubMixin, Milestone):
     def start_date(self) -> datetime:
         """
         Retrieves a timestamp on when the milestone was started.
+        The start_date does not exist in GitHub.
         """
         return None
