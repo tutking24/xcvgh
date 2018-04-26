@@ -32,8 +32,9 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         :param token: A Token object to be used for authentication.
         :param project: The full name of the project. Including the owner
                         e.g. ``owner/project``.
-        :param number: The milestones identification number (id).
+        :param number: The unique milestone identification number (id).
                         Not The clear text number given on the Web UI
+                        See also https://docs.gitlab.com/ee/api/README.html#id-vs-iid
         :raises RuntimeError: If something goes wrong (network, auth, ...)
         """
         self._token = token
