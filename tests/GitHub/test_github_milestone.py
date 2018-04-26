@@ -33,6 +33,7 @@ class GitHubMilestoneTest(IGittTestCase):
     def test_description_setter(self):
         self.milestone.description = 'Test Milestone Description'
         self.assertEqual(self.milestone.description, 'Test Milestone Description')
+        self.milestone.description = None
 
     def test_state_getter(self):
         self.assertEqual(self.milestone.state, MilestoneStates.OPEN)
