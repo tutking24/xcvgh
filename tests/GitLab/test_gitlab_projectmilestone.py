@@ -54,6 +54,18 @@ class GitLabProjectMilestoneTest(IGittTestCase):
 
     def test_project_getter(self):
         self.assertEqual(self.milestone.project, GitLabRepository(self.token, 'gitmate-test-user/test'))
+    def test_due_date_setter(self):
+        self.milestone.due_date = datetime.datetime(2050, 4, 23, 0, 0)
+        self.assertEqual(self.milestone.due_date, datetime.datetime(2050, 4, 23, 0, 0))
+        self.milestone.due_date = None
+        self.assertEqual(self.milestone.due_date, None)
+
+    def test_start_date_setter(self):
+        self.milestone.start_date = datetime.datetime(2040, 4, 23, 0, 0)
+        self.assertEqual(self.milestone.start_date, datetime.datetime(2040, 4, 23, 0, 0))
+        self.milestone.start_date = None
+        self.assertEqual(self.milestone.start_date, None)
+
 
     def tearDown(self):
         self.milestone.delete()
