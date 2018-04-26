@@ -189,10 +189,13 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :param new_date: The new start date.
         """
-        self.data = put(self._token, self.url, {
-            'start_date': new_date,
-            'title': self.title
-        })
+        if new_date == None: # In case auf deleting the start_date
+            self.data = put(self._token, self.url, {'start_date': None, 'title': self.title})
+        else:
+            self.data = put(self._token, self.url, {
+                'start_date': datetime.strftime(new_date, '%Y-%m-%d'),
+                'title': self.title
+            })
         # The title is only set because the GitLab APIV4 requires this.
 
     @property
