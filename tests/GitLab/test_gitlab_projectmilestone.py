@@ -37,6 +37,13 @@ class GitLabProjectMilestoneTest(IGittTestCase):
     def test_state_getter(self):
         self.assertEqual(self.milestone.state, MilestoneStates.OPEN)
 
+    def test_close_reopen_methods(self):
+        self.milestone.close()
+        self.assertEqual(self.milestone.state, MilestoneStates.CLOSED)
+
+        self.milestone.reopen()
+        self.assertEqual(self.milestone.state, MilestoneStates.OPEN)
+
     def test_created_getter(self):
         self.assertEqual(self.milestone.created.day, self.day_created)
 
