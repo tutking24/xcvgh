@@ -60,6 +60,13 @@ class GitHubMilestoneTest(IGittTestCase):
         self.milestone.due_date = None
         self.assertEqual(self.milestone.due_date, None)
 
+    def test_issues_getter(self):
+        self.assertEqual({int(issue.number) for issue in self.milestone.issues},
+                         {136, 138, 139}) # Prüft nicht, ob ein set zurück kommt?
+
+    def test_merge_requests_getter(self):
+        self.assertEqual({int(merge_request.number) for merge_request in self.milestone.merge_requests},
+                         {140})
 
     def test_start_date_getter(self):
         self.assertEqual(self.milestone.start_date, None)
