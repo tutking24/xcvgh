@@ -1,5 +1,6 @@
 import os
-#import datetime
+import datetime
+import pytest
 
 from IGitt.GitHub import GitHubToken
 from IGitt.GitHub.GitHubMilestone import GitHubMilestone
@@ -13,8 +14,7 @@ class GitHubMilestoneTest(IGittTestCase):
 
     def setUp(self):
         self.token = GitHubToken(os.environ.get('GITHUB_TEST_TOKEN', ''))
-        self.milestone = GitHubMilestone.create(self.token, 'gitmate-test-user', 'test', 'IGitt Created Test Milestone')
-        #self.milestone = GitHubMilestone(self.token, 'gitmate-test-user', 'test', 1)
+        self.milestone = GitHubMilestone(self.token, 'gitmate-test-user', 'test', 1)
 
     def test_setUp(self):
         assert(isinstance(self.milestone, GitHubMilestone))
@@ -43,5 +43,3 @@ class GitHubMilestoneTest(IGittTestCase):
     def test_project_getter(self):
         assert(isinstance(self.milestone.project, GitHubRepository))
 
-    def tearDown(self):
-        self.milestone.delete()
