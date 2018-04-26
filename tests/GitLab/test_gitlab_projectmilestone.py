@@ -45,7 +45,7 @@ class GitLabProjectMilestoneTest(IGittTestCase):
         self.assertEqual(self.milestone.state, MilestoneStates.OPEN)
 
     def test_created_getter(self):
-        self.assertEqual(self.milestone.created.day, self.day_created)
+        self.assertEqual(self.milestone.created, datetime.datetime(2018, 4, 25, 9, 11, 0, 29000))
 
     def test_updated_getter(self):
         self.milestone.description = 'Description update to test updated getter'
