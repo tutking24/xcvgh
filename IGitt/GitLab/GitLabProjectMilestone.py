@@ -203,7 +203,11 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         """
         Retrieves a timestamp on when the milestone is due.
         """
-        return self.data['due_date']
+        if self.data['due_date'] == None:
+            return None
+        else:
+            return datetime.strptime(self.data['due_date'],
+                                 '%Y-%m-%d')
 
     @due_date.setter
     def due_date(self, new_date: datetime):
