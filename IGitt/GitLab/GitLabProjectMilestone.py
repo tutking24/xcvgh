@@ -216,10 +216,13 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :param new_date: The new due date.
         """
-        self.data = put(self._token, self.url, {
-            'due_date': new_date,
-            'title': self.title
-        })
+        if new_date == None: # In case auf deleting the due_date
+            self.data = put(self._token, self.url, {'due_date': None, 'title': self.title})
+        else:
+            self.data = put(self._token, self.url, {
+                'due_date': datetime.strftime(new_date, '%Y-%m-%d'),
+                'title': self.title
+            })
         # The title is only set because the GitLab APIV4 requires this.
 
     def extract_repo_full_name(self, web_url):
