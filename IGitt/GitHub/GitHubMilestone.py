@@ -135,16 +135,14 @@ class GitHubMilestone(GitHubMixin, Milestone):
         """
         Retrieves a timestamp on when the milestone was created.
         """
-        return datetime.strptime(self.data['created_at'],
-                                 '%Y-%m-%dT%H:%M:%SZ')
+        return datetime.strptime(self.data['created_at'], '%Y-%m-%dT%H:%M:%SZ')
 
     @property
     def updated(self) -> datetime:
         """
         Retrieves a timestamp on when the milestone was updated the last time.
         """
-        return datetime.strptime(self.data['updated_at'],
-                                 '%Y-%m-%dT%H:%M:%SZ')
+        return datetime.strptime(self.data['updated_at'], '%Y-%m-%dT%H:%M:%SZ')
 
     @property
     def due_date(self) -> datetime:
@@ -154,8 +152,7 @@ class GitHubMilestone(GitHubMixin, Milestone):
         if self.data['due_on'] == None:
             return None
         else:
-            return datetime.strptime(self.data['due_on'],
-                                 '%Y-%m-%dT%H:%M:%SZ')
+            return datetime.strptime(self.data['due_on'], '%Y-%m-%dT%H:%M:%SZ')
 
     @due_date.setter
     def due_date(self, new_date: datetime):
@@ -165,10 +162,12 @@ class GitHubMilestone(GitHubMixin, Milestone):
 
         :param new_date: The new due date.
         """
-        if new_date == None: # In case auf deleting the due_date
+        if new_date == None:  # In case auf deleting the due_date
             self.data = patch(self._token, self.url, {'due_on': None})
         else:
-            self.data = patch(self._token, self.url, {'due_on': datetime.strftime(new_date, '%Y-%m-%dT%H:%M:%SZ')})
+            self.data = patch(
+                self._token, self.url,
+                {'due_on': datetime.strftime(new_date, '%Y-%m-%dT%H:%M:%SZ')})
 
     def delete(self):
         """

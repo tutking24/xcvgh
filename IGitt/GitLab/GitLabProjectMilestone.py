@@ -44,14 +44,12 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
             project=quote_plus(project), milestone_id=number)
 
     @staticmethod
-    def create(
-            token: (GitLabOAuthToken, GitLabPrivateToken),
-            project,
-            title: str,
-            description: str = None,
-            due_date = None,
-            start_date = None
-    ):
+    def create(token: (GitLabOAuthToken, GitLabPrivateToken),
+               project,
+               title: str,
+               description: str = None,
+               due_date=None,
+               start_date=None):
         """
         Create a new milestone with given title and body.
 
@@ -77,12 +75,13 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
             due_date = datetime.strftime(due_date, '%Y-%m-%d')
         if start_date != None:
             start_date = datetime.strftime(start_date, '%Y-%m-%d')
-        milestone = post(token, GitLabProjectMilestone.absolute_url(url), {
-            'title': title,
-            'description': description,
-            'due_date': due_date,
-            'start_date': start_date
-        })
+        milestone = post(
+            token, GitLabProjectMilestone.absolute_url(url), {
+                'title': title,
+                'description': description,
+                'due_date': due_date,
+                'start_date': start_date
+            })
 
         return GitLabProjectMilestone.from_data(milestone, token, project,
                                                 milestone['id'])
@@ -179,8 +178,7 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         if self.data['start_date'] == None:
             return None
         else:
-            return datetime.strptime(self.data['start_date'],
-                                 '%Y-%m-%d')
+            return datetime.strptime(self.data['start_date'], '%Y-%m-%d')
 
     @start_date.setter
     def start_date(self, new_date: datetime):
@@ -189,13 +187,17 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :param new_date: The new start date.
         """
-        if new_date == None: # In case auf deleting the start_date
-            self.data = put(self._token, self.url, {'start_date': None, 'title': self.title})
-        else:
+        if new_date == None:  # In case auf deleting the start_date
             self.data = put(self._token, self.url, {
-                'start_date': datetime.strftime(new_date, '%Y-%m-%d'),
+                'start_date': None,
                 'title': self.title
             })
+        else:
+            self.data = put(
+                self._token, self.url, {
+                    'start_date': datetime.strftime(new_date, '%Y-%m-%d'),
+                    'title': self.title
+                })
         # The title is only set because the GitLab APIV4 requires this.
 
     @property
@@ -206,8 +208,7 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         if self.data['due_date'] == None:
             return None
         else:
-            return datetime.strptime(self.data['due_date'],
-                                 '%Y-%m-%d')
+            return datetime.strptime(self.data['due_date'], '%Y-%m-%d')
 
     @due_date.setter
     def due_date(self, new_date: datetime):
@@ -216,13 +217,17 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :param new_date: The new due date.
         """
-        if new_date == None: # In case auf deleting the due_date
-            self.data = put(self._token, self.url, {'due_date': None, 'title': self.title})
-        else:
+        if new_date == None:  # In case auf deleting the due_date
             self.data = put(self._token, self.url, {
-                'due_date': datetime.strftime(new_date, '%Y-%m-%d'),
+                'due_date': None,
                 'title': self.title
             })
+        else:
+            self.data = put(
+                self._token, self.url, {
+                    'due_date': datetime.strftime(new_date, '%Y-%m-%d'),
+                    'title': self.title
+                })
         # The title is only set because the GitLab APIV4 requires this.
 
     def extract_repo_full_name(self, web_url):
