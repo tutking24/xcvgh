@@ -48,8 +48,10 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
             token: (GitLabOAuthToken, GitLabPrivateToken),
             project,
             title: str,
-            description: str = '',
-    ):  # TODO: Add start_date and due_date
+            description: str = None,
+            due_date = None,
+            start_date = None
+    ):
         """
         Create a new milestone with given title and body.
 
@@ -71,14 +73,19 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         """
         url = '/projects/{project}/milestones'.format(
             project=quote_plus(project))
+        if due_date != None:
+            due_date = datetime.strftime(due_date, '%Y-%m-%d')
+        if start_date != None:
+            start_date = datetime.strftime(start_date, '%Y-%m-%d')
         milestone = post(token, GitLabProjectMilestone.absolute_url(url), {
             'title': title,
-            'description': description
+            'description': description,
+            'due_date': due_date,
+            'start_date': start_date
         })
 
         return GitLabProjectMilestone.from_data(milestone, token, project,
                                                 milestone['id'])
-        # TODO Commit and understand whats different now
 
     @property
     def number(self) -> int:
