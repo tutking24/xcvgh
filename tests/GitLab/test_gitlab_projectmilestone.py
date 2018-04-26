@@ -19,8 +19,10 @@ class GitLabProjectMilestoneTest(IGittTestCase):
         assert(isinstance(self.milestone, GitLabProjectMilestone))
 
     def test_number_getter(self):
-        self.preset_milestone = GitLabProjectMilestone(self.token, 'gitmate-test-user/test', 345808)
-        self.assertEqual(self.preset_milestone.number, 345808)
+        self.assertEqual(self.milestone.number, 513937)
+
+    def test_title_getter(self):
+        self.assertEqual(self.milestone.title, 'Permanent IGitt test milestone. DO NOT DELETE.')
 
     def test_title_setter(self):
         self.milestone.title = 'Test title in test_title_setter'
