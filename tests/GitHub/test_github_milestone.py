@@ -23,11 +23,12 @@ class GitHubMilestoneTest(IGittTestCase):
         self.assertEqual(self.milestone.number, 1)
 
     def test_title_getter(self):
-        self.assertEqual(self.milestone.title, 'IGitt Created Test Milestone')
+        self.assertEqual(self.milestone.title, 'Permanent IGitt test milestone. DO NOT DELETE.')
 
     def test_title_setter(self):
         self.milestone.title = 'Updated Title'
         self.assertEqual(self.milestone.title, 'Updated Title')
+        self.milestone.title = 'Permanent IGitt test milestone. DO NOT DELETE.'
 
     def test_description_setter(self):
         self.milestone.description = 'Test Milestone Description'
