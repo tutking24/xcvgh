@@ -25,8 +25,9 @@ class GitLabProjectMilestoneTest(IGittTestCase):
         self.assertEqual(self.milestone.title, 'Permanent IGitt test milestone. DO NOT DELETE.')
 
     def test_title_setter(self):
-        self.milestone.title = 'Test title in test_title_setter'
-        self.assertEqual(self.milestone.title, 'Test title in test_title_setter')
+        self.milestone.title = 'Updated Title'
+        self.assertEqual(self.milestone.title, 'Updated Title')
+        self.milestone.title = 'Permanent IGitt test milestone. DO NOT DELETE.'
 
     def test_description_setter(self):
         self.milestone.description = 'Test description in test_description_setter'
