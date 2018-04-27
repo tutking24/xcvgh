@@ -6,13 +6,12 @@ from datetime import datetime
 from IGitt.Interfaces.Repository import Repository
 from IGitt.Interfaces import IGittObject
 from IGitt.Interfaces import MilestoneStates
-from IGitt.Interfaces.Organization import Organization
-from typing import Union
 
 
 class Milestone(IGittObject):
     """
-    Represents a milestone for GitHub or GitLab or any similar collection of issues.
+    Represents a milestone for GitHub or GitLab or any similar collection of
+    issues.
     """
     @property
     def number(self) -> int:

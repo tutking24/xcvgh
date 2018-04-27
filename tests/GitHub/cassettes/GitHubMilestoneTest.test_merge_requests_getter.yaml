@@ -7,7 +7,7 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['2']
       Content-Type: [application/json]
-      If-None-Match: [W/"0bd5642ed37268127b70edc2d08e4221"]
+      If-None-Match: [W/"4c222517995ff219839271478c9249f5"]
       User-Agent: [IGitt]
     method: GET
     uri: https://api.github.com/repos/gitmate-test-user/test/issues?milestone=1&per_page=100
@@ -21,8 +21,8 @@ interactions:
       Cache-Control: ['private, max-age=60, s-maxage=60']
       Content-Security-Policy: [default-src 'none']
       Content-Type: [application/octet-stream]
-      Date: ['Wed, 25 Apr 2018 08:29:40 GMT']
-      ETag: ['"0bd5642ed37268127b70edc2d08e4221"']
+      Date: ['Mon, 30 Apr 2018 11:11:09 GMT']
+      ETag: ['"4c222517995ff219839271478c9249f5"']
       Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
       Server: [GitHub.com]
       Status: [304 Not Modified]
@@ -30,11 +30,11 @@ interactions:
       Vary: ['Accept, Authorization, Cookie, X-GitHub-OTP']
       X-Content-Type-Options: [nosniff]
       X-Frame-Options: [deny]
-      X-GitHub-Request-Id: ['B6FE:6181:D91C99:1C90140:5AE03C74']
+      X-GitHub-Request-Id: ['E8C8:617F:1A9503C:4222F16:5AE6F9CD']
       X-RateLimit-Limit: ['5000']
-      X-RateLimit-Remaining: ['4981']
-      X-RateLimit-Reset: ['1524648029']
-      X-Runtime-rack: ['0.117806']
+      X-RateLimit-Remaining: ['4977']
+      X-RateLimit-Reset: ['1525090097']
+      X-Runtime-rack: ['0.102730']
       X-XSS-Protection: [1; mode=block]
     status: {code: 304, message: Not Modified}
 version: 1

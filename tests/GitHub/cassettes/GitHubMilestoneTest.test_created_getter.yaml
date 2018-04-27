@@ -7,50 +7,35 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['2']
       Content-Type: [application/json]
+      If-None-Match: [W/"c8deb4550767e5c00448120955435eef"]
       User-Agent: [IGitt]
     method: GET
     uri: https://api.github.com/repos/gitmate-test-user/test/milestones/1?per_page=100
   response:
-    body:
-      string: !!binary |
-        H4sIAAAAAAAAA6WUTY/aMBCG/0rkM+AkhAUiVb2AqkpVtwd66QWZZDZYcuzInmS1jfjvHZssW2i7
-        q2YlpJDJvI/nwzM9a61iOTsiNi7nXDRyVkk8todZYWpuoTGOk6EWCFMEh9PWgeX+H6+loofR4HjC
-        JoSo1f6a9hvpLUZAKHEA5W4gY0PiZxphZcnyebpOF8vlhOm2PoBleTJhKFEBJf8NbC00aIw+f5KI
-        kc8uumQ3izb30df7XbTZftnutjMCluAKKxuURpN88/IWtU1JlYrQnCHn1zKqAJEOnbDCgkBDx/dM
-        mUp6+R+VGSJO7u5WSTyPJ0x0AoW9LUswuvnQLt+WwmikLELnWv6s/9h9yAhZ2QHjq8HI8GrjPe4v
-        jf//NpPiwShlHol3m8H1XfvHkfwiv6Ckrt6DInnPDR6BSkppnnxxpMOR4QVpTzPicC9LD3PUFwvl
-        uBAHMQX4qCm2PoxgoLaHy6UbGeoVgpDGVkLLn8Lf45FIQjgihT0xLuEgJQR0dHVHMs7anjdWdqJ4
-        8uWyUIDsqAvv4d5ACItPjd8Y3+ne+J5IhL0oaz/HD0I5OFFRG9B76VwLjuUZTbwyjsJ4ttA4U4vR
-        Q7wnQcJKIA+BZEvjZDWNs2ma7ZI0T9Z5tv5BPsMeufFZ7OJVnib5Yul9yhb2YR+l8SIOjPkuXuZx
-        TD//fQjEH6NbpU6/ANQQQhv7BQAA
+    body: {string: ''}
     headers:
       Access-Control-Allow-Origin: ['*']
       Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
           X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
           X-Poll-Interval']
       Cache-Control: ['private, max-age=60, s-maxage=60']
-      Content-Encoding: [gzip]
       Content-Security-Policy: [default-src 'none']
-      Content-Type: [application/json; charset=utf-8]
-      Date: ['Wed, 25 Apr 2018 08:29:37 GMT']
-      ETag: [W/"1b150aaabfe622f2748c82a2e363ba30"]
-      Last-Modified: ['Wed, 25 Apr 2018 08:21:57 GMT']
+      Content-Type: [application/octet-stream]
+      Date: ['Mon, 30 Apr 2018 11:11:04 GMT']
+      ETag: ['"c8deb4550767e5c00448120955435eef"']
+      Last-Modified: ['Mon, 30 Apr 2018 11:11:01 GMT']
       Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
       Server: [GitHub.com]
-      Status: [200 OK]
+      Status: [304 Not Modified]
       Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
       Vary: ['Accept, Authorization, Cookie, X-GitHub-OTP']
-      X-Accepted-OAuth-Scopes: [repo]
       X-Content-Type-Options: [nosniff]
       X-Frame-Options: [deny]
-      X-GitHub-Media-Type: [github.v3; format=json]
-      X-GitHub-Request-Id: ['B6F4:617E:556D20:D1B300:5AE03C70']
-      X-OAuth-Scopes: ['admin:gpg_key, admin:org, admin:org_hook, admin:public_key,
-          admin:repo_hook, gist, notifications, repo, user']
+      X-GitHub-Request-Id: ['E8BC:6181:3696896:7343D00:5AE6F9C8']
       X-RateLimit-Limit: ['5000']
-      X-RateLimit-Remaining: ['4985']
-      X-RateLimit-Reset: ['1524648029']
-      X-Runtime-rack: ['0.049744']
+      X-RateLimit-Remaining: ['4982']
+      X-RateLimit-Reset: ['1525090097']
+      X-Runtime-rack: ['0.035648']
       X-XSS-Protection: [1; mode=block]
-    status: {code: 200, message: OK}
+    status: {code: 304, message: Not Modified}
 version: 1

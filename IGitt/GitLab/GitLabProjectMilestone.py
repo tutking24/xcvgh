@@ -1,6 +1,7 @@
 """
 This contains the Milestone implementation for GitLab
 """
+import re
 from datetime import datetime
 from urllib.parse import quote_plus
 
@@ -13,7 +14,6 @@ from IGitt.GitLab import GitLabOAuthToken, GitLabPrivateToken
 from IGitt.Interfaces.Milestone import Milestone
 from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.GitLab.GitLabMergeRequest import GitLabMergeRequest
-import re
 from IGitt.Interfaces import MilestoneStates
 from IGitt.GitLab.GitLabRepository import GitLabRepository
 
@@ -71,9 +71,9 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         """
         url = '/projects/{project}/milestones'.format(
             project=quote_plus(project))
-        if due_date != None:
+        if due_date is not None:
             due_date = datetime.strftime(due_date, '%Y-%m-%d')
-        if start_date != None:
+        if start_date is not None:
             start_date = datetime.strftime(start_date, '%Y-%m-%d')
         milestone = post(
             token, GitLabProjectMilestone.absolute_url(url), {
@@ -175,7 +175,7 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         """
         Retrieves a timestamp on when the milestone was started.
         """
-        if self.data['start_date'] == None:
+        if self.data['start_date'] is None:
             return None
         else:
             return datetime.strptime(self.data['start_date'], '%Y-%m-%d')
@@ -187,7 +187,7 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :param new_date: The new start date.
         """
-        if new_date == None:  # In case auf deleting the start_date
+        if new_date is None:  # In case auf deleting the start_date
             self.data = put(self._token, self.url, {
                 'start_date': None,
                 'title': self.title
@@ -205,7 +205,7 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
         """
         Retrieves a timestamp on when the milestone is due.
         """
-        if self.data['due_date'] == None:
+        if self.data['due_date'] is None:
             return None
         else:
             return datetime.strptime(self.data['due_date'], '%Y-%m-%d')
@@ -217,7 +217,7 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :param new_date: The new due date.
         """
-        if new_date == None:  # In case auf deleting the due_date
+        if new_date is None:  # In case auf deleting the due_date
             self.data = put(self._token, self.url, {
                 'due_date': None,
                 'title': self.title
@@ -230,11 +230,12 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
                 })
         # The title is only set because the GitLab APIV4 requires this.
 
-    def extract_repo_full_name(self, web_url):
+    @staticmethod
+    def extract_repo_full_name(web_url):
         """
         Extracts the repository name from the web_url of the issue
         """
-        return re.sub('https*://gitlab.com/|/issues/\d', '', web_url)
+        return re.sub(r'https*://gitlab.com/|/issues/\d', '', web_url)
 
     @property
     def issues(self) -> set:
@@ -275,4 +276,4 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :raises RuntimeError: If something goes wrong (network, auth...).
         """
-        self.data = delete(self._token, self.url)
+        delete(self._token, self.url)

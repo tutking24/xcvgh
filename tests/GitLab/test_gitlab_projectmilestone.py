@@ -3,7 +3,6 @@ import datetime
 
 from IGitt.GitLab import GitLabOAuthToken
 from IGitt.GitLab.GitLabProjectMilestone import GitLabProjectMilestone
-#from IGitt.GitLab.GitLabUser import GitLabUser
 from IGitt.Interfaces import MilestoneStates
 from IGitt.GitLab.GitLabRepository import GitLabRepository
 
@@ -17,7 +16,7 @@ class GitLabProjectMilestoneTest(IGittTestCase):
             self.token, 'gitmate-test-user/test', 513937)
 
     def test_setUp(self):
-        assert (isinstance(self.milestone, GitLabProjectMilestone))
+        assert isinstance(self.milestone, GitLabProjectMilestone)
 
     def test_number_getter(self):
         self.assertEqual(self.milestone.number, 513937)
@@ -84,23 +83,22 @@ class GitLabProjectMilestoneTest(IGittTestCase):
         }, {76})
 
     def test_project_getter(self):
-        assert (isinstance(self.milestone.project, GitLabRepository))
+        assert isinstance(self.milestone.project, GitLabRepository)
 
     def test_create_delete_methods(self):
-        self.minimal_data_milestone = GitLabProjectMilestone.create(
+        minimal_data_milestone = GitLabProjectMilestone.create(
             self.token, 'gitmate-test-user/test',
             'Temporary created minimal data test milestone.')
-        assert (isinstance(self.minimal_data_milestone,
-                           GitLabProjectMilestone))
-        self.assertEqual(self.minimal_data_milestone.title,
+        assert isinstance(minimal_data_milestone, GitLabProjectMilestone)
+        self.assertEqual(minimal_data_milestone.title,
                          'Temporary created minimal data test milestone.')
-        self.minimal_data_milestone.delete()
+        minimal_data_milestone.delete()
 
-        self.full_data_milestone = GitLabProjectMilestone.create(
+        full_data_milestone = GitLabProjectMilestone.create(
             self.token, 'gitmate-test-user/test',
             'Temporary created full data test milestone.', 'Test Description',
             datetime.datetime(2050, 4, 23), datetime.datetime(2040, 4, 23))
-        assert (isinstance(self.full_data_milestone, GitLabProjectMilestone))
-        self.assertEqual(self.full_data_milestone.start_date,
+        assert isinstance(full_data_milestone, GitLabProjectMilestone)
+        self.assertEqual(full_data_milestone.start_date,
                          datetime.datetime(2040, 4, 23))
-        self.full_data_milestone.delete()
+        full_data_milestone.delete()

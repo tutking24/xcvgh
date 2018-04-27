@@ -38,6 +38,9 @@ class GitHubMilestone(GitHubMixin, Milestone):
         self._number = number
         self._url = '/repos/{owner}/{project}/milestones/{milestone_number}'\
             .format(owner=owner, project=project, milestone_number=number)
+        self._issues_url = GitHubMixin.absolute_url(
+            '/repos/{owner}/{project}/issues'.format(
+                owner=self._owner, project=self._project))
 
     @staticmethod
     def create(token: GitHubToken,
@@ -149,7 +152,7 @@ class GitHubMilestone(GitHubMixin, Milestone):
         """
         Retrieves a timestamp on when the milestone is due.
         """
-        if self.data['due_on'] == None:
+        if self.data['due_on'] is None:
             return None
         else:
             return datetime.strptime(self.data['due_on'], '%Y-%m-%dT%H:%M:%SZ')
@@ -158,11 +161,12 @@ class GitHubMilestone(GitHubMixin, Milestone):
     def due_date(self, new_date: datetime):
         """
         Sets the due date of the milestone.
-        It is not possible to set the time. GitHub will always set the time on the due date to 07:00:00
+        It is not possible to set the time. GitHub will always set the time on
+        the due date to 07:00:00
 
         :param new_date: The new due date.
         """
-        if new_date == None:  # In case auf deleting the due_date
+        if new_date is None:  # In case auf deleting the due_date
             self.data = patch(self._token, self.url, {'due_on': None})
         else:
             self.data = patch(
@@ -176,16 +180,13 @@ class GitHubMilestone(GitHubMixin, Milestone):
 
         :raises RuntimeError: If something goes wrong (network, auth...).
         """
-        self.data = delete(self._token, self.url)
+        delete(self._token, self.url)
 
     @property
     def issues(self) -> set:
         """
         Retrieves a set of issue objects that are assigned to this milestone.
         """
-        self._issues_url = GitHubMixin.absolute_url(
-            '/repos/{owner}/{project}/issues'.format(
-                owner=self._owner, project=self._project))
         return {
             GitHubIssue.from_data(res, self._token, self._project,
                                   res['number'])
@@ -200,9 +201,6 @@ class GitHubMilestone(GitHubMixin, Milestone):
         Retrieves a set of merge_request
         objects that are assigned to this milestone.
         """
-        self._issues_url = GitHubMixin.absolute_url(
-            '/repos/{owner}/{project}/issues'.format(
-                owner=self._owner, project=self._project))
         return {
             GitHubMergeRequest.from_data(res, self._token, self._project,
                                          res['number'])
