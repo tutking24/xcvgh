@@ -7,6 +7,7 @@ from typing import Optional
 from typing import Set
 from typing import Union
 from urllib.parse import quote_plus
+from functools import lru_cache
 
 from IGitt import ElementAlreadyExistsError, ElementDoesntExistError
 from IGitt.GitLab import GitLabMixin
@@ -124,6 +125,33 @@ class GitLabRepository(GitLabMixin, Repository):
         """
         return self._repository or self.data['path_with_namespace']
 
+    @lru_cache(None)
+    def filter_commits(self, author: Optional[str]=None):
+        """
+        Filter commits based on properties.
+
+        :author: Author username of the commit.
+        :return: A set of GitLabCommit objects.
+        """
+        # Don't move to module, leads to circular imports
+        from IGitt.GitLab.GitLabCommit import GitLabCommit
+
+        commits = get(self._token, self.url + '/repository/commits')
+        if author is not None:
+            data =  {'username': author}
+            user = get(self._token, self.absolute_url('/users'), data)
+            if user:
+                author_name = user[0]['name']
+            else:
+                return None
+            commits = [commit for commit in commits
+                       if commit['author_name'] == author_name]
+        return {GitLabCommit.from_data(commit,
+                                       self._token,
+                                       self.full_name,
+                                       commit['id'])
+                for commit in commits}
+
     @property
     def commits(self):
         """
@@ -131,15 +159,7 @@ class GitLabRepository(GitLabMixin, Repository):
 
         :return: A set of GitLabCommit objects.
         """
-        # Don't move to module, leads to circular imports
-        from IGitt.GitLab.GitLabCommit import GitLabCommit
-
-        return {GitLabCommit.from_data(commit,
-                                       self._token,
-                                       self.full_name,
-                                       commit['id'])
-                for commit in get(self._token,
-                                  self.url + '/repository/commits')}
+        return self.filter_commits()
 
     @property
     def clone_url(self) -> str:

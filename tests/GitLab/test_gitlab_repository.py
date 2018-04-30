@@ -192,8 +192,13 @@ class GitLabRepositoryTest(IGittTestCase):
                           '515280bfe8488e1b403e0dd95c41a404355ca184',
                           '05a9faff56fd9bdb25d18a554bb2f3320de3fc6f',
                           'ed5fb0a1cc38a078a6f72b3523b6bce8c14be9b8'})
+        self.assertEqual({commit.sha
+                          for commit in self.repo.filter_commits('sils')},
+                         {'645961c0841a84c1dd2a58535aa70ad45be48c46'})
         repo = GitLabRepository(self.token, 'gitmate-test-user/empty')
         self.assertEqual(repo.commits, set())
+        self.assertEqual(repo.filter_commits('sils'), set())
+        self.assertEqual(repo.filter_commits('nonenone'), None)
 
     def test_get_permission_level(self):
         sils = GitLabUser(self.token, 104269)

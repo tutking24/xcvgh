@@ -125,4 +125,100 @@ interactions:
       X-Runtime-rack: ['0.029745']
       X-XSS-Protection: [1; mode=block]
     status: {code: 409, message: Conflict}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"87faaee61a980dd1e396246ac0ae5566"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://api.github.com/repos/gitmate-test-user/test/commits?author=sils&per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA+1WTW/bMAz9K4XOSWQ7lr+AYRuw3rbLPi4rikCRaFuALRuSnKIL8t9HOWnaBFjr
+        tNitN9nkIx+fSEk3W2JrTgqSxCxPQhFkccizWIRSRpxlbMk4TwMuY7aGOBNxQmZEdG2rHCm2hA+u
+        7oxfad4CRvnKrYWrH6IelGm51ugNLVcNmhpv+mSPpoUGh2bJnQdGQZjMg2ge5T9DVgRpweLfZPeQ
+        y8F/TdKCtbzyNH71no+8+n79+cu360UrkaEzgKYHnaDMlwELSxkEpQCRJlDKHEqRxFmZMhaE5TLM
+        yzRD4GB83bVzvS0o5b1aVMrVw3qBAlIDfWcp/mgx4dyBdfPBgqF+5X9Tn9bSyelQq7fl2++qpRc2
+        Ami3Et2gsR+iGdmAUaUS3KlOe8323yBJUfLGwowY4NabyKCtqjRaZsQvuBsMqqyHppmRnt83HUeQ
+        /9y9qbJXVFW7tlmdavlk3/6xY/s8rxDPnqW6pE0uLY56AG6YRdEfR7fpKuV3xKrGGxTqztIwYVGA
+        XhvuuDmnOP60waGdfduKTjsMPHb2QA/wj5sPMQaszCGKj0xemgsfzdIDl+e34uBUdk3T3SHqnObp
+        wD0GpkcEktmvla4uRCNiSztXA6qDlHe+UGXddBKj9xZH3bqVkh5vUVUDcjKRgz/SuNPIYDueKWOg
+        YW2FUb2fwumETlAYpTMV1+rPOMvToyDKd9F4vE2uZPRGFGx8d06G7d23tDdqw8W9L92AALVBES8M
+        dYbDSO6+H28E3FwvqXKw4rL1kzIeZed30/sUdXfvU4Qn19PZe5+il6eo52a8koqb41M0jeM8K2Uc
+        MlFyKZZMMFhH2TrLWQgZPryWLBVJieq+/slzvDunJ3v+NnrhYTA1ze52d/sXGb57t5ULAAA=
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
+          X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+          X-Poll-Interval']
+      Cache-Control: ['private, max-age=60, s-maxage=60']
+      Content-Encoding: [gzip]
+      Content-Security-Policy: [default-src 'none']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Mon, 07 May 2018 10:07:59 GMT']
+      ETag: [W/"f27b1cbdd505cb5a7f0bf106ae72d63d"]
+      Last-Modified: ['Mon, 29 Feb 2016 15:07:54 GMT']
+      Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
+      Server: [GitHub.com]
+      Status: [200 OK]
+      Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
+      Vary: ['Accept, Authorization, Cookie, X-GitHub-OTP']
+      X-Accepted-OAuth-Scopes: ['']
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [deny]
+      X-GitHub-Media-Type: [github.v3; format=json]
+      X-GitHub-Request-Id: ['FC5D:2CD3:2EF0219:5F43664:5AF0257E']
+      X-OAuth-Scopes: ['admin:gpg_key, admin:org, admin:org_hook, admin:public_key,
+          admin:repo_hook, gist, notifications, repo, user']
+      X-RateLimit-Limit: ['5000']
+      X-RateLimit-Remaining: ['4998']
+      X-RateLimit-Reset: ['1525691184']
+      X-Runtime-rack: ['0.087516']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://api.github.com/repos/gitmate-test-user/empty/commits?author=sils&per_page=100
+  response:
+    body: {string: '{"message":"Git Repository is empty.","documentation_url":"https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository"}'}
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
+          X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+          X-Poll-Interval']
+      Content-Length: ['136']
+      Content-Security-Policy: [default-src 'none']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Mon, 07 May 2018 10:08:01 GMT']
+      Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
+      Server: [GitHub.com]
+      Status: [409 Conflict]
+      Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
+      X-Accepted-OAuth-Scopes: ['']
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [deny]
+      X-GitHub-Media-Type: [github.v3; format=json]
+      X-GitHub-Request-Id: ['FC5E:2CD0:212FBC8:4C9F538:5AF0257F']
+      X-OAuth-Scopes: ['admin:gpg_key, admin:org, admin:org_hook, admin:public_key,
+          admin:repo_hook, gist, notifications, repo, user']
+      X-RateLimit-Limit: ['5000']
+      X-RateLimit-Remaining: ['4997']
+      X-RateLimit-Reset: ['1525691184']
+      X-Runtime-rack: ['0.063124']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 409, message: Conflict}
 version: 1

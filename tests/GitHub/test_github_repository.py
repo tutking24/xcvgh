@@ -189,8 +189,12 @@ class GitHubRepositoryTest(IGittTestCase):
                           '703c4badc774c9659a3909e203b2da96c97b44fc',
                           '500050498474c746349ccb0ac8972e77813d2e9b',
                           '674498fd415cfadc35c5eb28b8951e800f357c6f'})
+        self.assertEqual({commit.sha
+                          for commit in self.repo.filter_commits('sils')},
+                         {'645961c0841a84c1dd2a58535aa70ad45be48c46'})
         repo = GitHubRepository(self.token, 'gitmate-test-user/empty')
         self.assertEqual(repo.commits, set())
+        self.assertEqual(repo.filter_commits('sils'), set())
 
     def test_get_permission_level(self):
         sils = GitHubUser(self.token, 'sils')

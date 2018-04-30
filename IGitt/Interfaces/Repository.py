@@ -207,6 +207,16 @@ class Repository(IGittObject):
         raise NotImplementedError
 
     @property
+    def filter_commits(self, author: Optional[str]=None):
+        """
+        Filter commits based on properties.
+
+        :author: Author of the commit.
+        :return: Set of Commit objects.
+        """
+        raise NotImplementedError
+
+    @property
     def commits(self):
         """
         Retrieves the set of commits in this repository.

@@ -94,6 +94,29 @@ class GitHubRepository(GitHubMixin, Repository):
         """
         return self._repository or self.data['full_name']
 
+    def filter_commits(self, author: Optional[str]=None):
+        """
+        Filter commits based on properties.
+
+        :author: Author username of the commit.
+        :return: A set of GitHubCommit objects.
+        """
+        # Don't move to module, leads to circular imports
+        from IGitt.GitHub.GitHubCommit import GitHubCommit
+
+        data = {'author': author}
+        try:
+            return {GitHubCommit.from_data(commit,
+                                           self._token,
+                                           self.full_name,
+                                           commit['sha'])
+                    for commit in get(self._token, self.url + '/commits', data)}
+        except RuntimeError as ex:
+            # Repository is empty. GitHub returns 409.
+            if ex.args[1] == 409:
+                return set()
+            raise ex  # dont cover, this is the real exception
+
     @property
     def commits(self):
         """
@@ -101,21 +124,7 @@ class GitHubRepository(GitHubMixin, Repository):
 
         :return: A set of GitHubCommit objects.
         """
-        # Don't move to module, leads to circular imports
-        from IGitt.GitHub.GitHubCommit import GitHubCommit
-
-        try:
-            return {GitHubCommit.from_data(commit,
-                                           self._token,
-                                           self.full_name,
-                                           commit['sha'])
-                    for commit in get(self._token, self.url + '/commits')}
-        except RuntimeError as ex:
-            # Repository is empty. GitHub returns 409.
-            if ex.args[1] == 409:
-                return set()
-            raise ex  # dont cover, this is the real exception
-
+        return self.filter_commits()
 
     @property
     def clone_url(self):
