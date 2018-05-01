@@ -5,6 +5,7 @@ from IGitt.GitHub import GitHubToken
 from IGitt.GitHub.GitHubIssue import GitHubIssue
 from IGitt.GitHub.GitHubUser import GitHubUser
 from IGitt.Interfaces import IssueStates
+from IGitt.GitHub.GitHubMilestone import GitHubMilestone
 
 from tests import IGittTestCase
 
@@ -92,3 +93,14 @@ class GitHubIssueTest(IGittTestCase):
     def test_mrs_closed_by(self):
         issue = GitHubIssue(self.token, 'gitmate-test-user/test', 131)
         self.assertEqual({int(i.number) for i in issue.mrs_closed_by}, {132})
+
+    def test_milestone_setter(self):
+        issue = GitHubIssue(self.token, 'gitmate-test-user/test', 146)
+        print(issue.url)
+        #self.assertEqual(issue.milestone, None)
+        issue.milestone = GitHubMilestone(self.token, 'gitmate-test-user/test',
+                                          1)
+        self.assertEqual(issue.milestone.title,
+                         'Permanent IGitt test milestone. DO NOT DELETE.')
+        issue.milestone = None
+        self.assertEqual(issue.milestone, None)

@@ -451,3 +451,24 @@ class GitHubIssue(GitHubMixin, Issue):
 
         return {GitHubMergeRequest(self._token, repo_name, int(number))
                 for repo_name, number in matches}
+
+    @property
+    def milestone(self):
+        """
+        Retrieves the milestone.
+        """
+        from IGitt.GitHub.GitHubMilestone import GitHubMilestone
+        return GitHubMilestone.from_data(
+            self.data['milestone'], self._token, self._repository,
+            self.data['milestone']['number']
+        ) if self.data['milestone'] else None
+
+    @milestone.setter
+    def milestone(self, new_milestone):
+        """
+        Setter for the Milestone.
+        Delete the Milestone with passing a 'None'
+        """
+        self.data = patch(
+            self._token, self.url,
+            {'milestone': new_milestone.number if new_milestone else ''})

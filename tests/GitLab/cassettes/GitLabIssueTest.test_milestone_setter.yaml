@@ -1,0 +1,107 @@
+interactions:
+- request:
+    body: '{"milestone_id": 513937}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['24']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: PUT
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42
+  response:
+    body: {string: '{"id":10698538,"iid":42,"project_id":3439658,"title":"Issue to
+        test Milestone on Issues Setter. DO NOT DELETE","description":"","state":"opened","created_at":"2018-05-07T14:15:27.639Z","updated_at":"2018-05-08T09:57:14.579Z","closed_at":null,"closed_by":null,"labels":[],"milestone":{"id":513937,"iid":1,"project_id":3439658,"title":"Permanent
+        IGitt test milestone. DO NOT DELETE.","description":"Description update to
+        test updated getter","state":"active","created_at":"2018-04-25T09:11:00.029Z","updated_at":"2018-04-30T11:22:02.350Z","due_date":null,"start_date":null},"assignees":[],"author":{"id":463976,"name":"Sebastian
+        Latacz","username":"seblat","state":"active","avatar_url":"https://assets.gitlab-static.net/uploads/-/system/user/avatar/463976/avatar.png","web_url":"https://gitlab.com/seblat"},"assignee":null,"user_notes_count":0,"upvotes":0,"downvotes":0,"due_date":null,"confidential":false,"discussion_locked":null,"web_url":"https://gitlab.com/gitmate-test-user/test/issues/42","time_stats":{"time_estimate":0,"total_time_spent":0,"human_time_estimate":null,"human_total_time_spent":null},"_links":{"self":"https://gitlab.com/api/v4/projects/3439658/issues/42","notes":"https://gitlab.com/api/v4/projects/3439658/issues/42/notes","award_emoji":"https://gitlab.com/api/v4/projects/3439658/issues/42/award_emoji","project":"https://gitlab.com/api/v4/projects/3439658"},"subscribed":true,"weight":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['1416']
+      Content-Type: [application/json]
+      Date: ['Tue, 08 May 2018 09:57:15 GMT']
+      Etag: [W/"54395ccd57690724d85ce2abf48b8e9f"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1525773495']
+      RateLimit-ResetTime: ['Wed, 08 May 2018 09:58:15 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [4b735d1a-84f3-4158-9e1a-f76f974935fa]
+      X-Runtime: ['1.603700']
+    status: {code: 200, message: OK}
+- request:
+    body: '{"milestone_id": ""}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['20']
+      Content-Type: [application/json]
+      If-None-Match: [W/"54395ccd57690724d85ce2abf48b8e9f"]
+      User-Agent: [IGitt]
+    method: PUT
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42
+  response:
+    body: {string: '{"id":10698538,"iid":42,"project_id":3439658,"title":"Issue to
+        test Milestone on Issues Setter. DO NOT DELETE","description":"","state":"opened","created_at":"2018-05-07T14:15:27.639Z","updated_at":"2018-05-08T09:57:16.727Z","closed_at":null,"closed_by":null,"labels":[],"milestone":null,"assignees":[],"author":{"id":463976,"name":"Sebastian
+        Latacz","username":"seblat","state":"active","avatar_url":"https://assets.gitlab-static.net/uploads/-/system/user/avatar/463976/avatar.png","web_url":"https://gitlab.com/seblat"},"assignee":null,"user_notes_count":0,"upvotes":0,"downvotes":0,"due_date":null,"confidential":false,"discussion_locked":null,"web_url":"https://gitlab.com/gitmate-test-user/test/issues/42","time_stats":{"time_estimate":0,"total_time_spent":0,"human_time_estimate":null,"human_total_time_spent":null},"_links":{"self":"https://gitlab.com/api/v4/projects/3439658/issues/42","notes":"https://gitlab.com/api/v4/projects/3439658/issues/42/notes","award_emoji":"https://gitlab.com/api/v4/projects/3439658/issues/42/award_emoji","project":"https://gitlab.com/api/v4/projects/3439658"},"subscribed":true,"weight":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['1132']
+      Content-Type: [application/json]
+      Date: ['Tue, 08 May 2018 09:57:17 GMT']
+      Etag: [W/"0e14fd146ed0c5aa0b33221abdffb0d9"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1525773497']
+      RateLimit-ResetTime: ['Wed, 08 May 2018 09:58:17 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [838f681f-d027-46a6-8588-989081083bde]
+      X-Runtime: ['1.212177']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42?per_page=100
+  response:
+    body: {string: '{"id":10698538,"iid":42,"project_id":3439658,"title":"Issue to
+        test Milestone on Issues Setter. DO NOT DELETE","description":"","state":"opened","created_at":"2018-05-07T14:15:27.639Z","updated_at":"2018-05-08T09:57:16.727Z","closed_at":null,"closed_by":null,"labels":[],"milestone":null,"assignees":[],"author":{"id":463976,"name":"Sebastian
+        Latacz","username":"seblat","state":"active","avatar_url":"https://assets.gitlab-static.net/uploads/-/system/user/avatar/463976/avatar.png","web_url":"https://gitlab.com/seblat"},"assignee":null,"user_notes_count":0,"upvotes":0,"downvotes":0,"due_date":null,"confidential":false,"discussion_locked":null,"web_url":"https://gitlab.com/gitmate-test-user/test/issues/42","time_stats":{"time_estimate":0,"total_time_spent":0,"human_time_estimate":null,"human_total_time_spent":null},"_links":{"self":"https://gitlab.com/api/v4/projects/3439658/issues/42","notes":"https://gitlab.com/api/v4/projects/3439658/issues/42/notes","award_emoji":"https://gitlab.com/api/v4/projects/3439658/issues/42/award_emoji","project":"https://gitlab.com/api/v4/projects/3439658"},"subscribed":true,"weight":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['1132']
+      Content-Type: [application/json]
+      Date: ['Tue, 05 Jun 2018 11:54:17 GMT']
+      Etag: [W/"0e14fd146ed0c5aa0b33221abdffb0d9"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1528199717']
+      RateLimit-ResetTime: ['Wed, 05 Jun 2018 11:55:17 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [a51e98db-a2b2-473e-986a-412fe3a37621]
+      X-Runtime: ['0.271482']
+    status: {code: 200, message: OK}
+version: 1

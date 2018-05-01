@@ -5,6 +5,7 @@ from IGitt.GitLab import GitLabOAuthToken
 from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.GitLab.GitLabUser import GitLabUser
 from IGitt.Interfaces import IssueStates
+from IGitt.GitLab.GitLabProjectMilestone import GitLabProjectMilestone
 
 from tests import IGittTestCase
 
@@ -93,3 +94,13 @@ class GitLabIssueTest(IGittTestCase):
     def test_mrs_closed_by(self):
         issue = GitLabIssue(self.token, 'coala/package_manager', 152)
         self.assertEqual({int(i.number) for i in issue.mrs_closed_by}, {98})
+
+    def test_milestone_setter(self):
+        issue = GitLabIssue(self.token, 'gitmate-test-user/test', 42)
+        self.assertEqual(issue.milestone, None)
+        issue.milestone = GitLabProjectMilestone(
+            self.token, 'gitmate-test-user/test', 513937)
+        self.assertEqual(issue.milestone.title,
+                         'Permanent IGitt test milestone. DO NOT DELETE.')
+        issue.milestone = None
+        self.assertEqual(issue.milestone, None)

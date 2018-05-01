@@ -10,6 +10,7 @@ from IGitt.Interfaces import IGittObject
 from IGitt.Interfaces.Comment import Comment
 from IGitt.Interfaces.Repository import Repository
 from IGitt.Interfaces.User import User
+from IGitt.Interfaces.Milestone import Milestone
 
 
 class Issue(IGittObject):
@@ -211,5 +212,19 @@ class Issue(IGittObject):
     def mrs_closed_by(self) -> Set:
         """
         Returns the merge requests that close this issue.
+        """
+        raise NotImplementedError
+
+    @property
+    def milestone(self) -> Milestone:
+        """
+        Retrieves the milestone.
+        """
+        raise NotImplementedError
+
+    @milestone.setter
+    def milestone(self, new_milestone) -> Milestone:
+        """
+        Setter for the Milestone.
         """
         raise NotImplementedError
