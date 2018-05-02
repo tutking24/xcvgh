@@ -6,3 +6,4 @@ cryptography~=2.1.4
 PyJWT~=1.5.3
 backoff~=1.4.3
 beautifulsoup4~=4.6.0
+pytz~=2018.4
