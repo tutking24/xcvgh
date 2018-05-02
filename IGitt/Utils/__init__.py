@@ -50,7 +50,8 @@ class Cache:
     >>> from IGitt.Utils import Cache
     >>> Cache.use(read_from, write_to)
 
-    For further details follow the specific method documentation below.
+    If not provided, IGitt uses a default in-memory cache. For further details
+    follow the specific method documentation below.
     """
     __mem_store = LimitedSizeDict(size_limit=10 ** 6)  # a million entries
     _get = __mem_store.__getitem__
@@ -224,6 +225,12 @@ class PossiblyIncompleteDict:
         """
         self._data = self._del_nul(self._refresh())
         self.may_need_refresh = False
+
+    def get(self):
+        """
+        Returns the stored data.
+        """
+        return self._data
 
 
 class CachedDataMixin:

@@ -2,7 +2,6 @@
 This package contains an abstraction for a git repository.
 """
 from base64 import b64encode
-from collections import defaultdict
 from datetime import timedelta
 from enum import Enum
 from json.decoder import JSONDecodeError
@@ -16,9 +15,10 @@ from requests.auth import AuthBase
 from requests.auth import HTTPBasicAuth
 import requests
 
+from IGitt.Utils import Cache
+
 
 HEADERS = {'User-Agent': 'IGitt'}
-_RESPONSES = defaultdict()
 
 
 class IGittObject:
@@ -138,6 +138,17 @@ def is_client_error_or_unmodified(exception):
     return (400 <= exception.args[1] < 500) or (exception.args[1] == 304)
 
 
+def parse_response(response: requests.Response):
+    """
+    Parses the response object into JSON and link headers and returns them.
+    """
+    try:
+        return response.json(), response.links
+    except JSONDecodeError:
+        # if the response body is pure text, for e.g. a git diff.
+        return response.text, response.links
+
+
 @on_exception(expo, ConnectionError, max_tries=8)
 @on_exception(expo,
               RuntimeError,
@@ -148,18 +159,36 @@ def get_response(method: Callable,
                  auth: AuthBase,
                  json: Optional[Dict]=frozenset()):
     """
-    Sends a request and checks the response for errors, and retries unless it's
-    a HTTP client error.
+    Sends a request and returns the response. Also checks the response for
+    errors, and keeps retrying unless it's a HTTP Client Error.
     """
-    headers = ({'If-None-Match': _RESPONSES[url].headers.get('ETag')}
-               if url in _RESPONSES else {})
-    response = method(url, auth=auth, json=dict(json or {}), headers=headers)
-    if response.status_code == 304 and url in _RESPONSES:
-        return _RESPONSES[url]
-    elif response.status_code >= 300:
-        raise RuntimeError(response.text, response.status_code)
-    _RESPONSES[url] = response
-    return response
+    if method.__name__.lower() != 'get':
+        resp = method(url, auth=auth, json=dict(json or {}))
+        if resp.status_code >= 300 and resp.status_code != 304:
+            raise RuntimeError(resp.text, resp.status_code)
+        return parse_response(resp)
+
+    # cache only GET requests
+    cached_resp, headers = Cache.get(url), {}
+    if cached_resp:
+        if cached_resp['fromWebhook']:
+            headers['If-Modified-Since'] = cached_resp.get('lastFetched')
+        else:
+            headers['If-None-Match'] = cached_resp.get('entityTag')
+    resp = method(url, auth=auth, json=dict(json or {}), headers=headers)
+    if resp.status_code == 304 and cached_resp:
+        return cached_resp.get('data'), cached_resp.get('links')
+    elif resp.status_code >= 300:
+        raise RuntimeError(resp.text, resp.status_code)
+
+    data, links = parse_response(resp)
+    # update entry in cache
+    Cache.set(url, {
+        'entityTag': resp.headers.get('ETag'),
+        'data': data,
+        'links': links
+    })
+    return data, links
 
 
 def _fetch(url: str, req_type: str, token: Token, data: Optional[dict]=None,
@@ -196,34 +225,32 @@ def _fetch(url: str, req_type: str, token: Token, data: Optional[dict]=None,
         'patch': session.patch,
         'delete': session.delete
     }
-    method = req_methods[req_type]
-    resp = get_response(method, url, token.auth, json=data)
+    method = req_methods[req_type.lower()]
+    resp, links = get_response(method, url, token.auth, json=data)
 
-    # DELETE request returns no response
-    if not len(resp.text):
-        return []
+    # if the response body is pure text
+    if isinstance(resp, str):
+        # if the response body is empty, for e.g. in case of a DELETE request
+        if resp == '':
+            return []
+        return resp
 
     while True:
-        try:
-            if isinstance(resp.json(), dict) and 'items' not in resp.json():
-                # if response is a single object
-                return resp.json()
+        if isinstance(resp, dict):
+            if 'items' in resp:
+                # if response is a dict with `items` key, i.e. a list of items
+                data_container.extend(resp['items'])
             else:
-                if isinstance(resp.json(), list):
-                    # if response is a list of objects
-                    data_container.extend(resp.json())
-                elif 'items' in resp.json():
-                    # if response is a dict with `items` key
-                    data_container.extend(resp.json()['items'])
-                if not resp.links.get('next', False):
-                    return data_container
-                resp = get_response(method,
-                                    resp.links.get('next')['url'],
-                                    token.auth,
-                                    json=data)
-        except JSONDecodeError:
-            # if the request has a text response, for e.g. a git diff.
-            return resp.text
+                # if response is a single item
+                return resp
+        elif isinstance(resp, list):
+            # if response is a list of items
+            data_container.extend(resp)
+        if not links.get('next', False):
+            return data_container
+        resp, links = get_response(
+            method, links.get('next')['url'], token.auth, json=data)
+
 
 def get(token: Token, url: str, params: Optional[dict]=None,
         headers: Optional[dict]=None):

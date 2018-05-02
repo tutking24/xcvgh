@@ -1,16 +1,17 @@
 import os
 
 from IGitt.GitHub import BASE_URL as GITHUB_BASE_URL
+from IGitt.GitHub import GitHubMixin
 from IGitt.GitHub import GitHubToken
 from IGitt.GitHub import GitHubJsonWebToken
 from IGitt.GitHub import GitHubInstallationToken
 from IGitt.GitHub.GitHubRepository import GitHubRepository
 from IGitt.GitLab import BASE_URL as GITLAB_BASE_URL
 from IGitt.GitLab import GitLabOAuthToken
-from IGitt.Interfaces import _RESPONSES
 from IGitt.Interfaces import _fetch
 from IGitt.Interfaces import get
 from IGitt.Interfaces import BasicAuthorizationToken
+from IGitt.Utils import Cache
 
 from tests import IGittTestCase
 
@@ -67,17 +68,22 @@ class TestInterfacesInit(IGittTestCase):
 
     @staticmethod
     def test_github_conditional_request():
+        store = {}
+        Cache.use(store.__getitem__, store.__setitem__)
+
         token = GitHubToken(os.environ.get('GITHUB_TEST_TOKEN', ''))
         repo = GitHubRepository(token, os.environ.get('GITHUB_TEST_REPO',
                                                       'gitmate-test-user/test'))
 
         repo.refresh()
-        prev_data = repo.data._data
-        prev_count = _RESPONSES[repo.url].headers.get('X-RateLimit-Remaining')
+        prev_data = repo.data.get()
+        prev_count = get(
+            token, GitHubMixin.absolute_url('/rate_limit'))['rate']['limit']
 
         repo.refresh()
-        new_data = repo.data._data
-        new_count = _RESPONSES[repo.url].headers.get('X-RateLimit-Remaining')
+        new_data = repo.data.get()
+        new_count = get(
+            token, GitHubMixin.absolute_url('/rate_limit'))['rate']['limit']
 
         # check that no reduction in rate limit is observed
         assert prev_count == new_count
