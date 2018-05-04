@@ -16,6 +16,7 @@ from IGitt.Interfaces.Actions import IssueActions, MergeRequestActions, \
     PipelineActions, InstallationActions
 from IGitt.Interfaces.Comment import CommentType
 from IGitt.Interfaces.Hoster import Hoster
+from IGitt.Utils import Cache
 
 
 class GitHub(GitHubMixin, Hoster):
@@ -275,7 +276,15 @@ class GitHub(GitHubMixin, Hoster):
             raise NotImplementedError('Given webhook event cannot be handled '
                                       'yet.')
         if 'installation' in event:
-            yield from handler(data)
+            objects = handler(data)
         else:
             repository = self.get_repo_name(data)
-            yield from handler(data, repository)
+            objects = handler(data, repository)
+
+        for obj in objects:
+            item = obj[1][0]
+            Cache.update(item.url, {
+                'fromWebhook': True,
+                'data': item.data.get(),
+            })
+            yield obj
