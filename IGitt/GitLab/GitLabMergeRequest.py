@@ -206,17 +206,18 @@ class GitLabMergeRequest(GitLabIssue, MergeRequest):
         Returns a set of GitLabIssue objects which would be closed upon merging
         this pull request.
         """
-        issues = self._get_closes_issues()
-        return {GitLabIssue(self._token, repo_name, number)
-                for number, repo_name in issues}
-
+        return {issue for commit in self.commits
+                for issue in commit.closes_issues}
     @property
     def mentioned_issues(self) -> Set[GitLabIssue]:
         """
         Returns a set of GitLabIssue objects which are related to the merge
         request.
         """
-        issues = self._get_mentioned_issues()
+        body = [commit.message for commit in self.commits] + [
+            comment.body for comment in self.comments]
+        commit = next(iter(self.commits))
+        issues = commit.get_keywords_issues(r'', body)
         return {GitLabIssue(self._token, repo_name, number)
                 for number, repo_name in issues}
 

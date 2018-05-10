@@ -8,6 +8,7 @@ from IGitt import ElementDoesntExistError
 from IGitt.GitHub import GitHubMixin, GitHubToken
 from IGitt.GitHub.GitHubComment import GitHubComment
 from IGitt.GitHub.GitHubRepository import GitHubRepository
+from IGitt.GitHub.GitHubIssue import GitHubIssue
 from IGitt.Interfaces import get, post
 from IGitt.Interfaces.Comment import CommentType
 from IGitt.Interfaces.Commit import Commit
@@ -368,3 +369,20 @@ class GitHubCommit(GitHubMixin, Commit):
         return '\n'.join([diff for diff in difflines
                           if not diff.startswith('diff --git') and
                           not diff.startswith('index')])
+
+    @property
+    def closes_issues(self) -> Set[GitHubIssue]:
+        """
+        Returns a set of GitHubIssue objects which would be closed upon merging
+        this commit.
+        """
+        return {GitHubIssue(self._token, repo_name, number)
+                for number, repo_name in self._get_closes_issues()}
+
+    @property
+    def mentioned_issues(self) -> Set[GitHubIssue]:
+        """
+        Returns a set of GitHubIssue objects which are related to the commit.
+        """
+        return {GitHubIssue(self._token, repo_name, number)
+                for number, repo_name in self._get_mentioned_issues()}

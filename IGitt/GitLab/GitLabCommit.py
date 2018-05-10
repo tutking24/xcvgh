@@ -12,6 +12,7 @@ from IGitt.GitLab import GitLabMixin
 from IGitt.GitLab import GitLabOAuthToken, GitLabPrivateToken
 from IGitt.GitLab.GitLabComment import GitLabComment
 from IGitt.GitLab.GitLabRepository import GitLabRepository
+from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.Interfaces import get, post
 from IGitt.Interfaces.Comment import CommentType
 from IGitt.Interfaces.Commit import Commit
@@ -340,3 +341,23 @@ class GitLabCommit(GitLabMixin, Commit):
         return '\n'.join(patch['diff']
                          for patch in get(self._token, self.url + '/diff')
                         )
+
+    @property
+    def closes_issues(self) -> Set[GitLabIssue]:
+        """
+        Returns a set of GitLabIssue objects which would be closed upon merging
+        this pull request.
+        """
+        issues = self._get_closes_issues()
+        return {GitLabIssue(self._token, repo_name, number)
+                for number, repo_name in issues}
+
+    @property
+    def mentioned_issues(self) -> Set[GitLabIssue]:
+        """
+        Returns a set of GitLabIssue objects which are related to the merge
+        request.
+        """
+        issues = self._get_mentioned_issues()
+        return {GitLabIssue(self._token, repo_name, number)
+                for number, repo_name in issues}

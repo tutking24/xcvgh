@@ -84,3 +84,15 @@ class GitLabCommitTest(IGittTestCase):
                          ' a test repo\n'
                          '+\n'
                          '+a tst pr\n')
+
+    def test_closes_issues(self):
+        commit = GitLabCommit(self.token, 'gitmate-test-user/test',
+                              '9ba5b704f5866e468ec2e639fa893ae4c129f2ad')
+        self.assertEqual({int(issue.number) for issue in commit.closes_issues},
+                         {21, 22, 23, 26, 27, 30})
+
+    def test_mentioned_issues(self):
+        commit = GitLabCommit(self.token, 'gitmate-test-user/test',
+                              '9ba5b704f5866e468ec2e639fa893ae4c129f2ad')
+        self.assertEqual({int(issue.number) for issue in commit.mentioned_issues},
+                         {21, 22, 23, 31, 26, 27, 30})

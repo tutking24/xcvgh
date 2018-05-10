@@ -86,3 +86,22 @@ class GitHubCommitTest(IGittTestCase):
                          ' a test repo\n'
                          '+\n'
                          '+yeah thats it')
+
+    def test_closes_issues(self):
+        commit = GitHubCommit(self.token, 'gitmate-test-user/test',
+                              'fb37d69e72b46a52f8694cf45adb007315de3b6e')
+        self.assertEqual({int(issue.number) for issue in commit.closes_issues},
+                         {98, 104, 1, 107, 97, 105})
+        commit = GitHubCommit(self.token, 'gitmate-test-user/test',
+                              '4efefe405197072e709fa3d2a3459f29ba949b64')
+        self.assertEqual(commit.closes_issues, set())
+
+    def test_mentioned_issues(self):
+        commit = GitHubCommit(self.token, 'gitmate-test-user/test',
+                              'fb37d69e72b46a52f8694cf45adb007315de3b6e')
+        self.assertEqual({int(issue.number)
+                          for issue in commit.mentioned_issues},
+                         {98, 104, 1, 17, 107, 97, 105})
+        commit = GitHubCommit(self.token, 'gitmate-test-user/test',
+                              '4efefe405197072e709fa3d2a3459f29ba949b64')
+        self.assertEqual(commit.mentioned_issues, set())

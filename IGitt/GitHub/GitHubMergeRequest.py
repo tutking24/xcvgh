@@ -227,9 +227,8 @@ class GitHubMergeRequest(GitHubIssue, MergeRequest):
         Returns a set of GitHubIssue objects which would be closed upon merging
         this pull request.
         """
-        issues = self._get_closes_issues()
-        return {GitHubIssue(self._token, repo_name, number)
-                for number, repo_name in issues}
+        return {issue for commit in self.commits
+                for issue in commit.closes_issues}
 
     @property
     def mentioned_issues(self) -> Set[GitHubIssue]:
@@ -237,7 +236,11 @@ class GitHubMergeRequest(GitHubIssue, MergeRequest):
         Returns a set of GitHubIssue objects which are related to the pull
         request.
         """
-        issues = self._get_mentioned_issues()
+        commit_bodies = [commit.message for commit in self.commits]
+        comment_bodies = [comment.body for comment in self.comments]
+        commit = next(iter(self.commits))
+        issues = commit.get_keywords_issues(r'',
+                                            commit_bodies + comment_bodies)
         return {GitHubIssue(self._token, repo_name, number)
                 for number, repo_name in issues}
 
