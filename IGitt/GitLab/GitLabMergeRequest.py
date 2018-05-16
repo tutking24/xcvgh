@@ -331,3 +331,24 @@ class GitLabMergeRequest(GitLabIssue, MergeRequest):
                 _gitlab_merge_when_pipeline_succeeds
 
         self.data = put(self._token, self.url + '/merge', merge_options)
+
+    @property
+    def milestone(self):
+        """
+        Retrieves the milestone.
+        """
+        from IGitt.GitLab.GitLabProjectMilestone import GitLabProjectMilestone
+        return GitLabProjectMilestone.from_data(
+            self.data['milestone'], self._token, self._repository,
+            self.data['milestone']['id']
+        ) if self.data['milestone'] else None
+
+    @milestone.setter
+    def milestone(self, new_milestone):
+        """
+        Setter for the Milestone.
+        Delete the Milestone with passing a 'None'
+        """
+        self.data = put(
+            self._token, self.url,
+            {'milestone_id': new_milestone.number if new_milestone else ''})

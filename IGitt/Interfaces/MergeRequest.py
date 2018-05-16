@@ -11,6 +11,7 @@ from IGitt.Interfaces.Commit import Commit
 from IGitt.Interfaces.CommitStatus import Status
 from IGitt.Interfaces.Issue import Issue
 from IGitt.Interfaces.User import User
+from IGitt.Interfaces.Milestone import Milestone
 
 
 class MergeRequest(Issue):
@@ -215,5 +216,19 @@ class MergeRequest(Issue):
                                             pipeline succeeds.
         :raises RuntimeError:        If something goes wrong (network, auth...).
         :raises NotImplementedError: If an unused parameter is passed.
+        """
+        raise NotImplementedError
+
+    @property
+    def milestone(self) -> Milestone:
+        """
+        Retrieves the milestone.
+        """
+        raise NotImplementedError
+
+    @milestone.setter
+    def milestone(self, new_milestone) -> Milestone:
+        """
+        Setter for the Milestone.
         """
         raise NotImplementedError

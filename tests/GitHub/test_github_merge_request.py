@@ -4,6 +4,7 @@ import datetime
 from IGitt.GitHub import GitHubToken
 from IGitt.GitHub.GitHubMergeRequest import GitHubMergeRequest
 from IGitt.Interfaces.MergeRequest import MergeRequestStates
+from IGitt.GitHub.GitHubMilestone import GitHubMilestone
 
 from tests import IGittTestCase
 
@@ -152,3 +153,14 @@ class GitHubMergeRequestTest(IGittTestCase):
         mr = GitHubMergeRequest(self.token, 'gitmate-test-user/test', 134)
         mr.merge(message=commit_msg, sha=head_sha, _github_merge_method=method)
         self.assertEqual(mr.state, MergeRequestStates.MERGED)
+
+    def test_milestone_setter(self):
+        merge_request = GitHubMergeRequest(self.token,
+                                           'gitmate-test-user/test', 147)
+        self.assertEqual(merge_request.milestone, None)
+        merge_request.milestone = GitHubMilestone(self.token,
+                                                  'gitmate-test-user/test', 1)
+        self.assertEqual(merge_request.milestone.title,
+                         'Permanent IGitt test milestone. DO NOT DELETE.')
+        merge_request.milestone = None
+        self.assertEqual(merge_request.milestone, None)

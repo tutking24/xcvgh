@@ -5,6 +5,7 @@ from IGitt.GitLab import GitLabOAuthToken
 from IGitt.GitLab.GitLabMergeRequest import GitLabMergeRequest
 from IGitt.GitLab.GitLabUser import GitLabUser
 from IGitt.Interfaces import MergeRequestStates
+from IGitt.GitLab.GitLabProjectMilestone import GitLabProjectMilestone
 
 from tests import IGittTestCase
 
@@ -150,3 +151,14 @@ class GitLabMergeRequestTest(IGittTestCase):
                  should_remove_source_branch=True,
                  _gitlab_merge_when_pipeline_succeeds=True)
         self.assertEqual(mr.state, MergeRequestStates.MERGED)
+
+    def test_milestone_setter(self):
+        merge_request = GitLabMergeRequest(self.token,
+                                           'gitmate-test-user/test', 77)
+        self.assertEqual(merge_request.milestone, None)
+        merge_request.milestone = GitLabProjectMilestone(
+            self.token, 'gitmate-test-user/test', 513937)
+        self.assertEqual(merge_request.milestone.title,
+                         'Permanent IGitt test milestone. DO NOT DELETE.')
+        merge_request.milestone = None
+        self.assertEqual(merge_request.milestone, None)
