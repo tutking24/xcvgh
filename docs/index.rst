@@ -31,6 +31,11 @@ how to set labels on a GitHub issue::
 
     issue.labels = {"type/bug", "area/core"}
 
+IGitt also supports caching data from external requests for reuse to reduce the
+rate limiting issues from hosting providers. IGitt uses an in-memory cache
+store by default. To provide your own cache store, refer
+`here </using_cache.html>`_.
+
 API Documentation
 -----------------
 
@@ -40,6 +45,7 @@ API Documentation
 
    Welcome <self>
    Source on GitLab <https://gitlab.com/gitmate/open-source/IGitt>
+   Using Cache <using_cache>
 
 .. toctree::
    :caption: IGitt API Documentation

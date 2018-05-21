@@ -1,4 +1,5 @@
 # all .rst files here are generated
 *.rst
-# …except for the index
+# …except for index and using_cache
 !index.rst
+!using_cache.rst
