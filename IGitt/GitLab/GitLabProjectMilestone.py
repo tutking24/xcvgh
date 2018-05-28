@@ -190,15 +190,10 @@ class GitLabProjectMilestone(GitLabMixin, Milestone):
 
         :param new_date: The new start date.
         """
-        # The title is only set because the GitLab APIV4 requires this.
-        # This issue has been reported:
-        # https://gitlab.com/gitlab-org/gitlab-ce/issues/46740
         self.data = put(
             self._token, self.url, {
                 'start_date':
                 datetime.strftime(new_date, '%Y-%m-%d') if new_date else None,
-                'title':
-                self.title
             })
 
     @property

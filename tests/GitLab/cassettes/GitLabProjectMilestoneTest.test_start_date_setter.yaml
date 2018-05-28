@@ -1,43 +1,11 @@
 interactions:
 - request:
-    body: '{}'
+    body: '{"start_date": "2040-04-23"}'
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['2']
-      Content-Type: [application/json]
-      If-None-Match: [W/"a59f40b6bed85fba4778435de7c1d485"]
-      User-Agent: [IGitt]
-    method: GET
-    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/milestones/513937?per_page=100
-  response:
-    body: {string: ''}
-    headers:
-      Cache-Control: ['max-age=0, private, must-revalidate']
-      Date: ['Thu, 24 May 2018 13:37:48 GMT']
-      Etag: [W/"a59f40b6bed85fba4778435de7c1d485"]
-      RateLimit-Limit: ['600']
-      RateLimit-Observed: ['2']
-      RateLimit-Remaining: ['598']
-      RateLimit-Reset: ['1527169128']
-      RateLimit-ResetTime: ['Fri, 24 May 2018 13:38:48 GMT']
-      Server: [nginx]
-      Strict-Transport-Security: [max-age=31536000]
-      Vary: [Origin]
-      X-Content-Type-Options: [nosniff]
-      X-Frame-Options: [SAMEORIGIN]
-      X-Request-Id: [87bc066e-a723-42ca-a791-5757e0472b07]
-      X-Runtime: ['0.091372']
-    status: {code: 304, message: Not Modified}
-- request:
-    body: '{"start_date": "2040-04-23", "title": "Permanent IGitt test milestone.
-      DO NOT DELETE."}'
-    headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Length: ['87']
+      Content-Length: ['28']
       Content-Type: [application/json]
       User-Agent: [IGitt]
     method: PUT
@@ -45,33 +13,33 @@ interactions:
   response:
     body: {string: '{"id":513937,"iid":1,"project_id":3439658,"title":"Permanent IGitt
         test milestone. DO NOT DELETE.","description":"Description update to test
-        updated getter","state":"active","created_at":"2018-04-25T09:11:00.029Z","updated_at":"2018-05-24T13:37:49.560Z","due_date":null,"start_date":"2040-04-23"}'}
+        updated getter","state":"active","created_at":"2018-04-25T09:11:00.029Z","updated_at":"2018-06-26T09:20:24.135Z","due_date":null,"start_date":"2040-04-23","web_url":"https://gitlab.com/gitmate-test-user/test/milestones/1"}'}
     headers:
       Cache-Control: ['max-age=0, private, must-revalidate']
-      Content-Length: ['296']
+      Content-Length: ['363']
       Content-Type: [application/json]
-      Date: ['Thu, 24 May 2018 13:37:49 GMT']
-      Etag: [W/"8d1028cbe2abb268d415a38d29944863"]
+      Date: ['Tue, 26 Jun 2018 09:20:24 GMT']
+      Etag: [W/"f9a5e0bdb9e44f7c5a132082200bcca8"]
       RateLimit-Limit: ['600']
       RateLimit-Observed: ['1']
       RateLimit-Remaining: ['599']
-      RateLimit-Reset: ['1527169129']
-      RateLimit-ResetTime: ['Fri, 24 May 2018 13:38:49 GMT']
+      RateLimit-Reset: ['1530004884']
+      RateLimit-ResetTime: ['Wed, 26 Jun 2018 09:21:24 GMT']
       Server: [nginx]
       Strict-Transport-Security: [max-age=31536000]
       Vary: [Origin]
       X-Content-Type-Options: [nosniff]
       X-Frame-Options: [SAMEORIGIN]
-      X-Request-Id: [ef945336-eb7a-445d-8778-80b5a862c426]
-      X-Runtime: ['0.131603']
+      X-Request-Id: [f341e0ce-9b08-4df6-af27-e96a87e46996]
+      X-Runtime: ['0.145450']
     status: {code: 200, message: OK}
 - request:
-    body: '{"start_date": null, "title": "Permanent IGitt test milestone. DO NOT DELETE."}'
+    body: '{"start_date": null}'
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['79']
+      Content-Length: ['20']
       Content-Type: [application/json]
       User-Agent: [IGitt]
     method: PUT
@@ -79,24 +47,24 @@ interactions:
   response:
     body: {string: '{"id":513937,"iid":1,"project_id":3439658,"title":"Permanent IGitt
         test milestone. DO NOT DELETE.","description":"Description update to test
-        updated getter","state":"active","created_at":"2018-04-25T09:11:00.029Z","updated_at":"2018-05-24T13:37:51.966Z","due_date":null,"start_date":null}'}
+        updated getter","state":"active","created_at":"2018-04-25T09:11:00.029Z","updated_at":"2018-06-26T09:20:24.833Z","due_date":null,"start_date":null,"web_url":"https://gitlab.com/gitmate-test-user/test/milestones/1"}'}
     headers:
       Cache-Control: ['max-age=0, private, must-revalidate']
-      Content-Length: ['288']
+      Content-Length: ['355']
       Content-Type: [application/json]
-      Date: ['Thu, 24 May 2018 13:37:52 GMT']
-      Etag: [W/"4fccc837df98e71ea045fa1c483452c1"]
+      Date: ['Tue, 26 Jun 2018 09:20:24 GMT']
+      Etag: [W/"1d40571e073fb2d0039550c73796ddca"]
       RateLimit-Limit: ['600']
       RateLimit-Observed: ['2']
       RateLimit-Remaining: ['598']
-      RateLimit-Reset: ['1527169132']
-      RateLimit-ResetTime: ['Fri, 24 May 2018 13:38:52 GMT']
+      RateLimit-Reset: ['1530004884']
+      RateLimit-ResetTime: ['Wed, 26 Jun 2018 09:21:24 GMT']
       Server: [nginx]
       Strict-Transport-Security: [max-age=31536000]
       Vary: [Origin]
       X-Content-Type-Options: [nosniff]
       X-Frame-Options: [SAMEORIGIN]
-      X-Request-Id: [8182df35-15b4-42ff-ae98-9fadfe327507]
-      X-Runtime: ['0.338573']
+      X-Request-Id: [cce7a4b6-8165-4cf6-9625-2fa708dbcf15]
+      X-Runtime: ['0.120790']
     status: {code: 200, message: OK}
 version: 1
