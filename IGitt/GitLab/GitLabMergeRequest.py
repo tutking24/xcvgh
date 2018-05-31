@@ -222,6 +222,32 @@ class GitLabMergeRequest(GitLabIssue, MergeRequest):
                 for number, repo_name in issues}
 
     @property
+    def will_fix_issues(self) -> Set[GitLabIssue]:
+        """
+        Returns a set of GitLabIssue objects which would be fixed as stated in
+        this pull request.
+        """
+        return {issue for commit in self.commits
+                for issue in commit.will_fix_issues}
+
+    @property
+    def will_close_issues(self) -> Set[GitLabIssue]:
+        """
+        Returns a set of GitLabIssue objects which would be closed as stated in
+        this pull request.
+        """
+        return {issue for commit in self.commits
+                for issue in commit.will_close_issues}
+    @property
+    def will_resolve_issues(self) -> Set[GitLabIssue]:
+        """
+        Returns a set of GitLabIssue objects which would be resolved as stated
+        in this pull request.
+        """
+        return {issue for commit in self.commits
+                for issue in commit.will_resolve_issues}
+
+    @property
     def author(self) -> GitLabUser:
         """
         Retrieves the author of the merge request.

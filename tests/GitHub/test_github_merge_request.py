@@ -94,6 +94,32 @@ class GitHubMergeRequestTest(IGittTestCase):
         mr = GitHubMergeRequest(self.token, 'gitmate-test-user/test', 99)
         self.assertEqual(mr.mentioned_issues, set())
 
+    def test_will_fix_issues(self):
+        mr = GitHubMergeRequest(self.token, 'gitmate-test-user/test', 148)
+        self.assertEqual({int(issue.number) for issue in mr.will_fix_issues},
+                         {98, 104, 107, 97, 105})
+        mr = GitHubMergeRequest(self.token, 'gitmate-test-user/test', 120)
+        self.assertEqual({int(issue.number) for issue in mr.will_fix_issues},
+                         set())
+
+    def test_will_close_issues(self):
+        mr = GitHubMergeRequest(self.token, 'gitmate-test-user/test', 148)
+        self.assertEqual({int(issue.number) for issue in mr.will_close_issues},
+                         {1})
+        mr = GitHubMergeRequest(self.token, 'gitmate-test-user/test', 120)
+        self.assertEqual({int(issue.number) for issue in mr.will_close_issues},
+                         set())
+
+    def test_will_resolve_issues(self):
+        mr = GitHubMergeRequest(self.token, 'gitmate-test-user/test', 148)
+        self.assertEqual({int(issue.number)
+                          for issue in mr.will_resolve_issues},
+                         {145})
+        mr = GitHubMergeRequest(self.token, 'gitmate-test-user/test', 120)
+        self.assertEqual({int(issue.number)
+                          for issue in mr.will_resolve_issues},
+                         set())
+
     def test_tests_passed(self):
         self.assertEqual(self.mr.tests_passed, True)
         mr = GitHubMergeRequest(self.token, 'gitmate-test-user/test', 6)

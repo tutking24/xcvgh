@@ -1,0 +1,72 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/repository/commits/0164595c7d75404c2e0ce8622cea825e59e9d558?per_page=100
+  response:
+    body: {string: '{"id":"0164595c7d75404c2e0ce8622cea825e59e9d558","short_id":"0164595c","title":"Test
+        title","created_at":"2018-06-05T15:46:05.000+05:30","parent_ids":["20d99d2b6124ccef9e9593749357a10c79085dae"],"message":"Test
+        title\n\nsample commit message.\n\nFix #21, Fixes #22 and Closes #23.\nThis
+        commit is also related to #31 and fixes #26, #27\nand #30. Resolves #41\n","author_name":"Vamshi99","author_email":"bommvams72@gmail.com","authored_date":"2018-06-05T15:43:13.000+05:30","committer_name":"Vamshi99","committer_email":"bommvams72@gmail.com","committed_date":"2018-06-05T15:46:05.000+05:30","stats":{"additions":1,"deletions":0,"total":1},"status":null,"last_pipeline":null,"project_id":3439658}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['695']
+      Content-Type: [application/json]
+      Date: ['Thu, 07 Jun 2018 15:12:57 GMT']
+      Etag: [W/"189db5c222ef532a6cb8764ec9ecb4cc"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1528384437']
+      RateLimit-ResetTime: ['Fri, 07 Jun 2018 15:13:57 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [75e24112-f827-4bf4-9d29-d8f1d189adae]
+      X-Runtime: ['0.321308']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/repository/commits/38715b42c86ec565a6e0e4b13255448e8f202f8d?per_page=100
+  response:
+    body: {string: '{"id":"38715b42c86ec565a6e0e4b13255448e8f202f8d","short_id":"38715b42","title":"Add
+        new file","created_at":"2017-08-15T16:50:06.000+00:00","parent_ids":["198dd16f8249ea98ed41876efe27d068b69fa215"],"message":"Add
+        new file","author_name":"Naveen Kumar Sangi","author_email":"nkprince007@gmail.com","authored_date":"2017-08-15T16:50:06.000+00:00","committer_name":"Naveen
+        Kumar Sangi","committer_email":"nkprince007@gmail.com","committed_date":"2017-08-15T16:50:06.000+00:00","stats":{"additions":1,"deletions":0,"total":1},"status":null,"last_pipeline":null,"project_id":3439658}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['577']
+      Content-Type: [application/json]
+      Date: ['Thu, 07 Jun 2018 15:12:59 GMT']
+      Etag: [W/"e585b557f9a0bd3715b9a344445efc41"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1528384439']
+      RateLimit-ResetTime: ['Fri, 07 Jun 2018 15:13:59 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [6b146dcc-41a4-4cc8-9f3b-9c9d0fcbd346]
+      X-Runtime: ['0.167475']
+    status: {code: 200, message: OK}
+version: 1

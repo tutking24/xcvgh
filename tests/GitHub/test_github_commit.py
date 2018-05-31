@@ -105,3 +105,33 @@ class GitHubCommitTest(IGittTestCase):
         commit = GitHubCommit(self.token, 'gitmate-test-user/test',
                               '4efefe405197072e709fa3d2a3459f29ba949b64')
         self.assertEqual(commit.mentioned_issues, set())
+
+    def test_will_fix_issues(self):
+        commit = GitHubCommit(self.token, 'gitmate-test-user/test',
+                              'c0fd4facd43c471b5600e49076089a81522a23f8')
+        self.assertEqual({int(issue.number)
+                          for issue in commit.will_fix_issues},
+                         {98, 104, 107, 97, 105})
+        commit = GitHubCommit(self.token, 'gitmate-test-user/test',
+                              '4cdeb83fcacd6bf577a31e8b818ecd1d50544b06')
+        self.assertEqual(commit.will_fix_issues, set())
+
+    def test_will_close_issues(self):
+        commit = GitHubCommit(self.token, 'gitmate-test-user/test',
+                              'c0fd4facd43c471b5600e49076089a81522a23f8')
+        self.assertEqual({int(issue.number)
+                          for issue in commit.will_close_issues},
+                         {1})
+        commit = GitHubCommit(self.token, 'gitmate-test-user/test',
+                              '4cdeb83fcacd6bf577a31e8b818ecd1d50544b06')
+        self.assertEqual(commit.will_close_issues, set())
+
+    def test_will_resolve_issues(self):
+        commit = GitHubCommit(self.token, 'gitmate-test-user/test',
+                              'c0fd4facd43c471b5600e49076089a81522a23f8')
+        self.assertEqual({int(issue.number)
+                          for issue in commit.will_resolve_issues},
+                         {145})
+        commit = GitHubCommit(self.token, 'gitmate-test-user/test',
+                              '4cdeb83fcacd6bf577a31e8b818ecd1d50544b06')
+        self.assertEqual(commit.will_resolve_issues, set())

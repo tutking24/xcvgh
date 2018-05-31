@@ -22,6 +22,9 @@ GH_STATE_TRANSLATION = {Status.ERROR: 'error', Status.FAILED: 'failure',
 INV_GH_STATE_TRANSLATION = {'error': Status.ERROR, 'failure': Status.FAILED,
                             'pending': Status.PENDING,
                             'success': Status.SUCCESS}
+GITHUB_KEYWORD_REGEX = {'fix': r'[Ff]ix(?:e[sd])?',
+                        'close': r'[Cc]lose[sd]?',
+                        'resolve': r'[Rr]esolve[sd]?'}
 
 
 def get_diff_index(patch, line_nr):
@@ -386,3 +389,37 @@ class GitHubCommit(GitHubMixin, Commit):
         """
         return {GitHubIssue(self._token, repo_name, number)
                 for number, repo_name in self._get_mentioned_issues()}
+
+
+    @property
+    def will_fix_issues(self) -> Set[GitHubIssue]:
+        """
+        Returns a set of GitHubIssue objects which would be fixed as stated in
+        this commit message.
+        """
+        issues =  self.get_keywords_issues(GITHUB_KEYWORD_REGEX['fix'],
+                                           [self.message])
+        return {GitHubIssue(self._token, repo_name, number)
+                for number, repo_name in issues}
+
+    @property
+    def will_close_issues(self) -> Set[GitHubIssue]:
+        """
+        Returns a set of GitHubIssue objects which would be closed as stated in
+        this commit message.
+        """
+        issues =  self.get_keywords_issues(GITHUB_KEYWORD_REGEX['close'],
+                                           [self.message])
+        return {GitHubIssue(self._token, repo_name, number)
+                for number, repo_name in issues}
+
+    @property
+    def will_resolve_issues(self) -> Set[GitHubIssue]:
+        """
+        Returns a set of GitHubIssue objects which would be resolved as stated
+        in this commit message.
+        """
+        issues =  self.get_keywords_issues(GITHUB_KEYWORD_REGEX['resolve'],
+                                           [self.message])
+        return {GitHubIssue(self._token, repo_name, number)
+                for number, repo_name in issues}

@@ -32,6 +32,9 @@ GL_STATE_TRANSLATION = {
 
 INV_GL_STATE_TRANSLATION = {val: key for key, val
                             in GL_STATE_TRANSLATION.items()}
+GITLAB_KEYWORD_REGEX = {'fix': r'[Ff]ix(?:e[sd]|ing)?',
+                        'close': r'[Cc]los(?:e[sd]?|ing)',
+                        'resolve': r'[Rr]esolv(?:e[sd]?|ing)'}
 
 
 class GitLabCommit(GitLabMixin, Commit):
@@ -359,5 +362,38 @@ class GitLabCommit(GitLabMixin, Commit):
         request.
         """
         issues = self._get_mentioned_issues()
+        return {GitLabIssue(self._token, repo_name, number)
+                for number, repo_name in issues}
+
+    @property
+    def will_fix_issues(self) -> Set[GitLabIssue]:
+        """
+        Returns a set of GitLabIssue objects which would be fixed as stated in
+        this commit message.
+        """
+        issues =  self.get_keywords_issues(GITLAB_KEYWORD_REGEX['fix'],
+                                           [self.message])
+        return {GitLabIssue(self._token, repo_name, number)
+                for number, repo_name in issues}
+
+    @property
+    def will_close_issues(self) -> Set[GitLabIssue]:
+        """
+        Returns a set of GitLabIssue objects which would be closed as stated in
+        this commit message.
+        """
+        issues =  self.get_keywords_issues(GITLAB_KEYWORD_REGEX['close'],
+                                           [self.message])
+        return {GitLabIssue(self._token, repo_name, number)
+                for number, repo_name in issues}
+
+    @property
+    def will_resolve_issues(self) -> Set[GitLabIssue]:
+        """
+        Returns a set of GitLabIssue objects which would be resolved as stated
+        in this commit message.
+        """
+        issues =  self.get_keywords_issues(GITLAB_KEYWORD_REGEX['resolve'],
+                                           [self.message])
         return {GitLabIssue(self._token, repo_name, number)
                 for number, repo_name in issues}

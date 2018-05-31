@@ -291,3 +291,26 @@ class Commit(IGittObject):
         Returns a set of Issue objects which are related to the commit.
         """
         raise NotImplementedError
+
+    @property
+    def will_fix_issues(self) -> Set[Issue]:
+        """
+        Returns a set of Issue objects which would be fixed as stated in
+        this commit message.
+        """
+
+    @property
+    def will_close_issues(self) -> Set[Issue]:
+        """
+        Returns a set of Issue objects which would be closed as stated in
+        this commit message.
+        """
+        raise NotImplementedError
+
+    @property
+    def will_resolve_issues(self) -> Set[Issue]:
+        """
+        Returns a set of Issue objects which would be resolved as stated
+        in this commit message.
+        """
+        raise NotImplementedError

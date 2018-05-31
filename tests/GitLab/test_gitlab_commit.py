@@ -96,3 +96,33 @@ class GitLabCommitTest(IGittTestCase):
                               '9ba5b704f5866e468ec2e639fa893ae4c129f2ad')
         self.assertEqual({int(issue.number) for issue in commit.mentioned_issues},
                          {21, 22, 23, 31, 26, 27, 30})
+
+    def test_will_fix_issues(self):
+        commit = GitLabCommit(self.token, 'gitmate-test-user/test',
+                              '0164595c7d75404c2e0ce8622cea825e59e9d558')
+        self.assertEqual({int(issue.number)
+                          for issue in commit.will_fix_issues},
+                         {21, 22, 26, 27, 30})
+        commit = GitLabCommit(self.token, 'gitmate-test-user/test',
+                              '38715b42c86ec565a6e0e4b13255448e8f202f8d')
+        self.assertEqual(commit.will_fix_issues, set())
+
+    def test_will_close_issues(self):
+        commit = GitLabCommit(self.token, 'gitmate-test-user/test',
+                              '0164595c7d75404c2e0ce8622cea825e59e9d558')
+        self.assertEqual({int(issue.number)
+                          for issue in commit.will_close_issues},
+                         {23})
+        commit = GitLabCommit(self.token, 'gitmate-test-user/test',
+                              '38715b42c86ec565a6e0e4b13255448e8f202f8d')
+        self.assertEqual(commit.will_close_issues, set())
+
+    def test_will_resolve_issues(self):
+        commit = GitLabCommit(self.token, 'gitmate-test-user/test',
+                              '0164595c7d75404c2e0ce8622cea825e59e9d558')
+        self.assertEqual({int(issue.number)
+                          for issue in commit.will_resolve_issues},
+                         {41})
+        commit = GitLabCommit(self.token, 'gitmate-test-user/test',
+                              '38715b42c86ec565a6e0e4b13255448e8f202f8d')
+        self.assertEqual(commit.will_resolve_issues, set())
