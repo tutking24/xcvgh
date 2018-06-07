@@ -234,10 +234,19 @@ class Repository(IGittObject):
         """
         raise NotImplementedError
 
+    def filter_merge_requests(self, state: str='opened') -> set:
+        """
+        Filters the merge requests from the repository based on the state
+        of the merge requests.
+
+        :param state: 'merged' or 'opened' or 'closed' or 'all'
+        """
+        raise NotImplementedError
+
     @property
     def merge_requests(self) -> set:
         """
-        Retrieves a set of merge request objects.
+        Retrieves a set of open merge request objects.
         """
         raise NotImplementedError
 

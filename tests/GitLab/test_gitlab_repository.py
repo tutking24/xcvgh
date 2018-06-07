@@ -88,8 +88,14 @@ class GitLabRepositoryTest(IGittTestCase):
         self.assertIn('http://some.url/in/the/world', self.repo.hooks)
         self.repo.delete_hook('http://some.url/in/the/world')
 
+    def test_filter_merge_request(self):
+        self.assertEqual(len(self.repo.filter_merge_requests(state='all')), 42)
+        self.assertEqual(len(self.repo.filter_merge_requests(state='opened')), 13)
+        self.assertEqual(len(self.repo.filter_merge_requests(state='closed')), 25)
+        self.assertEqual(len(self.repo.filter_merge_requests(state='merged')), 4)
+
     def test_merge_requests(self):
-        self.assertEqual(len(self.repo.merge_requests), 32)
+        self.assertEqual(len(self.repo.merge_requests), 13)
 
     def test_issues(self):
         self.assertEqual(len(self.repo.issues), 14)

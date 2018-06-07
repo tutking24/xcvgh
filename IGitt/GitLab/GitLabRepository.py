@@ -389,10 +389,24 @@ class GitLabRepository(GitLabMixin, Repository):
         """
         return GitLabIssue.create(self._token, self.full_name, title, body)
 
+    def filter_merge_requests(self, state: str='opened') -> set:
+        """
+        Filters the merge requests from the repository based on the state
+        of the merge requests.
+
+        :param state: 'opened' or 'closed', or 'merged', or 'all'.
+        """
+        from IGitt.GitLab.GitLabMergeRequest import GitLabMergeRequest
+        return {GitLabMergeRequest.from_data(mr, self._token,
+                                             self.full_name, mr['iid'])
+                for mr in get(self._token,
+                              self.url + '/merge_requests',
+                              {'state': state})}
+
     @property
     def merge_requests(self) -> set:
         """
-        Retrieves a set of merge request objects.
+        Retrieves a set of open merge request objects.
 
         >>> from os import environ
         >>> repo = GitLabRepository(
@@ -402,10 +416,7 @@ class GitLabRepository(GitLabMixin, Repository):
         >>> len(repo.merge_requests)
         4
         """
-        from IGitt.GitLab.GitLabMergeRequest import GitLabMergeRequest
-        return {GitLabMergeRequest.from_data(res, self._token,
-                                             self.full_name, res['iid'])
-                for res in get(self._token, self.url + '/merge_requests')}
+        return self.filter_merge_requests(state='opened')
 
     def filter_issues(self, state: str='opened') -> set:
         """

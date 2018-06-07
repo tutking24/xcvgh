@@ -38,6 +38,10 @@ GH_ISSUE_STATE_TRANSLATION = {
     'all': 'all'
 }
 
+GH_MR_STATE_TRANSLATION = {MergeRequestStates.MERGED: 'merged',
+                           MergeRequestStates.OPEN: 'opened',
+                           MergeRequestStates.CLOSED: 'closed'}
+
 
 class GitHubRepository(GitHubMixin, Repository):
     """
@@ -356,10 +360,36 @@ class GitHubRepository(GitHubMixin, Repository):
             if hook['config'].get('url', None) == url:
                 delete(self._token, hook_url + '/' + str(hook['id']))
 
+    def filter_merge_requests(self, state: str='opened') -> set:
+        """
+        Filters the merge requests from the repository based on the state
+        of the merge requests.
+
+        :param state: 'opened' or 'closed', 'merged', or 'all'.
+        """
+        from IGitt.GitHub.GitHubMergeRequest import GitHubMergeRequest
+        if state == 'merged':
+            return {GitHubMergeRequest.from_data(mr, self._token,
+                                                 self.full_name, mr['number'])
+                    for mr in get(self._token, self.url + '/pulls',
+                                  {'state': 'closed'})
+                    if mr['merged_at'] is not None}
+        elif state == 'closed':
+            return {GitHubMergeRequest.from_data(mr, self._token,
+                                                 self.full_name, mr['number'])
+                    for mr in get(self._token, self.url + '/pulls',
+                                  {'state': 'closed'})
+                    if mr['merged_at'] is None}
+        else:
+            return {GitHubMergeRequest.from_data(mr, self._token,
+                                                 self.full_name, mr['number'])
+                    for mr in get(self._token, self.url + '/pulls',
+                                  {'state': state})}
+
     @property
     def merge_requests(self) -> set:
         """
-        Retrieves a set of merge request objects.
+        Retrieves a set of open merge request objects.
 
         >>> from os import environ
         >>> repo = GitHubRepository(environ['GITHUB_TEST_TOKEN'],
@@ -367,9 +397,7 @@ class GitHubRepository(GitHubMixin, Repository):
         >>> len(repo.merge_requests)
         3
         """
-        from IGitt.GitHub.GitHubMergeRequest import GitHubMergeRequest
-        return {GitHubMergeRequest(self._token, self.full_name, res['number'])
-                for res in get(self._token, self.url + '/pulls')}
+        return self.filter_merge_requests(state='opened')
 
     def filter_issues(self, state: str='opened') -> set:
         """

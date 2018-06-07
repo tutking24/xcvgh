@@ -1,0 +1,416 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?per_page=100&state=all
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Encoding: [gzip]
+      Content-Type: [application/json]
+      Date: ['Thu, 07 Jun 2018 09:20:27 GMT']
+      Etag: [W/"e8d7e0d8bfb2a779a50cf84f4c15eaf3"]
+      Link: ['<https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?id=gitmate-test-user%2Ftest&order_by=created_at&page=1&per_page=100&sort=desc&state=all>;
+          rel="first", <https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?id=gitmate-test-user%2Ftest&order_by=created_at&page=1&per_page=100&sort=desc&state=all>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1528363287']
+      RateLimit-ResetTime: ['Fri, 07 Jun 2018 09:21:27 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Accept-Encoding, Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [478dad68-6798-42ff-af5e-56709ec6a567]
+      X-Runtime: ['0.787886']
+      X-Total: ['42']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"e8d7e0d8bfb2a779a50cf84f4c15eaf3"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?per_page=100&state=opened
+  response:
+    body:
+      string: !!binary |
+        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
+        NQI8AAA=
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Encoding: [gzip]
+      Content-Type: [application/json]
+      Date: ['Thu, 07 Jun 2018 09:20:29 GMT']
+      Etag: [W/"e4e63d7d1d50a3a57e5747a7bc2d4070"]
+      Link: ['<https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?id=gitmate-test-user%2Ftest&order_by=created_at&page=1&per_page=100&sort=desc&state=opened>;
+          rel="first", <https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?id=gitmate-test-user%2Ftest&order_by=created_at&page=1&per_page=100&sort=desc&state=opened>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1528363289']
+      RateLimit-ResetTime: ['Fri, 07 Jun 2018 09:21:29 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Accept-Encoding, Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [96e02462-2d35-4327-98bb-a858b0ae6cc6]
+      X-Runtime: ['0.483248']
+      X-Total: ['13']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"e4e63d7d1d50a3a57e5747a7bc2d4070"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?per_page=100&state=closed
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Encoding: [gzip]
+      Content-Type: [application/json]
+      Date: ['Thu, 07 Jun 2018 09:20:32 GMT']
+      Etag: [W/"bad97d4a5136723aeb18ecde92502d3e"]
+      Link: ['<https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?id=gitmate-test-user%2Ftest&order_by=created_at&page=1&per_page=100&sort=desc&state=closed>;
+          rel="first", <https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?id=gitmate-test-user%2Ftest&order_by=created_at&page=1&per_page=100&sort=desc&state=closed>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1528363292']
+      RateLimit-ResetTime: ['Fri, 07 Jun 2018 09:21:32 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Accept-Encoding, Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [271c2a60-9487-4aab-a2ea-68813d48c3e6]
+      X-Runtime: ['0.550694']
+      X-Total: ['25']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"bad97d4a5136723aeb18ecde92502d3e"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?per_page=100&state=merged
+  response:
+    body: {string: "[{\"id\":7154981,\"iid\":75,\"project_id\":3439658,\"title\":\"\
+        Update temp1\",\"description\":\"\",\"state\":\"merged\",\"created_at\":\"\
+        2018-01-12T17:42:53.244Z\",\"updated_at\":\"2018-01-12T17:44:40.816Z\",\"\
+        target_branch\":\"master\",\"source_branch\":\"b3\",\"upvotes\":0,\"downvotes\"\
+        :0,\"author\":{\"id\":362269,\"name\":\"Andrew Dassonville\",\"username\"\
+        :\"andrewda\",\"state\":\"active\",\"avatar_url\":\"https://secure.gravatar.com/avatar/38f682efadbaacd2ba53d44466c2775a?s=80\\\
+        u0026d=identicon\",\"web_url\":\"https://gitlab.com/andrewda\"},\"assignee\"\
+        :null,\"source_project_id\":5090865,\"target_project_id\":3439658,\"labels\"\
+        :[],\"work_in_progress\":false,\"milestone\":null,\"merge_when_pipeline_succeeds\"\
+        :false,\"merge_status\":\"can_be_merged\",\"sha\":\"2dfdc8f236fd5a4683ac52addb9d92b2920d6cfe\"\
+        ,\"merge_commit_sha\":\"3f49e40b56723a773c8d817a815c5a4a26115df7\",\"user_notes_count\"\
+        :0,\"discussion_locked\":null,\"should_remove_source_branch\":null,\"force_remove_source_branch\"\
+        :true,\"allow_maintainer_to_push\":null,\"web_url\":\"https://gitlab.com/gitmate-test-user/test/merge_requests/75\"\
+        ,\"time_stats\":{\"time_estimate\":0,\"total_time_spent\":0,\"human_time_estimate\"\
+        :null,\"human_total_time_spent\":null},\"squash\":false,\"approvals_before_merge\"\
+        :null},{\"id\":7076885,\"iid\":74,\"project_id\":3439658,\"title\":\"Update\
+        \ temp1\",\"description\":\"\",\"state\":\"merged\",\"created_at\":\"2018-01-08T22:52:05.069Z\"\
+        ,\"updated_at\":\"2018-01-08T23:12:43.650Z\",\"target_branch\":\"master\"\
+        ,\"source_branch\":\"b2\",\"upvotes\":0,\"downvotes\":0,\"author\":{\"id\"\
+        :362269,\"name\":\"Andrew Dassonville\",\"username\":\"andrewda\",\"state\"\
+        :\"active\",\"avatar_url\":\"https://secure.gravatar.com/avatar/38f682efadbaacd2ba53d44466c2775a?s=80\\\
+        u0026d=identicon\",\"web_url\":\"https://gitlab.com/andrewda\"},\"assignee\"\
+        :null,\"source_project_id\":5090865,\"target_project_id\":3439658,\"labels\"\
+        :[],\"work_in_progress\":false,\"milestone\":null,\"merge_when_pipeline_succeeds\"\
+        :false,\"merge_status\":\"can_be_merged\",\"sha\":\"07434f75e2508d4e24f83f09c1735010b0c7e0b6\"\
+        ,\"merge_commit_sha\":\"66fd5d82d0b9ed923e69198082222877611c8bce\",\"user_notes_count\"\
+        :0,\"discussion_locked\":null,\"should_remove_source_branch\":null,\"force_remove_source_branch\"\
+        :false,\"allow_maintainer_to_push\":null,\"web_url\":\"https://gitlab.com/gitmate-test-user/test/merge_requests/74\"\
+        ,\"time_stats\":{\"time_estimate\":0,\"total_time_spent\":0,\"human_time_estimate\"\
+        :null,\"human_total_time_spent\":null},\"squash\":false,\"approvals_before_merge\"\
+        :null},{\"id\":6826532,\"iid\":69,\"project_id\":3439658,\"title\":\"Be my\
+        \ guest\",\"description\":\"\",\"state\":\"merged\",\"created_at\":\"2017-12-20T14:19:09.360Z\"\
+        ,\"updated_at\":\"2017-12-20T23:32:21.998Z\",\"target_branch\":\"master\"\
+        ,\"source_branch\":\"be-my-guest\",\"upvotes\":0,\"downvotes\":0,\"author\"\
+        :{\"id\":889700,\"name\":\"Naveen Kumar Sangi\U0001F984\",\"username\":\"\
+        nkprince007\",\"state\":\"active\",\"avatar_url\":\"https://secure.gravatar.com/avatar/2ed27920a4ec4445d0e390a30df7145d?s=80\\\
+        u0026d=identicon\",\"web_url\":\"https://gitlab.com/nkprince007\"},\"assignee\"\
+        :null,\"source_project_id\":3447786,\"target_project_id\":3439658,\"labels\"\
+        :[],\"work_in_progress\":false,\"milestone\":null,\"merge_when_pipeline_succeeds\"\
+        :false,\"merge_status\":\"can_be_merged\",\"sha\":\"ef46ed87766da84667570f28e04097fc3662ca86\"\
+        ,\"merge_commit_sha\":\"bd407435f5c16ee05f61aac5841e4cebe47f57a7\",\"user_notes_count\"\
+        :1,\"discussion_locked\":null,\"should_remove_source_branch\":null,\"force_remove_source_branch\"\
+        :false,\"allow_maintainer_to_push\":null,\"web_url\":\"https://gitlab.com/gitmate-test-user/test/merge_requests/69\"\
+        ,\"time_stats\":{\"time_estimate\":0,\"total_time_spent\":0,\"human_time_estimate\"\
+        :null,\"human_total_time_spent\":null},\"squash\":false,\"approvals_before_merge\"\
+        :null},{\"id\":4478770,\"iid\":26,\"project_id\":3439658,\"title\":\"Test\
+        \ issue pr sync\",\"description\":\"\",\"state\":\"merged\",\"created_at\"\
+        :\"2017-08-01T13:40:39.087Z\",\"updated_at\":\"2017-12-20T23:32:22.289Z\"\
+        ,\"target_branch\":\"master\",\"source_branch\":\"test-issue-pr-sync\",\"\
+        upvotes\":0,\"downvotes\":0,\"author\":{\"id\":889700,\"name\":\"Naveen Kumar\
+        \ Sangi\U0001F984\",\"username\":\"nkprince007\",\"state\":\"active\",\"avatar_url\"\
+        :\"https://secure.gravatar.com/avatar/2ed27920a4ec4445d0e390a30df7145d?s=80\\\
+        u0026d=identicon\",\"web_url\":\"https://gitlab.com/nkprince007\"},\"assignee\"\
+        :null,\"source_project_id\":3447786,\"target_project_id\":3439658,\"labels\"\
+        :[],\"work_in_progress\":false,\"milestone\":null,\"merge_when_pipeline_succeeds\"\
+        :false,\"merge_status\":\"can_be_merged\",\"sha\":\"33c53a63131beb1b06c10c4d3b2d7591338dbaa0\"\
+        ,\"merge_commit_sha\":null,\"user_notes_count\":3,\"discussion_locked\":null,\"\
+        should_remove_source_branch\":null,\"force_remove_source_branch\":false,\"\
+        allow_maintainer_to_push\":null,\"web_url\":\"https://gitlab.com/gitmate-test-user/test/merge_requests/26\"\
+        ,\"time_stats\":{\"time_estimate\":0,\"total_time_spent\":0,\"human_time_estimate\"\
+        :null,\"human_total_time_spent\":null},\"squash\":false,\"approvals_before_merge\"\
+        :null}]"}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['4692']
+      Content-Type: [application/json]
+      Date: ['Thu, 07 Jun 2018 09:20:34 GMT']
+      Etag: [W/"ad87f9ae6241213935f6c0f439afa420"]
+      Link: ['<https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?id=gitmate-test-user%2Ftest&order_by=created_at&page=1&per_page=100&sort=desc&state=merged>;
+          rel="first", <https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/merge_requests?id=gitmate-test-user%2Ftest&order_by=created_at&page=1&per_page=100&sort=desc&state=merged>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1528363294']
+      RateLimit-ResetTime: ['Fri, 07 Jun 2018 09:21:34 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [13967c4a-be09-4c76-b0df-4daa340152fd]
+      X-Runtime: ['0.540894']
+      X-Total: ['4']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
+version: 1

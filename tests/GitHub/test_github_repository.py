@@ -82,8 +82,14 @@ class GitHubRepositoryTest(IGittTestCase):
     def test_issues(self):
         self.assertEqual(len(self.repo.issues), 89)
 
+    def test_filter_merge_requests(self):
+        self.assertEqual(len(self.repo.filter_merge_requests(state='all')), 34)
+        self.assertEqual(len(self.repo.filter_merge_requests(state='opened')), 23)
+        self.assertEqual(len(self.repo.filter_merge_requests(state='closed')), 7)
+        self.assertEqual(len(self.repo.filter_merge_requests(state='merged')), 4)
+
     def test_merge_requests(self):
-        self.assertEqual(len(self.repo.merge_requests), 18)
+        self.assertEqual(len(self.repo.merge_requests), 23)
 
     def test_create_issue(self):
         self.assertEqual(self.repo.create_issue(
