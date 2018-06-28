@@ -1,0 +1,35 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/groups/1999522?per_page=100
+  response:
+    body: {string: '{"id":1999522,"web_url":"https://gitlab.com/groups/gitmate-test-org/another-subgroup","name":"another-subgroup","path":"another-subgroup","description":"","visibility":"public","lfs_enabled":true,"avatar_url":null,"request_access_enabled":false,"full_name":"gitmate-test-org
+        / another-subgroup","full_path":"gitmate-test-org/another-subgroup","parent_id":1999111,"projects":[],"shared_projects":[],"ldap_cn":null,"ldap_access":null,"shared_runners_minutes_limit":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['468']
+      Content-Type: [application/json]
+      Date: ['Fri, 29 Jun 2018 11:47:51 GMT']
+      Etag: [W/"bd007a6d4bd2ccdb6925f5236522167c"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1530272931']
+      RateLimit-ResetTime: ['Sat, 29 Jun 2018 11:48:51 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [a40c1e71-129b-47c2-8d50-cfd7b6e83a50]
+      X-Runtime: ['0.045707']
+    status: {code: 200, message: OK}
+version: 1

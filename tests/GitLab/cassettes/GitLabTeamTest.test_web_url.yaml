@@ -1,0 +1,33 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"311a51f687c7089ca642532190184938"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/groups/1999111?per_page=100
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Date: ['Fri, 29 Jun 2018 12:17:49 GMT']
+      Etag: [W/"311a51f687c7089ca642532190184938"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1530274729']
+      RateLimit-ResetTime: ['Sat, 29 Jun 2018 12:18:49 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [87518a66-31d9-4afc-8315-abef73bd4423]
+      X-Runtime: ['0.129252']
+    status: {code: 304, message: Not Modified}
+version: 1

@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/groups/2614704?per_page=100
+  response:
+    body: {string: '{"id":2614704,"web_url":"https://gitlab.com/groups/gitmate-test-org/another-subgroup/nested-subgroup","name":"nested-subgroup","path":"nested-subgroup","description":"This
+        is a test subgroup","visibility":"public","lfs_enabled":true,"avatar_url":null,"request_access_enabled":false,"full_name":"gitmate-test-org
+        / another-subgroup / nested-subgroup","full_path":"gitmate-test-org/another-subgroup/nested-subgroup","parent_id":1999522,"projects":[{"id":5731460,"description":"","name":"test","name_with_namespace":"gitmate-test-org
+        / another-subgroup / nested-subgroup / test","path":"test","path_with_namespace":"gitmate-test-org/another-subgroup/nested-subgroup/test","created_at":"2018-03-12T19:54:24.801Z","default_branch":null,"tag_list":[],"ssh_url_to_repo":"git@gitlab.com:gitmate-test-org/another-subgroup/nested-subgroup/test.git","http_url_to_repo":"https://gitlab.com/gitmate-test-org/another-subgroup/nested-subgroup/test.git","web_url":"https://gitlab.com/gitmate-test-org/another-subgroup/nested-subgroup/test","readme_url":null,"avatar_url":null,"star_count":0,"forks_count":0,"last_activity_at":"2018-03-12T19:54:24.801Z","_links":{"self":"https://gitlab.com/api/v4/projects/5731460","issues":"https://gitlab.com/api/v4/projects/5731460/issues","merge_requests":"https://gitlab.com/api/v4/projects/5731460/merge_requests","repo_branches":"https://gitlab.com/api/v4/projects/5731460/repository/branches","labels":"https://gitlab.com/api/v4/projects/5731460/labels","events":"https://gitlab.com/api/v4/projects/5731460/events","members":"https://gitlab.com/api/v4/projects/5731460/members"},"archived":false,"visibility":"public","resolve_outdated_diff_discussions":false,"container_registry_enabled":true,"issues_enabled":true,"merge_requests_enabled":true,"wiki_enabled":true,"jobs_enabled":true,"snippets_enabled":true,"shared_runners_enabled":true,"lfs_enabled":true,"creator_id":889700,"namespace":{"id":2614704,"name":"nested-subgroup","path":"nested-subgroup","kind":"group","full_path":"gitmate-test-org/another-subgroup/nested-subgroup","parent_id":1999522},"import_status":"none","open_issues_count":0,"public_jobs":true,"ci_config_path":null,"shared_with_groups":[],"only_allow_merge_if_pipeline_succeeds":false,"request_access_enabled":false,"only_allow_merge_if_all_discussions_are_resolved":false,"printing_merge_request_link_enabled":true,"merge_method":"merge","approvals_before_merge":0}],"shared_projects":[],"ldap_cn":null,"ldap_access":null,"shared_runners_minutes_limit":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['2510']
+      Content-Type: [application/json]
+      Date: ['Fri, 29 Jun 2018 11:47:49 GMT']
+      Etag: [W/"647ad3c1787e1cb2c8be70e795c99ab4"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1530272929']
+      RateLimit-ResetTime: ['Sat, 29 Jun 2018 11:48:49 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [9eda427e-fd33-45ee-a812-916c8b7d7dea]
+      X-Runtime: ['0.149071']
+    status: {code: 200, message: OK}
+version: 1

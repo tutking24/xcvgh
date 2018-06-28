@@ -1,0 +1,35 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/groups/1999111?per_page=100
+  response:
+    body: {string: '{"id":1999111,"web_url":"https://gitlab.com/groups/gitmate-test-org","name":"gitmate-test-org","path":"gitmate-test-org","description":"","visibility":"public","lfs_enabled":true,"avatar_url":null,"request_access_enabled":false,"full_name":"gitmate-test-org","full_path":"gitmate-test-org","parent_id":null,"projects":[{"id":5731027,"description":"","name":"test","name_with_namespace":"gitmate-test-org
+        / test","path":"test","path_with_namespace":"gitmate-test-org/test","created_at":"2018-03-12T19:21:26.165Z","default_branch":null,"tag_list":[],"ssh_url_to_repo":"git@gitlab.com:gitmate-test-org/test.git","http_url_to_repo":"https://gitlab.com/gitmate-test-org/test.git","web_url":"https://gitlab.com/gitmate-test-org/test","readme_url":null,"avatar_url":null,"star_count":0,"forks_count":0,"last_activity_at":"2018-03-12T19:21:26.165Z","_links":{"self":"https://gitlab.com/api/v4/projects/5731027","issues":"https://gitlab.com/api/v4/projects/5731027/issues","merge_requests":"https://gitlab.com/api/v4/projects/5731027/merge_requests","repo_branches":"https://gitlab.com/api/v4/projects/5731027/repository/branches","labels":"https://gitlab.com/api/v4/projects/5731027/labels","events":"https://gitlab.com/api/v4/projects/5731027/events","members":"https://gitlab.com/api/v4/projects/5731027/members"},"archived":false,"visibility":"public","resolve_outdated_diff_discussions":false,"container_registry_enabled":true,"issues_enabled":true,"merge_requests_enabled":true,"wiki_enabled":true,"jobs_enabled":true,"snippets_enabled":true,"shared_runners_enabled":true,"lfs_enabled":true,"creator_id":889700,"namespace":{"id":1999111,"name":"gitmate-test-org","path":"gitmate-test-org","kind":"group","full_path":"gitmate-test-org","parent_id":null},"import_status":"none","open_issues_count":0,"public_jobs":true,"ci_config_path":null,"shared_with_groups":[],"only_allow_merge_if_pipeline_succeeds":false,"request_access_enabled":false,"only_allow_merge_if_all_discussions_are_resolved":false,"printing_merge_request_link_enabled":true,"merge_method":"merge","approvals_before_merge":0}],"shared_projects":[],"ldap_cn":null,"ldap_access":null,"shared_runners_minutes_limit":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['2180']
+      Content-Type: [application/json]
+      Date: ['Fri, 29 Jun 2018 11:47:56 GMT']
+      Etag: [W/"311a51f687c7089ca642532190184938"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1530272936']
+      RateLimit-ResetTime: ['Sat, 29 Jun 2018 11:48:56 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [2e03e5b8-1046-4dd2-ae3d-d54d5c6a7b68]
+      X-Runtime: ['0.117851']
+    status: {code: 200, message: OK}
+version: 1

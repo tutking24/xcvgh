@@ -1,0 +1,93 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://api.github.com/teams/2809871/members?per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62VX0+rMByGvwvX0yI74lhycmKyc3EuNnMSNRpzslRWoRNa0hbmJH53f/wZK5y5
+        CN3d0vR9+rblWZ9yK+IBZdbUCqiKsSJnikh1lkoirJFFV9b0wnUnF/bYHlmMr8iyGLLms7/u/cMi
+        8te/ncU6eJvP5huYjjOssFimIoI5oVKJnCJUDcrxOSwQps8F2edMEabOfR6jFO0W+JX9/AGQQNSY
+        ciUY6OASWpOqOOAkOtQ9VHHUqVI1KHOHEi88ivgGeN0dfGtJ1MShc/WbssAEBfEccRUSOFLY5kdx
+        OFSqgfXKaA4blwousYBJuCxBVsMq1mEouGHQLUeCJLykps/SFzRRlLOBVVsIQHIRYEbfsQESEBJI
+        RcmBpcooIEgGn+5ARpXNUSJohv1tcVyC+IRmcAsm3A4EsGqbENDnrvJYUkWWeBUXor/gSJKP0V58
+        9gp1mE9s+wqCpfJXju1MvK+UH8/X19ub2auB8vUCBsq3Wx+XvT23l+ZadLjg/0NM1NZpRlLroNPp
+        3KLq/wVDRNZhfRXWs/3l1dOn0bbdp2V9P2HvcSxD6nm1rY7tud7lxD38QP/Z3Nw+Xi5uAwemH3ug
+        nS8f6N0CBrZqlY+rqk3s5ekuN1zSDsHE0AZlpGdDOZ2be6SpmA2pr5VNsL+STfQ0PmpN+sr47xO1
+        668wOAsAAA==
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
+          X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+          X-Poll-Interval']
+      Cache-Control: ['private, max-age=60, s-maxage=60']
+      Content-Encoding: [gzip]
+      Content-Security-Policy: [default-src 'none']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Fri, 29 Jun 2018 11:47:34 GMT']
+      ETag: [W/"e85db7b970d6e816dc31066e58c39f7a"]
+      Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
+      Server: [GitHub.com]
+      Status: [200 OK]
+      Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
+      Vary: ['Accept, Authorization, Cookie, X-GitHub-OTP']
+      X-Accepted-OAuth-Scopes: ['admin:org, read:org, repo, user, write:org']
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [deny]
+      X-GitHub-Media-Type: [github.v3; format=json]
+      X-GitHub-Request-Id: ['2FC9:6975:D36FE6:1BE5C4A:5B361C55']
+      X-OAuth-Scopes: ['admin:gpg_key, admin:org, admin:org_hook, admin:public_key,
+          admin:repo_hook, gist, notifications, repo, user']
+      X-RateLimit-Limit: ['5000']
+      X-RateLimit-Remaining: ['4994']
+      X-RateLimit-Reset: ['1530275927']
+      X-Runtime-rack: ['0.068670']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"e85db7b970d6e816dc31066e58c39f7a"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://api.github.com/teams/2809871/members?per_page=100
+  response:
+    body: {string: ''}
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
+          X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+          X-Poll-Interval']
+      Cache-Control: ['private, max-age=60, s-maxage=60']
+      Content-Security-Policy: [default-src 'none']
+      Content-Type: [application/octet-stream]
+      Date: ['Sat, 30 Jun 2018 12:30:03 GMT']
+      ETag: ['"e85db7b970d6e816dc31066e58c39f7a"']
+      Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
+      Server: [GitHub.com]
+      Status: [304 Not Modified]
+      Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
+      Vary: ['Accept, Authorization, Cookie, X-GitHub-OTP']
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [deny]
+      X-GitHub-Request-Id: ['0BAF:6974:244E908:464DBBB:5B3777CA']
+      X-RateLimit-Limit: ['5000']
+      X-RateLimit-Remaining: ['5000']
+      X-RateLimit-Reset: ['1530365403']
+      X-Runtime-rack: ['0.056860']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 304, message: Not Modified}
+version: 1

@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"c659691b643b1799d2a33d22697108f2"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/groups/1999111/members?per_page=100
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Date: ['Fri, 29 Jun 2018 11:47:54 GMT']
+      Etag: [W/"c659691b643b1799d2a33d22697108f2"]
+      Link: ['<https://gitlab.com/api/v4/groups/1999111/members?id=1999111&page=1&per_page=100>;
+          rel="first", <https://gitlab.com/api/v4/groups/1999111/members?id=1999111&page=1&per_page=100>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['4']
+      RateLimit-Remaining: ['596']
+      RateLimit-Reset: ['1530272934']
+      RateLimit-ResetTime: ['Sat, 29 Jun 2018 11:48:54 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [6c8247cc-8216-4d84-b12c-28d0f62bab60]
+      X-Runtime: ['0.062652']
+      X-Total: ['3']
+      X-Total-Pages: ['1']
+    status: {code: 304, message: Not Modified}
+version: 1
