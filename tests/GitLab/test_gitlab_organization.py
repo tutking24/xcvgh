@@ -65,3 +65,13 @@ class GitLabOrganizationTest(IGittTestCase):
             {'gitmate-test-org/test',
              'gitmate-test-org/subgroup/test',
              'gitmate-test-org/another-subgroup/nested-subgroup/test'})
+
+    def test_filter_issues(self):
+        self.assertEqual(len(self.org.filter_issues()), 3)
+        self.assertEqual(len(self.org.filter_issues(state='closed')),
+                         1)
+        self.assertEqual(len(self.org.filter_issues(label='test-label')), 1)
+        self.assertEqual(len(self.org.filter_issues(assignee='Vamshi99')), 1)
+
+    def test_issues(self):
+        self.assertEqual(len(self.org.issues), 2)

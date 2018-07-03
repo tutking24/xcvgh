@@ -2,13 +2,16 @@
 This module contains the Issue abstraction class which provides properties and
 actions related to issues and bug reports.
 """
+import re
 from functools import lru_cache
 from typing import Set
+from typing import Optional
 from urllib.parse import quote_plus
 
 from IGitt.GitLab import GL_INSTANCE_URL
 from IGitt.GitLab import GitLabMixin
 from IGitt.GitLab.GitLabUser import GitLabUser
+from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.Interfaces import get
 from IGitt.Interfaces import AccessLevel
 from IGitt.Interfaces.Organization import Organization
@@ -140,3 +143,37 @@ class GitLabOrganization(GitLabMixin, Organization):
                }.union({
                    repo for org in self.suborgs for repo in org.repositories
                })
+
+    def filter_issues(self,
+                      state: Optional[str]=None,
+                      label: Optional[str]=None,
+                      assignee: Optional[str]=None
+                     ) -> Set[GitLabIssue]:
+        """
+        Filters the issues in the organization based on properties
+
+        :param state: 'opened' or 'closed' or 'all'
+        :param label: Label of the issue
+        :param assignee: username of issue assignee
+        :return: Set of GitLabIssue objects
+        """
+        params = dict()
+        if state:
+            params['state'] = state
+        if label:
+            params['labels'] = label
+        if assignee:
+            params['assignee_id'] = GitLabUser(self._token,
+                                               assignee).identifier
+        url = re.compile(r'https://(?:[^/]+)/(.+)/issues/(\d+)')
+        return {GitLabIssue.from_data(issue, self._token,
+                                      url.match(issue['web_url']).group(0),
+                                      issue['iid'])
+                for issue in get(self._token, self.url + '/issues', params)}
+
+    @property
+    def issues(self) -> Set[GitLabIssue]:
+        """
+        Returns the list of issue objects in this organization.
+        """
+        return self.filter_issues(state='opened')

@@ -3,14 +3,23 @@ Here you go: GitHub organizations can be used in IGitt.
 """
 from functools import lru_cache
 from typing import Set
+from typing import Optional
 from urllib.parse import quote_plus
 
 from IGitt.GitHub import GH_INSTANCE_URL
 from IGitt.GitHub import GitHubMixin
+from IGitt.GitHub.GitHubIssue import GitHubIssue
 from IGitt.GitHub.GitHubUser import GitHubUser
 from IGitt.Interfaces import get
 from IGitt.Interfaces.Organization import Organization
 from IGitt.Interfaces.Repository import Repository
+
+
+GH_ISSUE_STATE_TRANSLATION = {
+    'opened': 'open',
+    'closed': 'closed',
+    'all': 'all'
+}
 
 
 class GitHubOrganization(GitHubMixin, Organization):
@@ -94,3 +103,32 @@ class GitHubOrganization(GitHubMixin, Organization):
 
         return {GitHubRepository.from_data(repo, self._token, repo['id'])
                 for repo in get(self._token, self.url + '/repos')}
+
+    def filter_issues(self,
+                      state: Optional[str]=None,
+                      label: Optional[str]=None,
+                      assignee: Optional[str]=None) -> Set[GitHubIssue]:
+        """
+        Filters the issues in the organization based on properties
+
+        :param state: 'opened' or 'closed' or 'all'.
+        :param label: Label of the issue
+        :param assignee: username of issue assignee
+        :return: Set of GitHubIssue objects
+        """
+        from IGitt.GitHub.GitHub import GitHub
+        query = 'user:' + self.name
+        if state:
+            query += ' state:' + GH_ISSUE_STATE_TRANSLATION[state]
+        if label:
+            query += ' label:' + label
+        if assignee:
+            query += ' assignee:' + assignee
+        return set(GitHub.raw_search(self._token, query))
+
+    @property
+    def issues(self) -> Set[GitHubIssue]:
+        """
+        Returns the set of Issues in this organization.
+        """
+        return self.filter_issues(state='opened')

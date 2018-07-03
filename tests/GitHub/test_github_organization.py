@@ -49,3 +49,13 @@ class GitHubOrganizationTest(IGittTestCase):
     def test_repositories(self):
         self.assertEqual({r.full_name for r in self.org.repositories},
                          {'gitmate-test-org/test', 'gitmate-test-org/test-1'})
+
+    def test_filter_issues(self):
+        self.assertEqual(len(self.org.filter_issues()), 3)
+        self.assertEqual(len(self.org.filter_issues(state='closed')),
+                         1)
+        self.assertEqual(len(self.org.filter_issues(label='test-label')), 1)
+        self.assertEqual(len(self.org.filter_issues(assignee='Vamshi99')), 1)
+
+    def test_issues(self):
+        self.assertEqual(len(self.org.issues), 2)

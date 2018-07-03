@@ -3,9 +3,11 @@ This module contains the Issue abstraction class which provides properties and
 actions related to issues and bug reports.
 """
 from typing import Set
+from typing import Optional
 
 from IGitt.Interfaces import IGittObject
 from IGitt.Interfaces.User import User
+from IGitt.Interfaces.Issue import Issue
 from IGitt.Interfaces.Repository import Repository
 
 
@@ -60,5 +62,26 @@ class Organization(IGittObject):
     def repositories(self) -> Set[Repository]:
         """
         Returns the list of repositories contained in this organization.
+        """
+        raise NotImplementedError
+
+    def filter_issues(self,
+                      state: Optional[str]='opened',
+                      label: Optional[str]=None,
+                      assignee: Optional[str]=None) -> Set[Issue]:
+        """
+        Filters the issues in the organization based on properties
+
+        :param state: 'opened' or 'closed' or 'all'
+        :param label: Label of the issue
+        :param assignee: username of issue assignee
+        :return: Set of Issue objects
+        """
+        raise NotImplementedError
+
+    @property
+    def issues(self) -> Set[Issue]:
+        """
+        Returns set of issue objects in this organization.
         """
         raise NotImplementedError

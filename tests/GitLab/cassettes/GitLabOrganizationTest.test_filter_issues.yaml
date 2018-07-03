@@ -1,0 +1,222 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/groups/gitmate-test-org/issues?per_page=100
+  response:
+    body: {string: '[{"id":12610314,"iid":3,"project_id":5731027,"title":"Just for
+        a test","description":"","state":"opened","created_at":"2018-07-07T14:27:18.608Z","updated_at":"2018-07-07T14:27:18.608Z","closed_at":null,"closed_by":null,"labels":[],"milestone":null,"assignees":[],"author":{"id":1137314,"name":"Vamshi
+        Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"},"assignee":null,"user_notes_count":0,"upvotes":0,"downvotes":0,"due_date":null,"confidential":false,"discussion_locked":null,"web_url":"https://gitlab.com/gitmate-test-org/test/issues/3","time_stats":{"time_estimate":0,"total_time_spent":0,"human_time_estimate":null,"human_total_time_spent":null},"weight":null},{"id":12610311,"iid":2,"project_id":5731027,"title":"Test
+        issue","description":"","state":"opened","created_at":"2018-07-07T14:27:03.420Z","updated_at":"2018-07-07T16:33:00.267Z","closed_at":null,"closed_by":null,"labels":["test-label"],"milestone":null,"assignees":[{"id":1137314,"name":"Vamshi
+        Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"}],"author":{"id":1137314,"name":"Vamshi
+        Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"},"assignee":{"id":1137314,"name":"Vamshi
+        Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"},"user_notes_count":0,"upvotes":0,"downvotes":0,"due_date":null,"confidential":false,"discussion_locked":null,"web_url":"https://gitlab.com/gitmate-test-org/test/issues/2","time_stats":{"time_estimate":0,"total_time_spent":0,"human_time_estimate":null,"human_total_time_spent":null},"weight":null},{"id":12610308,"iid":1,"project_id":5731027,"title":"Test
+        Issue","description":"","state":"closed","created_at":"2018-07-07T14:26:12.645Z","updated_at":"2018-07-07T14:27:29.233Z","closed_at":"2018-07-07T14:27:29.209Z","closed_by":{"id":1137314,"name":"Vamshi
+        Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"},"labels":[],"milestone":null,"assignees":[],"author":{"id":1137314,"name":"Vamshi
+        Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"},"assignee":null,"user_notes_count":0,"upvotes":0,"downvotes":0,"due_date":null,"confidential":false,"discussion_locked":null,"web_url":"https://gitlab.com/gitmate-test-org/test/issues/1","time_stats":{"time_estimate":0,"total_time_spent":0,"human_time_estimate":null,"human_total_time_spent":null},"weight":null}]'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['3104']
+      Content-Type: [application/json]
+      Date: ['Mon, 09 Jul 2018 20:22:21 GMT']
+      Etag: [W/"cd89133cb4e0b1740e32f407b079d617"]
+      Link: ['<https://gitlab.com/api/v4/groups/gitmate-test-org/issues?id=gitmate-test-org&order_by=created_at&page=1&per_page=100&sort=desc&state=all>;
+          rel="first", <https://gitlab.com/api/v4/groups/gitmate-test-org/issues?id=gitmate-test-org&order_by=created_at&page=1&per_page=100&sort=desc&state=all>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1531167801']
+      RateLimit-ResetTime: ['Tue, 09 Jul 2018 20:23:21 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [099cce27-e8a2-4480-afaf-bc78c3d50efc]
+      X-Runtime: ['0.131090']
+      X-Total: ['3']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"cd89133cb4e0b1740e32f407b079d617"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/groups/gitmate-test-org/issues?per_page=100&state=closed
+  response:
+    body: {string: '[{"id":12610308,"iid":1,"project_id":5731027,"title":"Test Issue","description":"","state":"closed","created_at":"2018-07-07T14:26:12.645Z","updated_at":"2018-07-07T14:27:29.233Z","closed_at":"2018-07-07T14:27:29.209Z","closed_by":{"id":1137314,"name":"Vamshi
+        Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"},"labels":[],"milestone":null,"assignees":[],"author":{"id":1137314,"name":"Vamshi
+        Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"},"assignee":null,"user_notes_count":0,"upvotes":0,"downvotes":0,"due_date":null,"confidential":false,"discussion_locked":null,"web_url":"https://gitlab.com/gitmate-test-org/test/issues/1","time_stats":{"time_estimate":0,"total_time_spent":0,"human_time_estimate":null,"human_total_time_spent":null},"weight":null}]'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['1043']
+      Content-Type: [application/json]
+      Date: ['Mon, 09 Jul 2018 20:22:23 GMT']
+      Etag: [W/"e35c0349a97b0b6df8dc94923c84d7c7"]
+      Link: ['<https://gitlab.com/api/v4/groups/gitmate-test-org/issues?id=gitmate-test-org&order_by=created_at&page=1&per_page=100&sort=desc&state=closed>;
+          rel="first", <https://gitlab.com/api/v4/groups/gitmate-test-org/issues?id=gitmate-test-org&order_by=created_at&page=1&per_page=100&sort=desc&state=closed>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1531167803']
+      RateLimit-ResetTime: ['Tue, 09 Jul 2018 20:23:23 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [5d27a5cd-8942-4f9d-961e-5cf7fe6727b6]
+      X-Runtime: ['0.117911']
+      X-Total: ['1']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"e35c0349a97b0b6df8dc94923c84d7c7"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/groups/gitmate-test-org/issues?labels=test-label&per_page=100
+  response:
+    body: {string: '[{"id":12610311,"iid":2,"project_id":5731027,"title":"Test issue","description":"","state":"opened","created_at":"2018-07-07T14:27:03.420Z","updated_at":"2018-07-07T16:33:00.267Z","closed_at":null,"closed_by":null,"labels":["test-label"],"milestone":null,"assignees":[{"id":1137314,"name":"Vamshi
+        Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"}],"author":{"id":1137314,"name":"Vamshi
+        Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"},"assignee":{"id":1137314,"name":"Vamshi
+        Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"},"user_notes_count":0,"upvotes":0,"downvotes":0,"due_date":null,"confidential":false,"discussion_locked":null,"web_url":"https://gitlab.com/gitmate-test-org/test/issues/2","time_stats":{"time_estimate":0,"total_time_spent":0,"human_time_estimate":null,"human_total_time_spent":null},"weight":null}]'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['1255']
+      Content-Type: [application/json]
+      Date: ['Mon, 09 Jul 2018 20:22:24 GMT']
+      Etag: [W/"54798fc9fecdb1f9f040be1ff2be47f9"]
+      Link: ['<https://gitlab.com/api/v4/groups/gitmate-test-org/issues?id=gitmate-test-org&labels=test-label&order_by=created_at&page=1&per_page=100&sort=desc&state=all>;
+          rel="first", <https://gitlab.com/api/v4/groups/gitmate-test-org/issues?id=gitmate-test-org&labels=test-label&order_by=created_at&page=1&per_page=100&sort=desc&state=all>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1531167804']
+      RateLimit-ResetTime: ['Tue, 09 Jul 2018 20:23:24 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [20a2836f-1bca-4216-9d3f-f9d949b263ec]
+      X-Runtime: ['0.117505']
+      X-Total: ['1']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/users?per_page=100&username=Vamshi99
+  response:
+    body: {string: '[{"id":1137314,"name":"Vamshi Krishna","username":"Vamshi99","state":"active","avatar_url":"https://secure.gravatar.com/avatar/cfbd6bc03e4540f65e8d4e91a96f4907?s=80\u0026d=identicon","web_url":"https://gitlab.com/Vamshi99"}]'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['224']
+      Content-Type: [application/json]
+      Date: ['Mon, 09 Jul 2018 20:22:26 GMT']
+      Etag: [W/"424bc986f699dd3c92baecd3ae6da496"]
+      Link: ['<https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=Vamshi99&with_custom_attributes=false>;
+          rel="first", <https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=Vamshi99&with_custom_attributes=false>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1531167806']
+      RateLimit-ResetTime: ['Tue, 09 Jul 2018 20:23:26 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [7b1a84cb-812a-483a-a792-5ec886aa3470]
+      X-Runtime: ['0.041120']
+      X-Total: ['1']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"54798fc9fecdb1f9f040be1ff2be47f9"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/groups/gitmate-test-org/issues?assignee_id=1137314&per_page=100
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Date: ['Mon, 09 Jul 2018 20:22:28 GMT']
+      Etag: [W/"54798fc9fecdb1f9f040be1ff2be47f9"]
+      Link: ['<https://gitlab.com/api/v4/groups/gitmate-test-org/issues?assignee_id=1137314&id=gitmate-test-org&order_by=created_at&page=1&per_page=100&sort=desc&state=all>;
+          rel="first", <https://gitlab.com/api/v4/groups/gitmate-test-org/issues?assignee_id=1137314&id=gitmate-test-org&order_by=created_at&page=1&per_page=100&sort=desc&state=all>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['3']
+      RateLimit-Remaining: ['597']
+      RateLimit-Reset: ['1531167808']
+      RateLimit-ResetTime: ['Tue, 09 Jul 2018 20:23:28 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [e0d3e46e-aed8-4644-97bd-f796ba7c64dd]
+      X-Runtime: ['0.114967']
+      X-Total: ['1']
+      X-Total-Pages: ['1']
+    status: {code: 304, message: Not Modified}
+version: 1

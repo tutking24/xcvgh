@@ -1,0 +1,59 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://api.github.com/search/issues?per_page=100&q=user%3Agitmate-test-org+state%3Aopen
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA+1YbW/aMBD+K5U/Q00CpCRSNW1qN20SVNvo61QhkzjBqxNHsQMjEf995wRaiDo6
+        KKv2IRIfgnP3+Hy+tyc5UkIRPnJFGinkmA3EIleEMaeKjhIqU64kcnzCJYVXiobw70eO0oQjB02U
+        iqWDMYnZccDUJB0fgy5OaCwkhoWQKNpUVKqmSAKsHzCTMqUSt1EDFWJMiWQ+2hcOUDgZUy73Rng0
+        CJdAOY5ISBcADCcJaaQOAb2CAlQ6PRBmCQSIExXyyvHX7uLFW2Aectpt2+jY3XargSLh0ZFeQ/2z
+        S+v7zSDzri+zfvbwa3D2YPSz96ewZZSGY5qAXgMppjgF6S+pVEe+SI7Ikb5nEEqlFskRFwGLQOKK
+        hHLCbBteaXyzZVt2t2dtbvnVuroZcPfn59nF8LY7GAYmiJMpUSSpXnGxKM1l4OndXBEp8G4Rgyle
+        bfBuetoBkCBZwhSH0/ZtC2ENJ/Gaydu9vCboC87FDLSr9m7myOYG+FELDCufWRTsgQBaORZqQsFd
+        cAQdxwGTLwVxxZhCI4cElgpCQWNIcHVCvZ0MWuqAObMILMmLslCApWPpJixWTES7eWlDE5CgqpCI
+        ZWR3JNCUAFCUoJ1OVWiA5t/kccWtpUqO44RNiTvXrkioS9kUHLsHXEUX0NQ81ql4qRMP3AzVekS8
+        UCdfUb8Xq2JZVHCdBnbP6rWt1kmvmvfDTx/Z3fWse3F22+lnt7NBFui835oy26p+WVuLDtAsngFM
+        11mwdmPNFVxA0UC+7xtjH4Q86hNoQasT3BehqLSeiGkEAly4DxSOsuxQREoWRBQE6sLzfHOuC09d
+        eN6+8Kzyspwe65HgubG5zsw6M986M6GhhoxDWxYR9Mwo5fyJ+CAH+ICbUOi33ohAD0Zmy+g1Wyfw
+        GxodxzQdo3Onx4LYe17GctqG0zW1jMuFXMKUu5BUTUQygsIgXFZMcLBB/7z/4fwbiI+FNy/HdOmK
+        BEwzjluLxut5p6YT/xXvNP8d7zTx4XmniQ/BO/UtPPFOIJ/V+bPCO7OL4fk67zSfeOcQYveo+Kig
+        A7GmnByy5g+fZer+UveXt+4va5RzB+627BBLLqdnxtf0KcN2utbWPtVxHmUO0afuF78BqYjpOFYV
+        AAA=
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
+          X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+          X-Poll-Interval']
+      Cache-Control: [no-cache]
+      Content-Encoding: [gzip]
+      Content-Security-Policy: [default-src 'none']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Mon, 09 Jul 2018 20:22:11 GMT']
+      Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
+      Server: [GitHub.com]
+      Status: [200 OK]
+      Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
+      X-Accepted-OAuth-Scopes: ['']
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [deny]
+      X-GitHub-Media-Type: [github.v3; format=json]
+      X-GitHub-Request-Id: ['158C:12A2:136EA48:2D19BA9:5B43C3F2']
+      X-OAuth-Scopes: ['admin:gpg_key, admin:org, admin:org_hook, admin:public_key,
+          admin:repo_hook, gist, notifications, repo, user']
+      X-RateLimit-Limit: ['30']
+      X-RateLimit-Remaining: ['25']
+      X-RateLimit-Reset: ['1531167783']
+      X-Runtime-rack: ['0.118758']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
