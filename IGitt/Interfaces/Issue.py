@@ -3,6 +3,7 @@ This module contains the Issue abstraction class which provides properties and
 actions related to issues and bug reports.
 """
 from datetime import datetime
+from datetime import timedelta
 from typing import Set
 from typing import List
 
@@ -226,5 +227,50 @@ class Issue(IGittObject):
     def milestone(self, new_milestone) -> Milestone:
         """
         Setter for the Milestone.
+        """
+        raise NotImplementedError
+
+    @property
+    def time_estimate(self) -> timedelta:
+        """
+        Retrieves the time_estimate in seconds.
+        Writes the time_estimate into
+        the seconds property of an timedelta object.
+        """
+        raise NotImplementedError
+
+    @time_estimate.setter
+    def time_estimate(self, new_time_estimate: timedelta):
+        """
+        Setter for the time_estimate.
+        Allows any time unit of the timedelta object.
+        """
+        raise NotImplementedError
+
+    @property
+    def total_time_spent(self) -> timedelta:
+        """
+        Retrieves the total_time_spent in seconds.
+        Writes the total_time_spent into the
+        seconds property of an timedelta object.
+        """
+        raise NotImplementedError
+
+    @total_time_spent.setter
+    def total_time_spent(self, absolute_time_spent: timedelta):
+        """
+        Writes the value of absolute_time_spent into total_time_spent.
+        Can't be less than 0.
+        Allows any time unit of the timedelta object.
+        Allows total_time_spent to be reset to 0 by passing a None or 0.
+        """
+        raise NotImplementedError
+
+    def add_to_total_time_spent(self, relative_time_spent: timedelta):
+        """
+        Adds the value of relative_time_spent to total_time_spent.
+        Allows for positive and negative values.
+        Allows any time unit of the timedelta object.
+        Does nothing when passing None or 0.
         """
         raise NotImplementedError

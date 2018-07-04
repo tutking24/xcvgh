@@ -1,5 +1,7 @@
 import os
 import datetime
+from datetime import timedelta
+import pytest
 
 from IGitt.GitLab import GitLabOAuthToken
 from IGitt.GitLab.GitLabIssue import GitLabIssue
@@ -104,3 +106,70 @@ class GitLabIssueTest(IGittTestCase):
                          'Permanent IGitt test milestone. DO NOT DELETE.')
         issue.milestone = None
         self.assertEqual(issue.milestone, None)
+
+    def test_time_estimate_getter(self):
+        issue = GitLabIssue(self.token, 'gitmate-test-user/test', 42)
+        self.assertEqual(issue.time_estimate, timedelta(seconds=7320))
+
+    def test_time_estimate_setter(self):
+        issue = GitLabIssue(self.token, 'gitmate-test-user/test', 42)
+
+        issue.time_estimate = None
+        self.assertEqual(issue.time_estimate, timedelta(seconds=0))
+        issue.time_estimate = timedelta(seconds=0)
+        self.assertEqual(issue.time_estimate, timedelta(seconds=0))
+
+        issue.time_estimate = timedelta(minutes=1)
+        self.assertEqual(issue.time_estimate, timedelta(seconds=60))
+
+        issue.time_estimate = timedelta(seconds=7320)
+        self.assertEqual(issue.time_estimate, timedelta(seconds=7320))
+
+    def test_total_time_spent_getter(self):
+        issue = GitLabIssue(self.token, 'gitmate-test-user/test', 42)
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=4400))
+
+    def test_total_time_spent_setter(self):
+        issue = GitLabIssue(self.token, 'gitmate-test-user/test', 42)
+
+        # Writing absolute values
+        issue.total_time_spent = timedelta(seconds=6600)
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=6600))
+        with pytest.raises(RuntimeError):
+            issue.total_time_spent = timedelta(seconds=-1)
+
+        # Different time units
+        issue.time_estimate = timedelta(minutes=1)
+        self.assertEqual(issue.time_estimate, timedelta(seconds=60))
+
+        # Reseting
+        issue.total_time_spent = None
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=0))
+        issue.total_time_spent = timedelta(seconds=0)
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=0))
+
+        # Restoring original value
+        issue.total_time_spent = timedelta(seconds=4400)
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=4400))
+
+    def test_add_to_total_time_spent(self):
+        issue = GitLabIssue(self.token, 'gitmate-test-user/test', 42)
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=4400))
+
+        # Writing relative values
+        issue.add_to_total_time_spent(timedelta(seconds=1))
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=4401))
+        issue.add_to_total_time_spent(timedelta(seconds=-1))
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=4400))
+
+        # Different time units
+        issue.add_to_total_time_spent(timedelta(minutes=1))
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=4460))
+        issue.add_to_total_time_spent(timedelta(minutes=-1))
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=4400))
+
+        # Adding nothing
+        issue.add_to_total_time_spent = None
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=4400))
+        issue.add_to_total_time_spent = timedelta(seconds=0)
+        self.assertEqual(issue.total_time_spent, timedelta(seconds=4400))

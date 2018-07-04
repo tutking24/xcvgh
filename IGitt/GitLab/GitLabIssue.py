@@ -2,6 +2,7 @@
 This contains the Issue implementation for GitLab.
 """
 from datetime import datetime
+from datetime import timedelta
 from typing import List
 from typing import Optional
 from typing import Set
@@ -464,3 +465,71 @@ class GitLabIssue(GitLabMixin, Issue):
         self.data = put(
             self._token, self.url,
             {'milestone_id': new_milestone.number if new_milestone else ''})
+
+    @property
+    def time_estimate(self) -> timedelta:
+        """
+        Retrieves the time_estimate from the 'time_estimate' attribute
+        in the GitLab Issue.
+        """
+        return timedelta(seconds=self.data['time_stats']['time_estimate'])
+
+    @time_estimate.setter
+    def time_estimate(self, new_time_estimate: timedelta):
+        """
+        Setter for the time_estimate.
+        Sets the time on 'human_time_estimate' since it's not possible to set
+        'time_estimate'. GitLab then automatically calculates 'time_estimate'.
+        time_estimate is set to 0 when passing a None or 0.
+        """
+        if new_time_estimate:
+            human_time_estimate = \
+                            str(int(new_time_estimate.total_seconds())) + 's'
+            self.data = post(self._token, self.url +
+                             '/time_estimate',
+                             {'duration': human_time_estimate})
+        else:
+            self.data = post(self._token, self.url +
+                             '/reset_time_estimate', {'duration': None})
+
+    @property
+    def total_time_spent(self) -> timedelta:
+        """
+        Retrieves the time_estimate from the 'total_time_spent' attribute
+        in the GitLab Issue.
+        """
+        return timedelta(seconds=self.data['time_stats']['total_time_spent'])
+
+    @total_time_spent.setter
+    def total_time_spent(self, absolute_time_spent: timedelta):
+        """
+        Writes the value of absolute_time_spent into total_time_spent.
+        Can't be less than 0.
+        Allows any time unit of the timedelta object.
+        Allows total_time_spent to be reset to 0 by passing a None or 0.
+        """
+        if absolute_time_spent and absolute_time_spent.total_seconds() != 0:
+            self.data = post(self._token, self.url +
+                             '/reset_spent_time', {'duration': None})
+            human_time_spent = \
+                        str(int(absolute_time_spent.total_seconds())) + 's'
+            self.data = post(self._token, self.url +
+                             '/add_spent_time',
+                             {'duration': human_time_spent})
+        else:
+            self.data = post(self._token, self.url +
+                             '/reset_spent_time', {'duration': None})
+
+    def add_to_total_time_spent(self, relative_time_spent: timedelta):
+        """
+        Adds the value of relative_time_spent to total_time_spent.
+        Allows for positive and negative values.
+        Allows any time unit of the timedelta object.
+        Does nothing when passing None or 0.
+        """
+        if relative_time_spent and relative_time_spent.total_seconds() != 0:
+            human_time_spent = \
+                        str(int(relative_time_spent.total_seconds())) + 's'
+            self.data = post(self._token, self.url +
+                             '/add_spent_time',
+                             {'duration': human_time_spent})

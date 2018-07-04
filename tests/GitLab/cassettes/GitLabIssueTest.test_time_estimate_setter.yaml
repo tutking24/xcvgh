@@ -1,0 +1,273 @@
+interactions:
+- request:
+    body: '{"duration": null}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['18']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: POST
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42/reset_time_estimate
+  response:
+    body: {string: '{"time_estimate":0,"total_time_spent":4400,"human_time_estimate":null,"human_total_time_spent":"1h
+        13m 20s"}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['108']
+      Content-Type: [application/json]
+      Date: ['Thu, 12 Jul 2018 10:31:53 GMT']
+      Etag: [W/"faf34b78565f502b23fde9dec377f1e7"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['3']
+      RateLimit-Remaining: ['597']
+      RateLimit-Reset: ['1531391573']
+      RateLimit-ResetTime: ['Fri, 12 Jul 2018 10:32:53 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [d57d3547-1947-4fce-8b7d-4b0019c9e15c]
+      X-Runtime: ['0.309515']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"2de88c52087c16ada07e5d0ee728d3ea"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42?per_page=100
+  response:
+    body: {string: '{"id":10698538,"iid":42,"project_id":3439658,"title":"Issue to
+        test Milestone on Issues Setter. DO NOT DELETE","description":"","state":"opened","created_at":"2018-05-07T14:15:27.639Z","updated_at":"2018-07-12T10:31:53.626Z","closed_at":null,"closed_by":null,"labels":[],"milestone":null,"assignees":[],"author":{"id":463976,"name":"Sebastian
+        Latacz","username":"seblat","state":"active","avatar_url":"https://assets.gitlab-static.net/uploads/-/system/user/avatar/463976/avatar.png","web_url":"https://gitlab.com/seblat"},"assignee":null,"user_notes_count":0,"upvotes":0,"downvotes":0,"due_date":null,"confidential":false,"discussion_locked":null,"web_url":"https://gitlab.com/gitmate-test-user/test/issues/42","time_stats":{"time_estimate":0,"total_time_spent":4400,"human_time_estimate":null,"human_total_time_spent":"1h
+        13m 20s"},"_links":{"self":"https://gitlab.com/api/v4/projects/3439658/issues/42","notes":"https://gitlab.com/api/v4/projects/3439658/issues/42/notes","award_emoji":"https://gitlab.com/api/v4/projects/3439658/issues/42/award_emoji","project":"https://gitlab.com/api/v4/projects/3439658"},"subscribed":true,"weight":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['1143']
+      Content-Type: [application/json]
+      Date: ['Thu, 12 Jul 2018 10:31:55 GMT']
+      Etag: [W/"ada938da3d8e5525f8607690801656b8"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1531391575']
+      RateLimit-ResetTime: ['Fri, 12 Jul 2018 10:32:55 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [7be52be2-2498-4911-b54a-e9911c419a09]
+      X-Runtime: ['0.787088']
+    status: {code: 200, message: OK}
+- request:
+    body: '{"duration": null}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['18']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: POST
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42/reset_time_estimate
+  response:
+    body: {string: '{"time_estimate":0,"total_time_spent":4400,"human_time_estimate":null,"human_total_time_spent":"1h
+        13m 20s"}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['108']
+      Content-Type: [application/json]
+      Date: ['Thu, 12 Jul 2018 10:31:55 GMT']
+      Etag: [W/"faf34b78565f502b23fde9dec377f1e7"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1531391575']
+      RateLimit-ResetTime: ['Fri, 12 Jul 2018 10:32:55 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [05f175ac-0ead-4385-8406-3a329bf51623]
+      X-Runtime: ['0.289458']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"ada938da3d8e5525f8607690801656b8"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42?per_page=100
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Date: ['Thu, 12 Jul 2018 10:31:56 GMT']
+      Etag: [W/"ada938da3d8e5525f8607690801656b8"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1531391576']
+      RateLimit-ResetTime: ['Fri, 12 Jul 2018 10:32:56 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [3f22d8d9-d5e4-4e64-a7ca-708efda8c923]
+      X-Runtime: ['0.541667']
+    status: {code: 304, message: Not Modified}
+- request:
+    body: '{"duration": "60s"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['19']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: POST
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42/time_estimate
+  response:
+    body: {string: '{"time_estimate":60,"total_time_spent":4400,"human_time_estimate":"1m","human_total_time_spent":"1h
+        13m 20s"}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['109']
+      Content-Type: [application/json]
+      Date: ['Thu, 12 Jul 2018 10:31:57 GMT']
+      Etag: [W/"0f2c4f69050a8bb217a698a020a1803d"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1531391577']
+      RateLimit-ResetTime: ['Fri, 12 Jul 2018 10:32:57 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [42ebd0d7-aa2a-4dd0-bbd4-4487e161f19f]
+      X-Runtime: ['0.429430']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"ada938da3d8e5525f8607690801656b8"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42?per_page=100
+  response:
+    body: {string: '{"id":10698538,"iid":42,"project_id":3439658,"title":"Issue to
+        test Milestone on Issues Setter. DO NOT DELETE","description":"","state":"opened","created_at":"2018-05-07T14:15:27.639Z","updated_at":"2018-07-12T10:31:57.507Z","closed_at":null,"closed_by":null,"labels":[],"milestone":null,"assignees":[],"author":{"id":463976,"name":"Sebastian
+        Latacz","username":"seblat","state":"active","avatar_url":"https://assets.gitlab-static.net/uploads/-/system/user/avatar/463976/avatar.png","web_url":"https://gitlab.com/seblat"},"assignee":null,"user_notes_count":0,"upvotes":0,"downvotes":0,"due_date":null,"confidential":false,"discussion_locked":null,"web_url":"https://gitlab.com/gitmate-test-user/test/issues/42","time_stats":{"time_estimate":60,"total_time_spent":4400,"human_time_estimate":"1m","human_total_time_spent":"1h
+        13m 20s"},"_links":{"self":"https://gitlab.com/api/v4/projects/3439658/issues/42","notes":"https://gitlab.com/api/v4/projects/3439658/issues/42/notes","award_emoji":"https://gitlab.com/api/v4/projects/3439658/issues/42/award_emoji","project":"https://gitlab.com/api/v4/projects/3439658"},"subscribed":true,"weight":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['1144']
+      Content-Type: [application/json]
+      Date: ['Thu, 12 Jul 2018 10:31:59 GMT']
+      Etag: [W/"1fc6c7ad734efa7cda9aea627b0fc9d7"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1531391579']
+      RateLimit-ResetTime: ['Fri, 12 Jul 2018 10:32:59 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [686367ad-a250-41b1-94be-eebb8d63ec1d]
+      X-Runtime: ['1.408665']
+    status: {code: 200, message: OK}
+- request:
+    body: '{"duration": "7320s"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['21']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: POST
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42/time_estimate
+  response:
+    body: {string: '{"time_estimate":7320,"total_time_spent":4400,"human_time_estimate":"2h
+        2m","human_total_time_spent":"1h 13m 20s"}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['114']
+      Content-Type: [application/json]
+      Date: ['Thu, 12 Jul 2018 10:32:00 GMT']
+      Etag: [W/"1152abb76df3a815f3b50d10304b7bb6"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1531391580']
+      RateLimit-ResetTime: ['Fri, 12 Jul 2018 10:33:00 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [fd76dfc2-42da-408b-ae37-eed068c9820b]
+      X-Runtime: ['0.304918']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"1fc6c7ad734efa7cda9aea627b0fc9d7"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42?per_page=100
+  response:
+    body: {string: '{"id":10698538,"iid":42,"project_id":3439658,"title":"Issue to
+        test Milestone on Issues Setter. DO NOT DELETE","description":"","state":"opened","created_at":"2018-05-07T14:15:27.639Z","updated_at":"2018-07-12T10:32:00.334Z","closed_at":null,"closed_by":null,"labels":[],"milestone":null,"assignees":[],"author":{"id":463976,"name":"Sebastian
+        Latacz","username":"seblat","state":"active","avatar_url":"https://assets.gitlab-static.net/uploads/-/system/user/avatar/463976/avatar.png","web_url":"https://gitlab.com/seblat"},"assignee":null,"user_notes_count":0,"upvotes":0,"downvotes":0,"due_date":null,"confidential":false,"discussion_locked":null,"web_url":"https://gitlab.com/gitmate-test-user/test/issues/42","time_stats":{"time_estimate":7320,"total_time_spent":4400,"human_time_estimate":"2h
+        2m","human_total_time_spent":"1h 13m 20s"},"_links":{"self":"https://gitlab.com/api/v4/projects/3439658/issues/42","notes":"https://gitlab.com/api/v4/projects/3439658/issues/42/notes","award_emoji":"https://gitlab.com/api/v4/projects/3439658/issues/42/award_emoji","project":"https://gitlab.com/api/v4/projects/3439658"},"subscribed":true,"weight":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['1149']
+      Content-Type: [application/json]
+      Date: ['Thu, 12 Jul 2018 10:32:01 GMT']
+      Etag: [W/"69609c7d139a423b8750439b8a0c2641"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1531391581']
+      RateLimit-ResetTime: ['Fri, 12 Jul 2018 10:33:01 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [93f3792e-8e24-4f9b-a452-02d65f5798db]
+      X-Runtime: ['0.553331']
+    status: {code: 200, message: OK}
+version: 1
