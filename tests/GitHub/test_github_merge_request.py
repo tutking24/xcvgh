@@ -164,3 +164,8 @@ class GitHubMergeRequestTest(IGittTestCase):
                          'Permanent IGitt test milestone. DO NOT DELETE.')
         merge_request.milestone = None
         self.assertEqual(merge_request.milestone, None)
+
+    def test_mergeable(self):
+        self.assertFalse(self.mr.mergeable)
+        test_mr = GitHubMergeRequest(self.token, 'gitmate-test-user/test', 99)
+        self.assertTrue(test_mr.mergeable)

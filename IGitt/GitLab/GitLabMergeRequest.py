@@ -352,3 +352,10 @@ class GitLabMergeRequest(GitLabIssue, MergeRequest):
         self.data = put(
             self._token, self.url,
             {'milestone_id': new_milestone.number if new_milestone else ''})
+
+    @property
+    def mergeable(self) -> bool:
+        """
+        Returns true if there is no merge conflict.
+        """
+        return True if self.data['merge_status'] == 'can_be_merged' else False

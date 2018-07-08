@@ -354,3 +354,10 @@ class GitHubMergeRequest(GitHubIssue, MergeRequest):
         self.data = patch(
             self._token, self.url,
             {'milestone': new_milestone.number if new_milestone else ''})
+
+    @property
+    def mergeable(self) -> bool:
+        """
+        Returns true if there is no merge conflict.
+        """
+        return self.data['mergeable']
