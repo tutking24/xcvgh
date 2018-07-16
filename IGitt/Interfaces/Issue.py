@@ -274,3 +274,12 @@ class Issue(IGittObject):
         Does nothing when passing None or 0.
         """
         raise NotImplementedError
+
+    def list_time_records_for_user(
+            self, start_date: datetime, end_date: datetime, user: User) -> list :
+        """
+        Lists all additions, substractions and resets for the given intervall and user.
+        Returns a List of TimeRecord objects.
+        Adds the value of relative_time_spent to total_time_spent.
+        """
+        raise NotImplementedError
