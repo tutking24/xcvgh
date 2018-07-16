@@ -174,3 +174,10 @@ class GitLabIssueTest(IGittTestCase):
         self.assertEqual(issue.total_time_spent, timedelta(seconds=4400))
         issue.add_to_total_time_spent = timedelta(seconds=0)
         self.assertEqual(issue.total_time_spent, timedelta(seconds=4400))
+
+    def test_list_time_records_for_user(self):
+        issue = GitLabIssue(self.token, 'gitmate-test-user/test', 42)
+        time_records = issue.list_time_records_for_user(2018-05-07, 2018-05-07, 'gitmate-test-user')#Fix datetime
+
+        self.assertIsIn(time_record.user for time_record in time_records]), #IsIn fixen
+                         'gitmate-test-user')
