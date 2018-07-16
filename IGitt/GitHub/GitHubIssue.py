@@ -279,7 +279,13 @@ class GitHubIssue(GitHubMixin, Issue):
         if 'labels' in self.data and value == self.labels:
             return  # No need to patch
 
-        self.data = patch(self._token, self.url, {'labels': list(value)})
+        for label in list(self.labels - set(value)):
+            # Iteratetively removes Labels which are not to be set anymore
+            delete(self._token, self._url+'/labels/'+label)
+
+        self.data = post(self._token,
+                         self._url+'/labels',
+                         list(set(value) - self.labels))
 
     @property
     def available_labels(self):
