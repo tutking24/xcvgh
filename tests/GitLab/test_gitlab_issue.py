@@ -177,7 +177,13 @@ class GitLabIssueTest(IGittTestCase):
 
     def test_list_time_records_for_user(self):
         issue = GitLabIssue(self.token, 'gitmate-test-user/test', 42)
-        time_records = issue.list_time_records_for_user(2018-05-07, 2018-05-07, 'gitmate-test-user')#Fix datetime
+        time_records = issue.list_time_records_for_user(datetime(2018, 7, 4), datetime(2018, 7, 5), 'gitmate-test-user')
 
-        self.assertIsIn(time_record.user for time_record in time_records]), #IsIn fixen
-                         'gitmate-test-user')
+        self.assertIn('gitmate-test-user/delete-test',
+                      [user for time_record in time_records]) #Is the list thing right?
+        self.assertIn(datetime(2018, 7, 4),
+                      [date for time_record in time_records]) #Is the list thing right?
+        self.assertIn(timedelta(seconds=604800),
+                      [loged_time for time_record in time_records]) #Is the list thing right? + timedelta der zeiteinheit anpassen, die die methode zurückgeben wird
+
+        #TODO: Test für resets hinzufügen
