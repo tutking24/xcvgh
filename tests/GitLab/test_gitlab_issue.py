@@ -178,7 +178,7 @@ class GitLabIssueTest(IGittTestCase):
         issue = GitLabIssue(self.token, 'gitmate-test-user/test', 42)
         time_records = issue.list_time_records_for_user(datetime(2018, 7, 4), datetime(2018, 7, 5), 'gitmate-test-user')
 
-        self.assertIn('gitmate-test-user/delete-test',
+        self.assertIn('gitmate-test-user',
                       [user for time_record in time_records]) #Is the list thing right?
         self.assertIn(datetime(2018, 7, 4),
                       [date for time_record in time_records]) #Is the list thing right?
