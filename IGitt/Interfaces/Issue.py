@@ -289,6 +289,5 @@ class Issue(IGittObject):
         """
         Lists all additions, substractions and resets for the given intervall and user.
         Returns a List of TimeRecord objects.
-        Adds the value of relative_time_spent to total_time_spent.
         """
         raise NotImplementedError
