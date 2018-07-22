@@ -1,5 +1,6 @@
 import os
 
+from IGitt import ElementDoesntExistError
 from IGitt.GitLab import GitLabOAuthToken
 from IGitt.GitLab.GitLabUser import GitLabUser
 
@@ -20,6 +21,10 @@ class GitLabUserTest(IGittTestCase):
     def test_user_id(self):
         self.assertEqual(self.user.identifier, 1369631)
         self.assertEqual(self.sils.identifier, 104269)
+        test_user = GitLabUser(self.token, 'sils')
+        self.assertEqual(test_user.identifier, 104269)
+        with self.assertRaises(ElementDoesntExistError):
+            GitLabUser(self.token, 'sils38838')
 
     def test_username(self):
         self.assertEqual(self.sils.username, 'sils')

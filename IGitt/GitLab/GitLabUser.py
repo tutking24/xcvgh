@@ -4,10 +4,12 @@ Contains a representation of GitHub users.
 from typing import Optional
 from typing import Union
 
+from IGitt import ElementDoesntExistError
 from IGitt.GitLab import GitLabMixin
 from IGitt.GitLab import GitLabOAuthToken
 from IGitt.GitLab import GitLabPrivateToken
 from IGitt.Interfaces.User import User
+from IGitt.Interfaces import get
 
 
 class GitLabUser(GitLabMixin, User):
@@ -17,7 +19,7 @@ class GitLabUser(GitLabMixin, User):
 
     def __init__(self,
                  token: Union[GitLabPrivateToken, GitLabOAuthToken],
-                 identifier: Optional[int]=None):
+                 identifier: Optional[Union[str, int]]=None):
         """
         Creates a new user.
 
@@ -25,8 +27,21 @@ class GitLabUser(GitLabMixin, User):
         :param identifier: Pass None if it's you! Otherwise the id, integer.
         """
         self._token = token
-        self._url = '/users/' + str(identifier) if identifier else '/user'
+        self._url = '/user'
         self._id = identifier
+        if identifier:
+            if isinstance(identifier, str):
+                params =  {'username': identifier}
+                resp = get(self._token, self.absolute_url('/users'), params)
+                if resp:
+                    self._id = resp[0]['id']
+                    self._url = '/users/' + str(resp[0]['id'])
+                else:
+                    raise ElementDoesntExistError('This username does not '
+                                                  'exist.')
+            else:
+                self._url = '/users/' + str(identifier)
+
 
     @property
     def username(self) -> str:
