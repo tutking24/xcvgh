@@ -250,11 +250,17 @@ class Repository(IGittObject):
         """
         raise NotImplementedError
 
-    def filter_issues(self, state: str='opened') -> set:
+    def filter_issues(self,
+                      state: str='opened',
+                      label: Optional[str]=None,
+                      assignee: Optional[str]=None
+                     ) -> set:
         """
         Filters the issues from the repository based on properties.
 
         :param state: 'opened' or 'closed' or 'all'.
+        :param label: Label of the issue
+        :param assignee: username of issue assignee
         """
         raise NotImplementedError
 

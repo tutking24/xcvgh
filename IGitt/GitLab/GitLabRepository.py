@@ -14,6 +14,7 @@ from IGitt.GitLab import GitLabMixin
 from IGitt.GitLab import GitLabOAuthToken, GitLabPrivateToken
 from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.GitLab.GitLabOrganization import GitLabOrganization
+from IGitt.GitLab.GitLabUser import GitLabUser
 from IGitt.Interfaces import delete, get, post
 from IGitt.Interfaces import BasicAuthorizationToken
 from IGitt.Interfaces import AccessLevel
@@ -418,17 +419,28 @@ class GitLabRepository(GitLabMixin, Repository):
         """
         return self.filter_merge_requests(state='opened')
 
-    def filter_issues(self, state: str='opened') -> set:
+    def filter_issues(self, state: str='opened',
+                      label: Optional[str]=None,
+                      assignee: Optional[str]=None
+                     ) -> set:
         """
         Filters the issues from the repository based on properties.
 
         :param state: 'opened' or 'closed' or 'all'.
+        :param label: Label of the issue.
+        :param assignee: username of issue assignee.
         """
+        params = {'state': state}
+        if label:
+            params['labels'] = label
+        if assignee:
+            params['assignee_id'] = GitLabUser(self._token,
+                                               assignee).identifier
         return {GitLabIssue.from_data(res, self._token,
                                       self.full_name, res['iid'])
                 for res in get(self._token,
                                self.url + '/issues',
-                               {'state': state})}
+                               params)}
 
     @property
     def issues(self) -> set:

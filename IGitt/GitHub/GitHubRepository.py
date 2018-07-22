@@ -399,13 +399,22 @@ class GitHubRepository(GitHubMixin, Repository):
         """
         return self.filter_merge_requests(state='opened')
 
-    def filter_issues(self, state: str='opened') -> set:
+    def filter_issues(self, state: str='opened',
+                      label: Optional[str]=None,
+                      assignee: Optional[str]=None
+                     ) -> set:
         """
         Filters the issues from the repository based on properties.
 
         :param state: 'opened' or 'closed' or 'all'.
+        :param label: Label of the issue
+        :param assignee: username of issue assignee
         """
         params = {'state': GH_ISSUE_STATE_TRANSLATION[state]}
+        if label:
+            params['labels'] = label
+        if assignee:
+            params['assignee'] = assignee
         return {GitHubIssue.from_data(res, self._token,
                                       self.full_name, res['number'])
                 for res in get(self._token, self.url + '/issues', params)

@@ -97,6 +97,15 @@ class GitLabRepositoryTest(IGittTestCase):
     def test_merge_requests(self):
         self.assertEqual(len(self.repo.merge_requests), 13)
 
+    def test_filter_issues(self):
+        self.assertEqual(len(self.repo.filter_issues(state='all')), 22)
+        self.assertEqual(len(self.repo.filter_issues(state='opened')), 20)
+        self.assertEqual(len(self.repo.filter_issues(state='closed')), 2)
+        self.assertEqual(len(self.repo.filter_issues(label='dem')), 2)
+        self.assertEqual(
+            len(self.repo.filter_issues(assignee='gitmate-test-user')), 3
+        )
+
     def test_issues(self):
         self.assertEqual(len(self.repo.issues), 14)
 

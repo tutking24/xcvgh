@@ -79,6 +79,14 @@ class GitHubRepositoryTest(IGittTestCase):
     def test_get_mr(self):
         self.assertEqual(self.repo.get_mr(11).title, 'testpr closing/opening')
 
+    def test_filter_issues(self):
+        self.assertEqual(len(self.repo.filter_issues(state='opened')), 97)
+        self.assertEqual(len(self.repo.filter_issues(state='closed')), 17)
+        self.assertEqual(len(self.repo.filter_issues(label='a')), 1)
+        self.assertEqual(
+            len(self.repo.filter_issues(assignee='gitmate-test-user')), 0
+        )
+
     def test_issues(self):
         self.assertEqual(len(self.repo.issues), 89)
 
