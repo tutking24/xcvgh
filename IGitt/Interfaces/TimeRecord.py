@@ -17,12 +17,9 @@ from IGitt.Interfaces.Repository import Repository
 def comment_contains_time_record(comment_to_read_from: Comment):
     time_record_regex = re.compile()
 
-    if (comment_to_read_from.data['resolvable'] == 'false' and
-        comment_to_read_from.type == CommentType.ISSUE and
-        comment_to_read_from.data['system'] == 'true' and
-        (re.match(r'(subtracted|added)(\s\d[wdhms]){1,5}(\sof time spent$)',
+    if (re.match(r'(subtracted|added)(\s\d[wdhms]){1,5}(\sof time spent$)',
         comment_to_read_from.data['body']) or
-        comment_to_read_from.data['body'] == 'removed time spent')):
+        comment_to_read_from.data['body'] == 'removed time spent'):
         return True
 
 @staticmethod
