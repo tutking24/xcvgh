@@ -1,4 +1,6 @@
 import os
+from datetime import datetime
+from datetime import timedelta
 
 from IGitt.Interfaces import TimeRecord
 from IGitt.GitLab import GitLabOAuthToken
@@ -34,3 +36,12 @@ class TestTimeRecord(IGittTestCase):
                                         self.time_reseting_comment))
         self.assertFalse(TimeRecord.comment_contains_time_record(
                                         self.comment_without_time_record))
+
+    def test_extract_loged_time_from_comment(self):
+        self.assertEqual(TimeRecord.extract_loged_time_from_comment(
+                                        self.time_subtracting_comment),
+                                        timedelta(minutes=-1))
+        self.assertEqual(TimeRecord.extract_loged_time_from_comment(
+                                        self.time_adding_comment),
+                                        timedelta(minutes=1))
+        #TODO: Add test for time_reseting_comment
