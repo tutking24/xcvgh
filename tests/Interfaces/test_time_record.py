@@ -1,5 +1,4 @@
 import os
-from datetime import datetime
 from datetime import timedelta
 
 from IGitt.Interfaces import TimeRecord
