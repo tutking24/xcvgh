@@ -13,39 +13,50 @@ from IGitt.Interfaces.Comment import Comment
 from IGitt.Interfaces.Comment import CommentType
 from IGitt.Interfaces.Repository import Repository
 
+
 def comment_contains_time_record(comment_to_read_from: Comment):
 
     if (re.match(r'(subtracted|added)(\s\d+[wdhms]){1,5}(\sof time spent$)',
-        comment_to_read_from.data['body']) or
-        comment_to_read_from.data['body'] == 'removed time spent'):
+                 comment_to_read_from.data['body'])
+            or comment_to_read_from.data['body'] == 'removed time spent'):
         return True
 
-def extract_loged_time_from_comment(comment_to_read_from: Comment) -> timedelta:
+
+def extract_loged_time_from_comment(
+        comment_to_read_from: Comment) -> timedelta:
 
     if re.match(r'(subtracted|added)(\s\d+[wdhms]){1,5}(\sof time spent$)',
-        comment_to_read_from.data['body']):
+                comment_to_read_from.data['body']):
 
-        time_values = {'s':0, 'm':0, 'h':0, 'd':0, 'w':0}
-
+        time_values = {'s': 0, 'm': 0, 'h': 0, 'd': 0, 'w': 0}
 
         for time_unit in ['s', 'm', 'h', 'd', 'w']:
-            time_extraction_regex = r'(?:\s)(\d+)(?:' + re.escape(time_unit) + r')'
+            time_extraction_regex = r'(?:\s)(\d+)(?:' + re.escape(
+                time_unit) + r')'
 
-            if not re.search(time_extraction_regex, comment_to_read_from.data['body']):
+            if not re.search(time_extraction_regex,
+                             comment_to_read_from.data['body']):
                 pass
 
             else:
-                time_values[time_unit] = int(re.search(time_extraction_regex, comment_to_read_from.data['body']).group(1))
+                time_values[time_unit] = int(
+                    re.search(time_extraction_regex,
+                              comment_to_read_from.data['body']).group(1))
 
-        extracted_time = timedelta(seconds=time_values['s'], minutes=time_values['m'], hours=time_values['h'], days=time_values['d'], weeks=time_values['w'])
+        extracted_time = timedelta(
+            seconds=time_values['s'],
+            minutes=time_values['m'],
+            hours=time_values['h'],
+            days=time_values['d'],
+            weeks=time_values['w'])
 
     if re.search(r'(^subtracted)', comment_to_read_from.data['body']):
         extracted_time = extracted_time * (-1)
 
     return extracted_time
 
-class TimeRecord(IGittObject):
 
+class TimeRecord(IGittObject):
     def __init__(self, repository: Repository, comment_to_read_from: Comment):
         #TODO: Aus einem Kommentar ein TimeRecord erstellen
         ## Braucht es das Repository?
@@ -56,11 +67,11 @@ class TimeRecord(IGittObject):
             self._repository = repository
             self._id = comment_to_read_from.number
             self._date = comment_to_read_from.created
-            self._loged_time = extract_loged_time_from_comment(comment_to_read_from)
+            self._loged_time = extract_loged_time_from_comment(
+                comment_to_read_from)
             self._user = comment_to_read_from.author
         else:
             raise FaultyCommentError
-
 
     @property
     def date(self) -> datetime:
