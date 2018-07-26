@@ -10,7 +10,6 @@ import re
 from IGitt.Interfaces import IGittObject
 from IGitt.Interfaces.User import User
 from IGitt.Interfaces.Comment import Comment
-from IGitt.Interfaces.Comment import CommentType
 from IGitt.Interfaces.Repository import Repository
 
 
@@ -31,8 +30,7 @@ def extract_loged_time_from_comment(
         time_values = {'s': 0, 'm': 0, 'h': 0, 'd': 0, 'w': 0}
 
         for time_unit in ['s', 'm', 'h', 'd', 'w']:
-            time_extraction_regex = r'(?:\s)(\d+)(?:' + re.escape(
-                time_unit) + r')'
+            time_extraction_regex = r'(?:\s)(\d+)(?:' + time_unit + r')'
 
             if not re.search(time_extraction_regex,
                              comment_to_read_from.data['body']):
@@ -53,6 +51,7 @@ def extract_loged_time_from_comment(
     if re.search(r'(^subtracted)', comment_to_read_from.data['body']):
         extracted_time = extracted_time * (-1)
 
+    #TODO: Reset irgendwie extrahieren?
     return extracted_time
 
 
@@ -92,4 +91,4 @@ class TimeRecord(IGittObject):
         """
 
         """
-        self._user
+        return self._user

@@ -1,0 +1,103 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"cd0ae43ac6239efe4ae3985a9b695d2e"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42/notes/88185697?per_page=100
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Date: ['Mon, 30 Jul 2018 12:17:52 GMT']
+      Etag: [W/"cd0ae43ac6239efe4ae3985a9b695d2e"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1532953132']
+      RateLimit-ResetTime: ['Tue, 30 Jul 2018 12:18:52 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [16e26925-77e9-4984-9f9e-671a8e4536dc]
+      X-Runtime: ['0.113912']
+    status: {code: 304, message: Not Modified}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"64f20528742a02ca6e73deeac9bcfd43"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42/notes/88185691?per_page=100
+  response:
+    body: {string: ''}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Date: ['Mon, 30 Jul 2018 12:17:52 GMT']
+      Etag: [W/"64f20528742a02ca6e73deeac9bcfd43"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1532953132']
+      RateLimit-ResetTime: ['Tue, 30 Jul 2018 12:18:52 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [e54f70ef-14a7-47ce-ae8c-8984d6e11678]
+      X-Runtime: ['0.106291']
+    status: {code: 304, message: Not Modified}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/42/notes/88178603?per_page=100
+  response:
+    body: {string: "{\"id\":88178603,\"type\":null,\"body\":\"added 1h 13m 20s of\
+        \ time spent\",\"attachment\":null,\"author\":{\"id\":1369631,\"name\":\"\
+        GitMate Labs \U0001F47D\",\"username\":\"gitmate-test-user\",\"state\":\"\
+        active\",\"avatar_url\":\"https://assets.gitlab-static.net/uploads/-/system/user/avatar/1369631/avatar.png\"\
+        ,\"web_url\":\"https://gitlab.com/gitmate-test-user\"},\"created_at\":\"2018-07-16T10:15:04.857Z\"\
+        ,\"updated_at\":\"2018-07-16T10:15:04.857Z\",\"system\":true,\"noteable_id\"\
+        :10698538,\"noteable_type\":\"Issue\",\"resolvable\":false,\"noteable_iid\"\
+        :42}"}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['507']
+      Content-Type: [application/json]
+      Date: ['Mon, 30 Jul 2018 12:17:53 GMT']
+      Etag: [W/"467fbe8ab2d29db43975d7730dc6b71f"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['3']
+      RateLimit-Remaining: ['597']
+      RateLimit-Reset: ['1532953133']
+      RateLimit-ResetTime: ['Tue, 30 Jul 2018 12:18:53 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [1cfaffb7-0f65-43c8-a6f8-af45a5a3d9c1]
+      X-Runtime: ['0.105383']
+    status: {code: 200, message: OK}
+version: 1
