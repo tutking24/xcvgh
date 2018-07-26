@@ -26,6 +26,9 @@ class TestTimeRecord(IGittTestCase):
         self.comment_without_time_record = GitLabComment(token,
                                            'gitmate-test-user/test', 42,
                                            CommentType.ISSUE, 88744093)
+        self.comment_with_several_values = GitLabComment(token,
+                                           'gitmate-test-user/test', 42,
+                                           CommentType.ISSUE, 88178603)
 
     def test_comment_contains_time_record(self):
         self.assertTrue(TimeRecord.comment_contains_time_record(
@@ -44,4 +47,8 @@ class TestTimeRecord(IGittTestCase):
         self.assertEqual(TimeRecord.extract_loged_time_from_comment(
                                         self.time_adding_comment),
                                         timedelta(minutes=1))
+        self.assertEqual(TimeRecord.extract_loged_time_from_comment(
+                                        self.comment_with_several_values),
+                                        timedelta(seconds=20, minutes=13,
+                                                    hours=1))
         #TODO: Add test for time_reseting_comment
