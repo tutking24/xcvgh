@@ -162,6 +162,26 @@ class GitHubIssue(GitHubMixin, Issue):
         self.data = get(self._token, self.url)
 
     @property
+    def available_assignees(self) -> Set[GitHubUser]:
+        """
+        Retrieves a set of available assignees for the issue.
+
+        >>> from os import environ
+        >>> issue = GitHubIssue(GitHubToken(environ['GITHUB_TEST_TOKEN']),
+        ...                     'gitmate-test-user/test', 1)
+        >>> {a.username for a in issue.available_assignees}
+        {'gitmate-test-user'}
+
+        :return: A set of GitHubUsers.
+        """
+        return {
+            GitHubUser.from_data(user, self._token, user['login'])
+            for user in get(
+                self._token,
+                self.absolute_url('/repos/' + self._repository + '/assignees'))
+        }
+
+    @property
     def description(self):
         r"""
         Retrieves the main description of the issue:

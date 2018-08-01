@@ -152,6 +152,26 @@ class GitLabIssue(GitLabMixin, Issue):
                         {'assignee_ids': [u.identifier for u in value]})
 
     @property
+    def available_assignees(self) -> Set[GitLabUser]:
+        """
+        Retrieves a set of available assignees for the issue.
+
+        >>> from os import environ
+        >>> issue = GitLabIssue(GitLabOAuthToken(environ['GITLAB_TEST_TOKEN']),
+        ...                     'gitmate-test-user/test', 1)
+        >>> {a.username for a in issue.available_assignees}
+        {'gitmate-test-user'}
+
+        :return: A set of GitLabUsers.
+        """
+        return {
+            GitLabUser.from_data(user, self._token, user['id'])
+            for user in get(
+                self._token, self.absolute_url(
+                    '/projects/' + quote_plus(self._repository) + '/members'))
+        }
+
+    @property
     def description(self) -> str:
         r"""
         Retrieves the main description of the issue.

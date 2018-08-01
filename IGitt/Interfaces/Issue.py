@@ -99,6 +99,15 @@ class Issue(IGittObject):
         raise NotImplementedError
 
     @property
+    def available_assignees(self) -> Set[User]:
+        """
+        Compiles a set of Users that are available for assigning this issue.
+
+        :return: A set of User objects.
+        """
+        raise NotImplementedError
+
+    @property
     def labels(self) -> Set[str]:
         """
         Retrieves the set of labels the issue is currently tagged with.

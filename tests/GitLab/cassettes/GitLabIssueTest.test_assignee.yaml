@@ -145,4 +145,60 @@ interactions:
       X-Request-Id: [c08bc098-65ee-4325-9eb5-c745eaba5923]
       X-Runtime: ['0.395186']
     status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/members?per_page=100
+  response:
+    body: {string: "[{\"id\":1369631,\"name\":\"GitMate Labs \U0001F47D\",\"username\"\
+        :\"gitmate-test-user\",\"state\":\"active\",\"avatar_url\":\"https://assets.gitlab-static.net/uploads/-/system/user/avatar/1369631/avatar.png\"\
+        ,\"web_url\":\"https://gitlab.com/gitmate-test-user\",\"access_level\":40,\"\
+        expires_at\":null},{\"id\":889700,\"name\":\"Naveen Kumar Sangi\U0001F984\"\
+        ,\"username\":\"nkprince007\",\"state\":\"active\",\"avatar_url\":\"https://secure.gravatar.com/avatar/2ed27920a4ec4445d0e390a30df7145d?s=80\\\
+        u0026d=identicon\",\"web_url\":\"https://gitlab.com/nkprince007\",\"access_level\"\
+        :40,\"expires_at\":null},{\"id\":707601,\"name\":\"Meet Mangukiya\",\"username\"\
+        :\"meetmangukiya\",\"state\":\"active\",\"avatar_url\":\"https://assets.gitlab-static.net/uploads/-/system/user/avatar/707601/avatar.png\"\
+        ,\"web_url\":\"https://gitlab.com/meetmangukiya\",\"access_level\":30,\"expires_at\"\
+        :null},{\"id\":1399318,\"name\":\"GitMate Bot\",\"username\":\"gitmate-bot\"\
+        ,\"state\":\"active\",\"avatar_url\":\"https://assets.gitlab-static.net/uploads/-/system/user/avatar/1399318/avatar.png\"\
+        ,\"web_url\":\"https://gitlab.com/gitmate-bot\",\"access_level\":40,\"expires_at\"\
+        :null},{\"id\":463976,\"name\":\"Sebastian Latacz\",\"username\":\"seblat\"\
+        ,\"state\":\"active\",\"avatar_url\":\"https://assets.gitlab-static.net/uploads/-/system/user/avatar/463976/avatar.png\"\
+        ,\"web_url\":\"https://gitlab.com/seblat\",\"access_level\":30,\"expires_at\"\
+        :null}]"}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['1301']
+      Content-Type: [application/json]
+      Date: ['Wed, 01 Aug 2018 13:44:42 GMT']
+      Etag: [W/"12deb2a6ad0f92a91a2b68e338d56de3"]
+      Link: ['<https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/members?id=gitmate-test-user%2Ftest&page=1&per_page=100>;
+          rel="first", <https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/members?id=gitmate-test-user%2Ftest&page=1&per_page=100>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1533131142']
+      RateLimit-ResetTime: ['Thu, 01 Aug 2018 13:45:42 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [1ea8b89e-17b5-4126-bf1f-32ce34322cab]
+      X-Runtime: ['0.084994']
+      X-Total: ['5']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
 version: 1

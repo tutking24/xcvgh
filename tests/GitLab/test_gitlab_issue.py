@@ -39,6 +39,7 @@ class GitLabIssueTest(IGittTestCase):
         self.assertEqual(iss.assignees, set())
         iss = GitLabIssue(self.token, 'gitmate-test-user/test', 2)
         self.assertEqual(iss.assignees, set())
+        self.assertEqual(len(iss.available_assignees), 5)
 
     def test_number(self):
         self.assertEqual(self.iss.number, 3)
