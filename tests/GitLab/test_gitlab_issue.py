@@ -184,6 +184,6 @@ class GitLabIssueTest(IGittTestCase):
         self.assertIn(datetime(2018, 7, 4),
                       [date for time_record in time_records]) #Is the list thing right?
         self.assertIn(timedelta(seconds=604800),
-                      [loged_time for time_record in time_records]) #Is the list thing right? + timedelta der zeiteinheit anpassen, die die methode zurückgeben wird
+                      [loged_time for time_record in time_records]) #Is the list thing right?
 
-        #TODO: Test für resets hinzufügen
+        #TODO: Add tests for resets

@@ -51,17 +51,12 @@ def extract_loged_time_from_comment(
     if re.search(r'(^subtracted)', comment_to_read_from.data['body']):
         extracted_time = extracted_time * (-1)
 
-    #TODO: Reset irgendwie extrahieren?
+    #TODO: Extract reset somehow?
     return extracted_time
 
 
 class TimeRecord(IGittObject):
     def __init__(self, repository: Repository, comment_to_read_from: Comment):
-        #TODO: Aus einem Kommentar ein TimeRecord erstellen
-        ## Braucht es das Repository?
-        """
-
-        """
         if comment_contains_time_record(comment_to_read_from):
             self._repository = repository
             self._id = comment_to_read_from.number
