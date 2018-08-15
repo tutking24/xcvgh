@@ -6,6 +6,7 @@ from typing import Set
 from typing import Optional
 from urllib.parse import quote_plus
 
+from IGitt.GitHub import GitHubToken
 from IGitt.GitHub import GH_INSTANCE_URL
 from IGitt.GitHub import GitHubMixin
 from IGitt.GitHub.GitHubIssue import GitHubIssue
@@ -139,3 +140,18 @@ class GitHubOrganization(GitHubMixin, Organization):
         Returns the set of Issues in this organization.
         """
         return self.filter_issues(state='opened')
+
+    @staticmethod
+    def create(token: GitHubToken,
+               name: str,
+               path: str,
+               parent_id: Optional[int]=None,
+               description: Optional[str]=None,
+               visibility: str='private',
+               lfs_enabled: bool=False,
+               request_access_enabled: bool=False) -> Organization:
+        """
+        GitHub does not allow creating new organizations via the API.
+        """
+        raise NotImplementedError('GitHub does not allow creating '
+                                  'new organizations via the API as of now.')

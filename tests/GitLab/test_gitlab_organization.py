@@ -78,3 +78,13 @@ class GitLabOrganizationTest(IGittTestCase):
 
     def test_identifier(self):
         self.assertEqual(self.org.identifier, 1999111)
+
+    def test_create(self):
+        org = GitLabOrganization.create(self.token,
+                                        'ya-group',
+                                        'ya-group',
+                                        self.org.identifier,
+                                        'yet another test organization',
+                                        'public')
+        self.assertEqual(org.name, 'ya-group')
+        self.assertEqual(org.description, 'yet another test organization')

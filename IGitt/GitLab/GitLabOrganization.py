@@ -6,13 +6,17 @@ import re
 from functools import lru_cache
 from typing import Set
 from typing import Optional
+from typing import Union
 from urllib.parse import quote_plus
 
+from IGitt.GitLab import GitLabPrivateToken
+from IGitt.GitLab import GitLabOAuthToken
 from IGitt.GitLab import GL_INSTANCE_URL
 from IGitt.GitLab import GitLabMixin
 from IGitt.GitLab.GitLabUser import GitLabUser
 from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.Interfaces import get
+from IGitt.Interfaces import post
 from IGitt.Interfaces import AccessLevel
 from IGitt.Interfaces.Organization import Organization
 from IGitt.Interfaces.Repository import Repository
@@ -184,3 +188,47 @@ class GitLabOrganization(GitLabMixin, Organization):
         Returns the list of issue objects in this organization.
         """
         return self.filter_issues(state='opened')
+
+    @staticmethod
+    def create(token: Union[GitLabOAuthToken, GitLabPrivateToken],
+               name: str,
+               path: str,
+               parent_id: Optional[int]=None,
+               description: Optional[str]=None,
+               visibility: str='private',
+               lfs_enabled: bool=False,
+               request_access_enabled: bool=False) -> Organization:
+        """
+        Creates a new organization from the given parameters.
+
+        :param token:
+            The credentials to be used for authorization.
+        :param name:
+            The name of the organization.
+        :param path:
+            The path of the organization.
+        :param parent_id:
+            The parent organization id to create nested organization.
+        :param description:
+            The description of the organization.
+        :param visibility:
+            Controls the visibility of the organization. Can be either
+            'private', 'public' or 'internal'.
+        :param lfs_enabled:
+            Enables Git Large File System for projects in this organization.
+        :param request_access_enabled:
+            Allow users to request member access on the organization.
+        """
+        url = '/groups'
+        org = post(
+            token,
+            GitLabOrganization.absolute_url(url),
+            {'name': name,
+             'path': path,
+             'description': description,
+             'visibility': visibility,
+             'lfs_enabled': lfs_enabled,
+             'request_access_enabled': request_access_enabled,
+             'parent_id': parent_id}
+        )
+        return GitLabOrganization.from_data(org, token, org['name'])

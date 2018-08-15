@@ -62,3 +62,7 @@ class GitHubOrganizationTest(IGittTestCase):
 
     def test_identifier(self):
         self.assertEqual(self.org.identifier, 32204920)
+
+    def test_create(self):
+        with self.assertRaises(NotImplementedError):
+            GitHubOrganization.create(self.token, 'random', 'random')

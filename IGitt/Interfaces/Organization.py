@@ -5,6 +5,7 @@ actions related to issues and bug reports.
 from typing import Set
 from typing import Optional
 
+from IGitt.Interfaces import Token
 from IGitt.Interfaces import IGittObject
 from IGitt.Interfaces.User import User
 from IGitt.Interfaces.Issue import Issue
@@ -90,5 +91,37 @@ class Organization(IGittObject):
     def issues(self) -> Set[Issue]:
         """
         Returns set of issue objects in this organization.
+        """
+        raise NotImplementedError
+
+    @staticmethod
+    def create(token: Token,
+               name: str,
+               path: str,
+               parent_id: Optional[int]=None,
+               description: Optional[str]=None,
+               visibility: str='private',
+               lfs_enabled: bool=False,
+               request_access_enabled: bool=False):
+        """
+        Creates a new organization from the given parameters.
+
+        :param token:
+            The credentials to be used for authorization.
+        :param name:
+            The name of the organization.
+        :param path:
+            The path of the organization.
+        :param parent_id:
+            The parent organization id to create nested organization.
+        :param description:
+            The description of the organization.
+        :param visibility:
+            Controls the visibility of the organization. Can be either
+            'private', 'public' or 'internal'.
+        :param lfs_enabled:
+            Enables Git Large File System for projects in this organization.
+        :param request_access_enabled:
+            Allow users to request member access on the organization.
         """
         raise NotImplementedError
