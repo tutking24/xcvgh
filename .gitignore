@@ -13,3 +13,5 @@ __pycache__
 build/
 .pytest_cache
 _build
+.venv
+.env

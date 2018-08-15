@@ -1,5 +1,5 @@
 [all]
-ignore = .ci/**, build/**, .env/**, docs/**.py
+ignore = .ci/**, build/**, .env/**, .venv/**, docs/**.py
 language = python
 
 [all.autopep8]
