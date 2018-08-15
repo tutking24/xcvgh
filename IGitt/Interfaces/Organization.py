@@ -16,6 +16,13 @@ class Organization(IGittObject):
     Represents an organization on GitHub or GitLab.
     """
     @property
+    def identifier(self) -> int:
+        """
+        Returns the identifier of the organization.
+        """
+        raise NotImplementedError
+
+    @property
     def description(self) -> str:
         """
         Returns the description of the Organization.

@@ -36,6 +36,13 @@ class GitLabOrganization(GitLabMixin, Organization):
         self._is_user = None
 
     @property
+    def identifier(self) -> int:
+        """
+        Returns the identifier of the organization.
+        """
+        return self.data['id']
+
+    @property
     def description(self) -> str:
         """
         Returns the description of this organization.

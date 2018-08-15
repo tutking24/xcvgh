@@ -75,3 +75,6 @@ class GitLabOrganizationTest(IGittTestCase):
 
     def test_issues(self):
         self.assertEqual(len(self.org.issues), 2)
+
+    def test_identifier(self):
+        self.assertEqual(self.org.identifier, 1999111)

@@ -40,6 +40,13 @@ class GitHubOrganization(GitHubMixin, Organization):
         self._url = '/orgs/{name}'.format(name=quote_plus(name))
 
     @property
+    def identifier(self) -> int:
+        """
+        Returns the identifier of the organization.
+        """
+        return self.data['id']
+
+    @property
     def description(self) -> str:
         """
         Returns the description of this organization.
