@@ -284,10 +284,14 @@ class Issue(IGittObject):
         """
         raise NotImplementedError
 
-    def list_time_records_for_user(
-            self, start_date: datetime, end_date: datetime, user: User) -> list :
+    def time_records(self, start_date: datetime=None,
+                     end_date: datetime=None, user: User=None) -> list:
         """
-        Lists all additions, substractions and resets for the given intervall and user.
-        Returns a List of TimeRecord objects.
+        Lists all additions, substractions and resets for the given interval
+        and user as TimeRecord objects.
+
+        :param start_date: Only give back records logged after the given date
+        :param end_date: Only give back records logged before the given date
+        :param user: Only give back records logged by the respective user
         """
         raise NotImplementedError
