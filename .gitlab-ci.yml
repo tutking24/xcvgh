@@ -26,8 +26,10 @@ cache:
   - /root/.cache/pip
 
 release:
+  # twine 1.12 indirectly depends on cmarkgfm to render README,
+  # which requires a compiler
   before_script:
-  - pip install twine
+  - pip install 'twine<1.12'
   script:
   - python .ci/adjust_version.py IGitt/VERSION -b `date --utc +%Y%m%d%H%M%S`
   - python setup.py sdist bdist_wheel
