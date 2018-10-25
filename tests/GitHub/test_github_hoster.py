@@ -44,6 +44,10 @@ class GitHubHosterTest(IGittTestCase):
         self.assertEqual(self.gh.get_repo('gitmate-test-user/test').full_name,
                          'gitmate-test-user/test')
 
+    def test_get_user(self):
+        self.assertEqual(self.gh.get_user('sils').username, 'sils')
+        self.assertEqual(self.gh.get_user().username, 'gitmate-test-user')
+
 
 class TestGitHubWebhook(IGittTestCase):
 

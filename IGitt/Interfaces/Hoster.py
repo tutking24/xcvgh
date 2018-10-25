@@ -7,6 +7,7 @@ from IGitt.Interfaces import IGittObject, Token
 from IGitt.Interfaces.Repository import Repository
 from IGitt.Interfaces.Issue import Issue
 from IGitt.Interfaces.MergeRequest import MergeRequest
+from IGitt.Interfaces.User import User
 
 
 class Hoster(IGittObject):
@@ -49,6 +50,16 @@ class Hoster(IGittObject):
     def get_repo(self, repository) -> Repository:
         """
         Return a repository object.
+        """
+        raise NotImplementedError
+
+    def get_user(self, username: str=None) -> User:
+        """
+        Retrieves repository name from given webhook data.
+
+        :param username:    Username to fetch, use None to fetch authenticated
+                            user.
+        :return:            The user.
         """
         raise NotImplementedError
 

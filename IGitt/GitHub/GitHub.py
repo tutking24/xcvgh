@@ -89,6 +89,16 @@ class GitHub(GitHubMixin, Hoster):
         """
         return GitHubRepository(self._token, repository)
 
+    def get_user(self, username: str=None) -> GitHubUser:
+        """
+        Retrieves repository name from given webhook data.
+
+        :param username:    Username to fetch, use None to fetch authenticated
+                            user.
+        :return:            The user.
+        """
+        return GitHubUser(self._token, username=username)
+
     @staticmethod
     def get_repo_name(webhook: dict):
         """

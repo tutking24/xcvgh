@@ -1,0 +1,107 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/users?per_page=100&username=sils
+  response:
+    body: {string: '[{"id":104269,"name":"Lasse Schuirmann","username":"sils","state":"active","avatar_url":"https://secure.gravatar.com/avatar/ea9b9ed83df6acc43cc4ea26b0447ea7?s=80\u0026d=identicon","web_url":"https://gitlab.com/sils"}]'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['217']
+      Content-Type: [application/json]
+      Date: ['Thu, 25 Oct 2018 07:53:43 GMT']
+      Etag: [W/"a37e5bb674e0601b24ce96829f3ce168"]
+      Link: ['<https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=sils&with_custom_attributes=false>;
+          rel="first", <https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=sils&with_custom_attributes=false>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1540454083']
+      RateLimit-ResetTime: ['Fri, 25 Oct 2018 07:54:43 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [92599139-30da-4fd2-b900-0ea21840b286]
+      X-Runtime: ['0.025853']
+      X-Total: ['1']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/users/104269?per_page=100
+  response:
+    body: {string: '{"id":104269,"name":"Lasse Schuirmann","username":"sils","state":"active","avatar_url":"https://secure.gravatar.com/avatar/ea9b9ed83df6acc43cc4ea26b0447ea7?s=80\u0026d=identicon","web_url":"https://gitlab.com/sils","created_at":"2015-03-01T14:47:31.571Z","bio":"","location":"Hamburg","public_email":"lasse.schuirmann@gmail.com","skype":"","linkedin":"","twitter":"","website_url":"viperdev.io","organization":null}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['415']
+      Content-Type: [application/json]
+      Date: ['Thu, 25 Oct 2018 07:53:43 GMT']
+      Etag: [W/"64d163242b2d574c090d65f287ef86e1"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1540454083']
+      RateLimit-ResetTime: ['Fri, 25 Oct 2018 07:54:43 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [5be14315-e3f1-4ef4-a0cb-a76984f1426e]
+      X-Runtime: ['0.022270']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/user?per_page=100
+  response:
+    body: {string: "{\"id\":1369631,\"name\":\"GitMate Labs \U0001F47D\",\"username\":\"gitmate-test-user\",\"state\":\"active\",\"avatar_url\":\"https://assets.gitlab-static.net/uploads/-/system/user/avatar/1369631/avatar.png\",\"web_url\":\"https://gitlab.com/gitmate-test-user\",\"created_at\":\"2017-06-02T07:14:25.112Z\",\"bio\":\"\",\"location\":\"\",\"public_email\":\"\",\"skype\":\"\",\"linkedin\":\"\",\"twitter\":\"\",\"website_url\":\"\",\"organization\":\"\",\"last_sign_in_at\":\"2018-05-24T13:25:34.745Z\",\"confirmed_at\":\"2017-06-02T07:17:21.578Z\",\"last_activity_on\":\"2018-08-15\",\"email\":\"naveendarknight@gmail.com\",\"theme_id\":null,\"color_scheme_id\":1,\"projects_limit\":100000,\"current_sign_in_at\":\"2018-08-15T11:02:55.378Z\",\"identities\":[],\"can_create_group\":true,\"can_create_project\":true,\"two_factor_enabled\":false,\"external\":false,\"private_profile\":null,\"shared_runners_minutes_limit\":2000}"}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['820']
+      Content-Type: [application/json]
+      Date: ['Thu, 25 Oct 2018 07:53:44 GMT']
+      Etag: [W/"3c0c3a2d516c38893e93aa1aaa48ab22"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1540454084']
+      RateLimit-ResetTime: ['Fri, 25 Oct 2018 07:54:44 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [11462a20-f463-4f45-a1d1-ce87e447bc0c]
+      X-Runtime: ['0.033563']
+    status: {code: 200, message: OK}
+version: 1

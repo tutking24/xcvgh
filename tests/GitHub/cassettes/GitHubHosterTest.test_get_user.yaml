@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://api.github.com/user?per_page=100
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6WUwY6bMBCG38XnsECyIRukqpfdY1Zaqa2qXtBgHOKtsS17SJqivHsHAxttlEOV
+        3LA9880/vz10TJlaapazWmIDKCIUHqPWC8dmTFYsT7PsKU0WyYxpU4mi32Kb57fsx89Xxd9f5q/v
+        9Z/N8+ZA4bAHBFe0TlHMDtH6PI6HTb94oAK7tuzJ3GgUGh+4aeI2ngp83X95JEjtRkyoRBsXOCtH
+        0pBOOB9f077DRl1IGRSEvGsZW6OUORDvsoP/Khl/pJPm4Vvq+h4UpXexwZ0gS6nNU2+O9HijvJDa
+        UeMe6RJ7mKfLcqK6TeKYTAIPmrR1sRPWBGpbeu6kRWn0jVI/IQhpXA1a/oU7kITwROpF3igqpBJC
+        7Onp3sgYcrvYOrkHfuztcoILuadbuId7ASEsHq2g8fk+zLGXKAqomn7Qt6C8oGGGhgJ0q9SM0UBY
+        0MdpWdIvYRg9ZXgwfToRDUia7SFrJ52AUn1QSmmmI9uWSvJisCxfzNi4Ed4gy+lfch6W84reezjj
+        xEVyBJBUzJM0i5I0ShffklW+XObzxS/qr7XVp5inKE2i+TLEZHkaYoLL1Pi5KhoEVUz7ozyq2L/h
+        6sp+Jf1vmj2oqclV75NSUBoHaNzQBh5MsQVO6wJamlSNcnJs9NkqIPu60W+2dUL0Q2KBE3O9ypbZ
+        /HG9vsa+lHk6/QO6+UgMrQUAAA==
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
+          X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+          X-Poll-Interval']
+      Cache-Control: ['private, max-age=60, s-maxage=60']
+      Content-Encoding: [gzip]
+      Content-Security-Policy: [default-src 'none']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 25 Oct 2018 07:57:25 GMT']
+      ETag: [W/"817666ce956fe69797f001caaea4ff97"]
+      Last-Modified: ['Thu, 25 Oct 2018 07:56:13 GMT']
+      Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
+      Server: [GitHub.com]
+      Status: [200 OK]
+      Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
+      Transfer-Encoding: [chunked]
+      Vary: ['Accept, Authorization, Cookie, X-GitHub-OTP']
+      X-Accepted-OAuth-Scopes: ['']
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [deny]
+      X-GitHub-Media-Type: [github.v3; format=json]
+      X-GitHub-Request-Id: ['B196:4F1F:57B1D77:B3B09BF:5BD17765']
+      X-OAuth-Scopes: ['repo, user']
+      X-RateLimit-Limit: ['5000']
+      X-RateLimit-Remaining: ['4999']
+      X-RateLimit-Reset: ['1540457845']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

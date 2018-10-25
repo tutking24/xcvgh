@@ -60,6 +60,10 @@ class GitLabHosterTest(IGittTestCase):
         self.assertEqual(self.gl.get_repo('gitmate-test-user/test').full_name,
                          'gitmate-test-user/test')
 
+    def test_get_user(self):
+        self.assertEqual(self.gl.get_user('sils').username, 'sils')
+        self.assertEqual(self.gl.get_user().username, 'gitmate-test-user')
+
 
 class GitLabWebhookTest(IGittTestCase):
 

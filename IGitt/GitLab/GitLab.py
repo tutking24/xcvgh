@@ -10,13 +10,14 @@ from IGitt.GitLab.GitLabComment import GitLabComment
 from IGitt.GitLab.GitLabCommit import GitLabCommit
 from IGitt.GitLab.GitLabIssue import GitLabIssue
 from IGitt.GitLab.GitLabMergeRequest import GitLabMergeRequest
+from IGitt.GitLab.GitLabRepository import GitLabRepository
+from IGitt.GitLab.GitLabUser import GitLabUser
 from IGitt.Interfaces import get
 from IGitt.Interfaces import AccessLevel
 from IGitt.Interfaces.Actions import IssueActions, MergeRequestActions, \
     PipelineActions
 from IGitt.Interfaces.Comment import CommentType
 from IGitt.Interfaces.Hoster import Hoster
-from IGitt.GitLab.GitLabRepository import GitLabRepository
 
 LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(logging.DEBUG)
@@ -135,6 +136,16 @@ class GitLab(GitLabMixin, Hoster):
         :return: A repository object.
         """
         return GitLabRepository(self._token, repository)
+
+    def get_user(self, username: str=None) -> GitLabUser:
+        """
+        Retrieves repository name from given webhook data.
+
+        :param username:    Username to fetch, use None to fetch authenticated
+                            user.
+        :return:            The user.
+        """
+        return GitLabUser(self._token, identifier=username)
 
     @staticmethod
     def get_repo_name(webhook: dict):
