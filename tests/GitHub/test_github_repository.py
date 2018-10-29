@@ -37,7 +37,7 @@ class GitHubRepositoryTest(IGittTestCase):
         self.assertEqual(self.repo.top_level_org.name, 'gitmate-test-user')
 
     def test_hoster(self):
-        self.assertEqual(self.repo.hoster, 'github')
+        self.assertEqual(str(self.repo.hoster), 'github')
 
     def test_full_name(self):
         self.assertEqual(self.repo.full_name, 'gitmate-test-user/test')

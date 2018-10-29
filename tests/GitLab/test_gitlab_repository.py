@@ -38,7 +38,7 @@ class GitLabRepositoryTest(IGittTestCase):
         self.assertEqual(self.repo.top_level_org.name, 'gitmate-test-user')
 
     def test_hoster(self):
-        self.assertEqual(self.repo.hoster, 'gitlab')
+        self.assertEqual(str(self.repo.hoster), 'gitlab')
 
     def test_full_name(self):
         self.assertEqual(self.repo.full_name, 'gitmate-test-user/test')

@@ -39,9 +39,10 @@ class GitLabMixin(CachedDataMixin):
     @property
     def hoster(self):
         """
-        Tells you that this is a `gitlab` object.
+        Gives you the hoster object.
         """
-        return 'gitlab'
+        from IGitt.GitLab.GitLab import GitLab  # Circular ref
+        return GitLab(self._token)
 
     @property
     def url(self):

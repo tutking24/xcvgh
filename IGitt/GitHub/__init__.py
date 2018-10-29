@@ -40,9 +40,10 @@ class GitHubMixin(CachedDataMixin):
     @property
     def hoster(self):
         """
-        Returns `github`.
+        Gives you the Hoster objet.
         """
-        return 'github'
+        from IGitt.GitHub.GitHub import GitHub  # Circular ref
+        return GitHub(self._token)
 
     @property
     def url(self):
