@@ -15,6 +15,13 @@ class Hoster(IGittObject):
     Abstracts a service like GitHub and allows e.g. to query for available
     repositories and stuff like that.
     """
+
+    def __str__(self):
+        """
+        Name of the hoster, e.g. 'gitlab'.
+        """
+        return type(self).__name__.lower()
+
     @staticmethod
     def get_repo_name(webhook) -> str:
         """

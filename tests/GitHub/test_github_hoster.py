@@ -20,6 +20,9 @@ class GitHubHosterTest(IGittTestCase):
     def setUp(self):
         self.gh = GitHub(GitHubToken(os.environ.get('GITHUB_TEST_TOKEN', '')))
 
+    def test_str(self):
+        self.assertEqual(str(self.gh), 'github')
+
     def test_master_repositories(self):
         self.assertEqual(sorted(map(lambda x: x.full_name, self.gh.master_repositories)),
                          ['GitMateIO/gitmate-2',

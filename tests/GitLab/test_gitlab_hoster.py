@@ -18,6 +18,9 @@ class GitLabHosterTest(IGittTestCase):
     def setUp(self):
         self.gl = GitLab(GitLabOAuthToken(os.environ.get('GITLAB_TEST_TOKEN', '')))
 
+    def test_str(self):
+        self.assertEqual(str(self.gl), 'gitlab')
+
     def test_repo_permissions_inheritance(self):
         repos = [
             {
