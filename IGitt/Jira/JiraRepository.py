@@ -201,7 +201,7 @@ class JiraRepository(JiraMixin, Repository):
     @property
     def issues(self) -> set:
         """
-        Retrieves the set of JiraIssue objects for this project.
+        Retrieves the set of open JiraIssue objects for this project.
         """
         params = {'jql': 'Project="{}"'.format(self.data['key'])}
         return {JiraIssue.from_data(iss, self._token, iss['id'])

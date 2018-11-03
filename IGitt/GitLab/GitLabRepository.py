@@ -445,7 +445,7 @@ class GitLabRepository(GitLabMixin, Repository):
     @property
     def issues(self) -> set:
         """
-        Retrieves a set of issue objects.
+        Retrieves a set of open issue objects.
 
         >>> from os import environ
         >>> repo = GitLabRepository(environ['GITLAB_TEST_TOKEN'],

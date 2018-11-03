@@ -423,7 +423,7 @@ class GitHubRepository(GitHubMixin, Repository):
     @property
     def issues(self) -> set:
         """
-        Retrieves a set of issue objects.
+        Retrieves a set of open issue objects.
 
         >>> from os import environ
         >>> repo = GitHubRepository(environ['GITHUB_TEST_TOKEN'],

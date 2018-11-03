@@ -267,7 +267,7 @@ class Repository(IGittObject):
     @property
     def issues(self) -> set:
         """
-        Retrieves a set of issue objects.
+        Retrieves a set of open issue objects.
         """
         raise NotImplementedError
 
