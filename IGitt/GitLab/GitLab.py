@@ -210,6 +210,12 @@ class GitLab(GitLabMixin, Hoster):
         }.get(issue['action'], IssueActions.ATTRIBUTES_CHANGED)
 
         if (trigger_event == IssueActions.ATTRIBUTES_CHANGED and
+                'assignees' in data['changes']):
+            assignees = data['changes']['assignees']['current']
+            users = {user['username'] for user in assignees}
+            return IssueActions.ASSIGNEES_CHANGED, [issue_obj, users]
+
+        if (trigger_event == IssueActions.ATTRIBUTES_CHANGED and
                 'labels' in data['changes']):
             # labels are changed
             yield from type(self)._handle_labels(

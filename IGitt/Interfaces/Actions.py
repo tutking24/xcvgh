@@ -42,13 +42,15 @@ class IssueActions(Enum):
     REOPENED = 3
     # When someone comments on an issue.
     COMMENTED = 4
-    # When an issue gets reassigned, or the linked
+    # When an issue gets updated, or the linked
     # milestone is changed
     ATTRIBUTES_CHANGED = 5
     # When a new label is added to the issue
     LABELED = 6
     # When a label is removed from an issue
     UNLABELED = 7
+    # When the assignees on an issue are changed.
+    ASSIGNEES_CHANGED = 8
 
 class PipelineActions(Enum):
     """

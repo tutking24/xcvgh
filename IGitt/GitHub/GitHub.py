@@ -201,7 +201,14 @@ class GitHub(GitHubMixin, Hoster):
             'reopened': IssueActions.REOPENED,
             'labeled': IssueActions.LABELED,
             'unlabeled': IssueActions.UNLABELED,
+            'assigned': IssueActions.ASSIGNEES_CHANGED,
+            'unassigned': IssueActions.ASSIGNEES_CHANGED
         }.get(data['action'], IssueActions.ATTRIBUTES_CHANGED)
+
+        if trigger_event == IssueActions.ASSIGNEES_CHANGED:
+            assignees = data.get('assignees') or set()
+            users = {user['login'] for user in assignees}
+            return IssueActions.ASSIGNEES_CHANGED, [issue_obj, users]
 
         if (trigger_event is IssueActions.LABELED
                 or trigger_event is IssueActions.UNLABELED):

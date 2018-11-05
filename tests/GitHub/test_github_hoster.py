@@ -217,3 +217,20 @@ class TestGitHubWebhook(IGittTestCase):
             self.assertEqual(event, MergeRequestActions.UNLABELED)
             self.assertIsInstance(obj[0], GitHubMergeRequest)
             self.assertEqual(obj[1], 'title')
+
+    def test_issue_assignees_changed(self):
+        self.default_data.update({
+            'assignees': [{'login': 'gitmate-bot'}],
+            'action': 'assigned',
+        })
+        for event, obj in self.gh.handle_webhook('issues', self.default_data):
+            self.assertEqual(event, IssueActions.ASSIGNEES_CHANGED)
+            self.assertIsInstance(obj[0], GitHubIssue)
+            self.assertEqual(obj[1], {'gitmate-bot'})
+        self.default_data.update({
+            'action': 'unassigned'
+        })
+        for event, obj in self.gh.handle_webhook('issues', self.default_data):
+            self.assertEqual(event, IssueActions.UNLABELED)
+            self.assertIsInstance(obj[0], GitHubIssue)
+            self.assertEqual(obj[1], set())

@@ -208,3 +208,23 @@ class GitLabWebhookTest(IGittTestCase):
 
         self.assertEqual(unlabeled_labels, {'old', 'old2'})
         self.assertEqual(labeled_labels, {'new'})
+
+    def test_issue_assignees_changed(self):
+        obj_attrs = self.default_data['object_attributes']
+        obj_attrs.update({'action': 'update'})
+
+        self.default_data.update({
+            'object_attributes': obj_attrs,
+            'changes': {
+                'assignees': {
+                    'previous': [],
+                    'current': [{'username': 'gitmate-bot'}],
+                },
+            },
+        })
+
+        for event, obj in self.gl.handle_webhook('Issue Hook',
+                                                 self.default_data):
+            self.assertEqual(event, IssueActions.ASSIGNEES_CHANGED)
+            self.assertIsInstance(obj[0], GitLabIssue)
+            self.assertEqual(obj[1], {'gitmate-bot'})
