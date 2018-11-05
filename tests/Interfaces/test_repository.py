@@ -26,7 +26,7 @@ class TestRepository(IGittTestCase):
 
 
     def test_clone_invalid_path(self):
-        nonexistent_dir = '/thisdoesntexist'
+        nonexistent_dir = '/tmp/thisdoesnotexist'
         os.mkdir(nonexistent_dir)
         os.chdir(nonexistent_dir)
         os.rmdir(nonexistent_dir)
