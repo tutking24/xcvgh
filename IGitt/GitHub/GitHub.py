@@ -208,10 +208,9 @@ class GitHub(GitHubMixin, Hoster):
         if trigger_event == IssueActions.ASSIGNEES_CHANGED:
             assignees = data.get('assignees') or set()
             users = {user['login'] for user in assignees}
-            return IssueActions.ASSIGNEES_CHANGED, [issue_obj, users]
-
-        if (trigger_event is IssueActions.LABELED
-                or trigger_event is IssueActions.UNLABELED):
+            yield IssueActions.ASSIGNEES_CHANGED, [issue_obj, users]
+        elif (trigger_event is IssueActions.LABELED
+              or trigger_event is IssueActions.UNLABELED):
             yield trigger_event, [issue_obj, data['label']['name']]
         else:
             yield trigger_event, [issue_obj]

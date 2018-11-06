@@ -228,9 +228,10 @@ class TestGitHubWebhook(IGittTestCase):
             self.assertIsInstance(obj[0], GitHubIssue)
             self.assertEqual(obj[1], {'gitmate-bot'})
         self.default_data.update({
-            'action': 'unassigned'
+            'action': 'unassigned',
+            'assignees': set()
         })
         for event, obj in self.gh.handle_webhook('issues', self.default_data):
-            self.assertEqual(event, IssueActions.UNLABELED)
+            self.assertEqual(event, IssueActions.ASSIGNEES_CHANGED)
             self.assertIsInstance(obj[0], GitHubIssue)
             self.assertEqual(obj[1], set())
