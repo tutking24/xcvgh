@@ -94,6 +94,10 @@ class GitLabIssueTest(IGittTestCase):
         self.assertEqual(sorted([r.name for r in issue.reactions]),
                          ['golf', 'thumbsdown', 'thumbsup'])
 
+    def test_weight(self):
+        self.iss.weight = 5
+        self.assertEqual(self.iss.weight, 5)
+
     def test_mrs_closed_by(self):
         issue = GitLabIssue(self.token, 'coala/package_manager', 152)
         self.assertEqual({int(i.number) for i in issue.mrs_closed_by}, {98})

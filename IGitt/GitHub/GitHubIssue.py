@@ -413,6 +413,20 @@ class GitHubIssue(GitHubMixin, Issue):
         return {GitHubReaction.from_data(r, self._token, self, r['id'])
                 for r in reactions}
 
+    @property
+    def weight(self) -> Optional[int]:
+        """
+        Retrieves the weight associated with the current issue.
+        """
+        raise NotImplementedError
+
+    @weight.setter
+    def weight(self, value: int):
+        """
+        Updates the weight associated with the current issue.
+        """
+        raise NotImplementedError
+
     @staticmethod
     def create(token: str, repository: str,
                title: str, body: str='', issue_type: Optional[str]=None):

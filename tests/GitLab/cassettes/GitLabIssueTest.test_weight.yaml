@@ -1,0 +1,49 @@
+interactions:
+- request:
+    body: '{"weight": 5}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['13']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: PUT
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/issues/3
+  response:
+    body: {string: "{\"id\":5613911,\"iid\":3,\"project_id\":3439658,\"title\":\"\
+        new title\",\"description\":\"new description\",\"state\":\"opened\",\"created_at\"\
+        :\"2017-06-05T06:19:06.379Z\",\"updated_at\":\"2018-11-06T12:07:09.352Z\"\
+        ,\"closed_at\":null,\"closed_by\":null,\"labels\":[\"a\",\"dem\"],\"milestone\"\
+        :null,\"assignees\":[],\"author\":{\"id\":1369631,\"name\":\"GitMate Labs\
+        \ \U0001F47D\",\"username\":\"gitmate-test-user\",\"state\":\"active\",\"\
+        avatar_url\":\"https://assets.gitlab-static.net/uploads/-/system/user/avatar/1369631/avatar.png\"\
+        ,\"web_url\":\"https://gitlab.com/gitmate-test-user\"},\"assignee\":null,\"\
+        user_notes_count\":11,\"upvotes\":0,\"downvotes\":0,\"due_date\":null,\"confidential\"\
+        :false,\"discussion_locked\":null,\"web_url\":\"https://gitlab.com/gitmate-test-user/test/issues/3\"\
+        ,\"time_stats\":{\"time_estimate\":0,\"total_time_spent\":0,\"human_time_estimate\"\
+        :null,\"human_total_time_spent\":null},\"_links\":{\"self\":\"https://gitlab.com/api/v4/projects/3439658/issues/3\"\
+        ,\"notes\":\"https://gitlab.com/api/v4/projects/3439658/issues/3/notes\",\"\
+        award_emoji\":\"https://gitlab.com/api/v4/projects/3439658/issues/3/award_emoji\"\
+        ,\"project\":\"https://gitlab.com/api/v4/projects/3439658\"},\"subscribed\"\
+        :true,\"weight\":5}"}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['1127']
+      Content-Type: [application/json]
+      Date: ['Tue, 06 Nov 2018 12:07:09 GMT']
+      Etag: [W/"c1a0e0ba328b8fc0babdd8bc63d60125"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1541506089']
+      RateLimit-ResetTime: ['Wed, 06 Nov 2018 12:08:09 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [5bcbfcc7-a563-421c-9caf-a84899c816d2]
+      X-Runtime: ['0.460005']
+    status: {code: 200, message: OK}
+version: 1

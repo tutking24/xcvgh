@@ -4,8 +4,9 @@ actions related to issues and bug reports.
 """
 from datetime import datetime
 from datetime import timedelta
-from typing import Set
 from typing import List
+from typing import Optional
+from typing import Set
 
 from IGitt.Interfaces import IGittObject
 from IGitt.Interfaces.Comment import Comment
@@ -262,6 +263,20 @@ class Issue(IGittObject):
         Retrieves the total_time_spent in seconds.
         Writes the total_time_spent into the
         seconds property of an timedelta object.
+        """
+        raise NotImplementedError
+
+    @property
+    def weight(self) -> Optional[int]:
+        """
+        Retrieves the weight associated with the current issue.
+        """
+        raise NotImplementedError
+
+    @weight.setter
+    def weight(self, value: int):
+        """
+        Updates the weight associated with the current issue.
         """
         raise NotImplementedError
 

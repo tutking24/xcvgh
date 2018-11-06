@@ -418,6 +418,20 @@ class GitLabIssue(GitLabMixin, Issue):
         return {GitLabReaction.from_data(r, self._token, self, r['id'])
                 for r in reactions}
 
+    @property
+    def weight(self) -> Optional[int]:
+        """
+        Retrieves the weight associated with the current issue.
+        """
+        return self.data['weight']
+
+    @weight.setter
+    def weight(self, value: int):
+        """
+        Updates the weight associated with the current issue.
+        """
+        self.data = put(self._token, self.url, {'weight': value})
+
     @staticmethod
     def create(token: Union[GitLabOAuthToken, GitLabPrivateToken],
                repository: str,
