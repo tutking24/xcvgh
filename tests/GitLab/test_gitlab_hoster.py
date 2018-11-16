@@ -228,3 +228,12 @@ class GitLabWebhookTest(IGittTestCase):
             self.assertEqual(event, IssueActions.ASSIGNEES_CHANGED)
             self.assertIsInstance(obj[0], GitLabIssue)
             self.assertEqual(obj[1], {'gitmate-bot'})
+
+    def test_issue_weight_changed(self):
+        data = self.default_data
+        data['object_attributes']['action'] = 'update'
+        data['changes'] = {'weight': {'previous': 2, 'current': 5}}
+        for event, obj in self.gl.handle_webhook('Issue Hook', data):
+            self.assertEqual(event, IssueActions.WEIGHT_CHANGED)
+            self.assertIsInstance(obj[0], GitLabIssue)
+            self.assertEqual(obj[1], {'previous': 2, 'current': 5})

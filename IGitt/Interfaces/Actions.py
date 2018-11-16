@@ -51,6 +51,8 @@ class IssueActions(Enum):
     UNLABELED = 7
     # When the assignees on an issue are changed.
     ASSIGNEES_CHANGED = 8
+    # When the weight on an issue is changed.
+    WEIGHT_CHANGED = 9
 
 class PipelineActions(Enum):
     """
