@@ -37,6 +37,10 @@ class GitLabRepositoryTest(IGittTestCase):
     def test_top_level_org(self):
         self.assertEqual(self.repo.top_level_org.name, 'gitmate-test-user')
 
+    def test_last_pushed_at(self):
+        self.assertEqual(self.repo.last_pushed_at,
+                         datetime(2018, 4, 26, 9, 35, 17))
+
     def test_hoster(self):
         self.assertEqual(self.repo.hoster, 'gitlab')
 
@@ -193,27 +197,39 @@ class GitLabRepositoryTest(IGittTestCase):
 
     def test_commits(self):
         self.assertEqual({commit.sha for commit in self.repo.commits},
-                         {'69e17e536092754e98aafbe5da0ee2be5fea81fb',
+                         {'05a9faff56fd9bdb25d18a554bb2f3320de3fc6f',
+                          '20d99d2b6124ccef9e9593749357a10c79085dae',
+                          '2dfdc8f236fd5a4683ac52addb9d92b2920d6cfe',
+                          '07434f75e2508d4e24f83f09c1735010b0c7e0b6',
+                          'bd407435f5c16ee05f61aac5841e4cebe47f57a7',
                           'dd52e331780d30b58da030f9341abd07ba4ce31e',
-                          '198dd16f8249ea98ed41876efe27d068b69fa215',
+                          '7747ee49b7d322e7d82520126ca275115aa67447',
+                          'e3d12312ee8e4ba8e60ed009cf64fb3a1007b2c3',
+                          '69e17e536092754e98aafbe5da0ee2be5fea81fb',
+                          'e0fb5e9d7f6e0e362d61afb6f76974a0822f13eb',
+                          '66fd5d82d0b9ed923e69198082222877611c8bce',
+                          '33c53a63131beb1b06c10c4d3b2d7591338dbaa0',
+                          '642d56a82f00feea4e63d31092c93f4a80a0273d',
                           '674498fd415cfadc35c5eb28b8951e800f357c6f',
+                          '198dd16f8249ea98ed41876efe27d068b69fa215',
+                          '515280bfe8488e1b403e0dd95c41a404355ca184',
+                          'ed5fb0a1cc38a078a6f72b3523b6bce8c14be9b8',
+                          '8ee108037431d696ec764859924475f5a0b42ad9',
                           '71a61579cb3aa493e8eadc9f183ff4377be4d1be',
                           'd6fe46331fcc32ac73c9308f94350d5822ce717d',
-                          '6371fe50a92fa2147dcde0ce011db726b35b2646',
-                          '7747ee49b7d322e7d82520126ca275115aa67447',
                           'cb9aa1c8964b3bcb0c542b281e06b339ddcc015f',
-                          '645961c0841a84c1dd2a58535aa70ad45be48c46',
-                          'e3d12312ee8e4ba8e60ed009cf64fb3a1007b2c3',
-                          '515280bfe8488e1b403e0dd95c41a404355ca184',
-                          '05a9faff56fd9bdb25d18a554bb2f3320de3fc6f',
-                          'ed5fb0a1cc38a078a6f72b3523b6bce8c14be9b8'})
+                          'ef46ed87766da84667570f28e04097fc3662ca86',
+                          '6371fe50a92fa2147dcde0ce011db726b35b2646',
+                          '3f49e40b56723a773c8d817a815c5a4a26115df7',
+                          '99ba5b443787a2e5556136caabc91bfbdcb59780',
+                          '645961c0841a84c1dd2a58535aa70ad45be48c46'})
         self.assertEqual({commit.sha
                           for commit in self.repo.filter_commits('sils')},
                          {'645961c0841a84c1dd2a58535aa70ad45be48c46'})
         repo = GitLabRepository(self.token, 'gitmate-test-user/empty')
         self.assertEqual(repo.commits, set())
         self.assertEqual(repo.filter_commits('sils'), set())
-        self.assertEqual(repo.filter_commits('nonenone'), None)
+        self.assertEqual(repo.filter_commits('thisisarandomusernamewhichwillneverexist#killmeifitdoes'), None)
 
     def test_get_permission_level(self):
         sils = GitLabUser(self.token, 104269)

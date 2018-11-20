@@ -72,7 +72,6 @@ class GitLabCommit(GitLabMixin, Commit):
 
         :return: A datetime object.
         """
-        print(self.data['created_at'])
         return datetime.strptime(self.data['created_at'],
                                  '%Y-%m-%dT%H:%M:%S.%fZ')
 

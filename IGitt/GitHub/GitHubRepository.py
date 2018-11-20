@@ -131,6 +131,16 @@ class GitHubRepository(GitHubMixin, Repository):
         return self.filter_commits()
 
     @property
+    def last_pushed_at(self):
+        """
+        Retrieves the time of pushing the latest commit.
+
+        :return: A datetime object.
+        """
+        return datetime.strptime(self.data['pushed_at'],
+                                 '%Y-%m-%dT%H:%M:%SZ')
+
+    @property
     def clone_url(self):
         """
         Retrieves the URL of the repository.

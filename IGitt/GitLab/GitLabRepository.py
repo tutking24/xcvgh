@@ -163,6 +163,16 @@ class GitLabRepository(GitLabMixin, Repository):
         return self.filter_commits()
 
     @property
+    def last_pushed_at(self):
+        """
+        Retrieves the time of pushing the latest commit.
+
+        :return: A datetime object.
+        """
+        commits = sorted(self.commits, key=lambda c: c.pushed_at, reverse=True)
+        return next(iter(commits)).pushed_at
+
+    @property
     def clone_url(self) -> str:
         """
         Retrieves the URL of the repository.

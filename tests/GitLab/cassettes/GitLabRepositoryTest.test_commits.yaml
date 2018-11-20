@@ -1,97 +1,86 @@
 interactions:
 - request:
-    body: null
+    body: '{}'
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
       User-Agent: [IGitt]
     method: GET
     uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/repository/commits?per_page=100
   response:
-    body: {string: '[{"id":"69e17e536092754e98aafbe5da0ee2be5fea81fb","short_id":"69e17e53","title":"Upload
-        tokens.png","created_at":"2017-09-28T20:28:10.000+00:00","parent_ids":["05a9faff56fd9bdb25d18a554bb2f3320de3fc6f"],"message":"Upload
-        tokens.png","author_name":"Naveen Kumar Sangi","author_email":"nkprince007@gmail.com","authored_date":"2017-09-28T20:28:10.000+00:00","committer_name":"Naveen
-        Kumar Sangi","committer_email":"nkprince007@gmail.com","committed_date":"2017-09-28T20:28:10.000+00:00"},{"id":"05a9faff56fd9bdb25d18a554bb2f3320de3fc6f","short_id":"05a9faff","title":"Add
-        .gitlab-ci.yml","created_at":"2017-09-28T19:45:56.000+00:00","parent_ids":["7747ee49b7d322e7d82520126ca275115aa67447"],"message":"Add
-        .gitlab-ci.yml","author_name":"Naveen Kumar Sangi","author_email":"nkprince007@gmail.com","authored_date":"2017-09-28T19:45:56.000+00:00","committer_name":"Naveen
-        Kumar Sangi","committer_email":"nkprince007@gmail.com","committed_date":"2017-09-28T19:45:56.000+00:00"},{"id":"7747ee49b7d322e7d82520126ca275115aa67447","short_id":"7747ee49","title":"Update
-        README","created_at":"2017-09-24T12:12:01.000+00:00","parent_ids":["71a61579cb3aa493e8eadc9f183ff4377be4d1be"],"message":"Update
-        README","author_name":"GitMate","author_email":"naveendarknight@gmail.com","authored_date":"2017-09-24T12:12:01.000+00:00","committer_name":"GitMate","committer_email":"naveendarknight@gmail.com","committed_date":"2017-09-24T12:12:01.000+00:00"},{"id":"71a61579cb3aa493e8eadc9f183ff4377be4d1be","short_id":"71a61579","title":"Delete
-        file","created_at":"2017-09-24T12:11:50.000+00:00","parent_ids":["d6fe46331fcc32ac73c9308f94350d5822ce717d"],"message":"Delete
-        file","author_name":"GitMate","author_email":"naveendarknight@gmail.com","authored_date":"2017-09-24T12:11:50.000+00:00","committer_name":"GitMate","committer_email":"naveendarknight@gmail.com","committed_date":"2017-09-24T12:11:50.000+00:00"},{"id":"d6fe46331fcc32ac73c9308f94350d5822ce717d","short_id":"d6fe4633","title":"hello","created_at":"2017-09-24T12:11:42.000+00:00","parent_ids":["515280bfe8488e1b403e0dd95c41a404355ca184"],"message":"hello","author_name":"GitMate","author_email":"naveendarknight@gmail.com","authored_date":"2017-09-24T12:11:42.000+00:00","committer_name":"GitMate","committer_email":"naveendarknight@gmail.com","committed_date":"2017-09-24T12:11:42.000+00:00"},{"id":"515280bfe8488e1b403e0dd95c41a404355ca184","short_id":"515280bf","title":"Update
-        README","created_at":"2017-07-19T14:57:58.000+00:00","parent_ids":["e3d12312ee8e4ba8e60ed009cf64fb3a1007b2c3"],"message":"Update
-        README","author_name":"GitMate","author_email":"naveendarknight@gmail.com","authored_date":"2017-07-19T14:57:58.000+00:00","committer_name":"GitMate","committer_email":"naveendarknight@gmail.com","committed_date":"2017-07-19T14:57:58.000+00:00"},{"id":"e3d12312ee8e4ba8e60ed009cf64fb3a1007b2c3","short_id":"e3d12312","title":"Delete
-        file","created_at":"2017-07-19T14:57:48.000+00:00","parent_ids":["6371fe50a92fa2147dcde0ce011db726b35b2646"],"message":"Delete
-        file","author_name":"GitMate","author_email":"naveendarknight@gmail.com","authored_date":"2017-07-19T14:57:48.000+00:00","committer_name":"GitMate","committer_email":"naveendarknight@gmail.com","committed_date":"2017-07-19T14:57:48.000+00:00"},{"id":"6371fe50a92fa2147dcde0ce011db726b35b2646","short_id":"6371fe50","title":"hello","created_at":"2017-07-19T14:57:42.000+00:00","parent_ids":["ed5fb0a1cc38a078a6f72b3523b6bce8c14be9b8"],"message":"hello","author_name":"GitMate","author_email":"naveendarknight@gmail.com","authored_date":"2017-07-19T14:57:42.000+00:00","committer_name":"GitMate","committer_email":"naveendarknight@gmail.com","committed_date":"2017-07-19T14:57:42.000+00:00"},{"id":"ed5fb0a1cc38a078a6f72b3523b6bce8c14be9b8","short_id":"ed5fb0a1","title":"Delete
-        file","created_at":"2017-07-19T14:53:12.000+00:00","parent_ids":["dd52e331780d30b58da030f9341abd07ba4ce31e"],"message":"Delete
-        file","author_name":"GitMate","author_email":"naveendarknight@gmail.com","authored_date":"2017-07-19T14:53:12.000+00:00","committer_name":"GitMate","committer_email":"naveendarknight@gmail.com","committed_date":"2017-07-19T14:53:12.000+00:00"},{"id":"dd52e331780d30b58da030f9341abd07ba4ce31e","short_id":"dd52e331","title":"hello","created_at":"2017-07-19T14:53:06.000+00:00","parent_ids":["cb9aa1c8964b3bcb0c542b281e06b339ddcc015f"],"message":"hello","author_name":"GitMate","author_email":"naveendarknight@gmail.com","authored_date":"2017-07-19T14:53:06.000+00:00","committer_name":"GitMate","committer_email":"naveendarknight@gmail.com","committed_date":"2017-07-19T14:53:06.000+00:00"},{"id":"cb9aa1c8964b3bcb0c542b281e06b339ddcc015f","short_id":"cb9aa1c8","title":"hello","created_at":"2017-07-19T14:53:00.000+00:00","parent_ids":["198dd16f8249ea98ed41876efe27d068b69fa215"],"message":"hello","author_name":"GitMate","author_email":"naveendarknight@gmail.com","authored_date":"2017-07-19T14:53:00.000+00:00","committer_name":"GitMate","committer_email":"naveendarknight@gmail.com","committed_date":"2017-07-19T14:53:00.000+00:00"},{"id":"198dd16f8249ea98ed41876efe27d068b69fa215","short_id":"198dd16f","title":"Update
-        README.md","created_at":"2017-06-06T00:18:11.000+00:00","parent_ids":["645961c0841a84c1dd2a58535aa70ad45be48c46"],"message":"Update
-        README.md","author_name":"GitMate","author_email":"naveendarknight@gmail.com","authored_date":"2017-06-06T00:18:11.000+00:00","committer_name":"GitMate","committer_email":"naveendarknight@gmail.com","committed_date":"2017-06-06T00:18:11.000+00:00"},{"id":"645961c0841a84c1dd2a58535aa70ad45be48c46","short_id":"645961c0","title":"Updated
-        README.md","created_at":"2016-02-29T16:07:54.000+01:00","parent_ids":["674498fd415cfadc35c5eb28b8951e800f357c6f"],"message":"Updated
-        README.md","author_name":"Lasse Schuirmann","author_email":"lasse@schuirmann.net","authored_date":"2016-02-29T16:07:54.000+01:00","committer_name":"Lasse
-        Schuirmann","committer_email":"lasse@schuirmann.net","committed_date":"2016-02-29T16:07:54.000+01:00"},{"id":"674498fd415cfadc35c5eb28b8951e800f357c6f","short_id":"674498fd","title":"Initial
-        commit","created_at":"2016-01-13T08:56:15.000+01:00","parent_ids":[],"message":"Initial
-        commit","author_name":"gitmate-test-user","author_email":"hostmaster@gitmate.io","authored_date":"2016-01-13T08:56:15.000+01:00","committer_name":"gitmate-test-user","committer_email":"hostmaster@gitmate.io","committed_date":"2016-01-13T08:56:15.000+01:00"}]'}
+    body:
+      string: !!binary |
+        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
     headers:
       Cache-Control: ['max-age=0, private, must-revalidate']
-      Content-Length: ['6433']
+      Content-Encoding: [gzip]
       Content-Type: [application/json]
-      Date: ['Fri, 29 Sep 2017 15:07:34 GMT']
-      Etag: [W/"d2fc454d5f8463dccdad8d81e3eba9eb"]
+      Date: ['Tue, 20 Nov 2018 04:27:56 GMT']
+      Etag: [W/"2d1270b280f8748eb70cf9f97397b50b"]
       Link: ['<https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/repository/commits?id=gitmate-test-user%2Ftest&page=1&per_page=100>;
           rel="first", <https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/repository/commits?id=gitmate-test-user%2Ftest&page=1&per_page=100>;
           rel="last"']
       RateLimit-Limit: ['600']
-      RateLimit-Observed: ['2']
-      RateLimit-Remaining: ['598']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1542688136']
+      RateLimit-ResetTime: ['Wed, 20 Nov 2018 04:28:56 GMT']
       Server: [nginx]
       Strict-Transport-Security: [max-age=31536000]
-      Vary: [Origin]
+      Vary: [Accept-Encoding, Origin]
+      X-Content-Type-Options: [nosniff]
       X-Frame-Options: [SAMEORIGIN]
       X-Next-Page: ['']
       X-Page: ['1']
       X-Per-Page: ['100']
       X-Prev-Page: ['']
-      X-Request-Id: [6fbf4dd6-df14-45ea-8466-69d8db8d367a]
-      X-Runtime: ['0.327143']
-      X-Total: ['14']
-      X-Total-Pages: ['1']
-    status: {code: 200, message: OK}
-- request:
-    body: null
-    headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      User-Agent: [IGitt]
-    method: GET
-    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Fempty/repository/commits?per_page=100
-  response:
-    body: {string: '[]'}
-    headers:
-      Cache-Control: ['max-age=0, private, must-revalidate']
-      Content-Length: ['2']
-      Content-Type: [application/json]
-      Date: ['Fri, 29 Sep 2017 15:07:36 GMT']
-      Etag: [W/"d751713988987e9331980363e24189ce"]
-      Link: ['<https://gitlab.com/api/v4/projects/gitmate-test-user%2Fempty/repository/commits?id=gitmate-test-user%2Fempty&page=1&per_page=100>;
-          rel="first", <https://gitlab.com/api/v4/projects/gitmate-test-user%2Fempty/repository/commits?id=gitmate-test-user%2Fempty&page=1&per_page=100>;
-          rel="last"']
-      RateLimit-Limit: ['600']
-      RateLimit-Observed: ['3']
-      RateLimit-Remaining: ['597']
-      Server: [nginx]
-      Strict-Transport-Security: [max-age=31536000]
-      Vary: [Origin]
-      X-Frame-Options: [SAMEORIGIN]
-      X-Next-Page: ['']
-      X-Page: ['1']
-      X-Per-Page: ['100']
-      X-Prev-Page: ['']
-      X-Request-Id: [68bc92d3-041b-44bc-a632-e66c13545040]
-      X-Runtime: ['0.093182']
-      X-Total: ['0']
+      X-Request-Id: [iW9k0V9Ix12]
+      X-Runtime: ['0.049120']
+      X-Total: ['26']
       X-Total-Pages: ['1']
     status: {code: 200, message: OK}
 - request:
@@ -102,182 +91,15 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['2']
       Content-Type: [application/json]
-      If-None-Match: [W/"d2fc454d5f8463dccdad8d81e3eba9eb"]
+      If-None-Match: [W/"2d1270b280f8748eb70cf9f97397b50b"]
       User-Agent: [IGitt]
     method: GET
     uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/repository/commits?per_page=100
   response:
-    body: {string: "[{\"id\":\"20d99d2b6124ccef9e9593749357a10c79085dae\",\"short_id\"\
-        :\"20d99d2b\",\"title\":\"Update README\",\"created_at\":\"2018-04-26T09:35:17.000Z\"\
-        ,\"parent_ids\":[\"e0fb5e9d7f6e0e362d61afb6f76974a0822f13eb\"],\"message\"\
-        :\"Update README\",\"author_name\":\"GitMate Labs \U0001F47D\",\"author_email\"\
-        :\"naveendarknight@gmail.com\",\"authored_date\":\"2018-04-26T09:35:17.000Z\"\
-        ,\"committer_name\":\"GitMate Labs \U0001F47D\",\"committer_email\":\"naveendarknight@gmail.com\"\
-        ,\"committed_date\":\"2018-04-26T09:35:17.000Z\"},{\"id\":\"e0fb5e9d7f6e0e362d61afb6f76974a0822f13eb\"\
-        ,\"short_id\":\"e0fb5e9d\",\"title\":\"hello\",\"created_at\":\"2018-04-26T09:33:14.000Z\"\
-        ,\"parent_ids\":[\"3f49e40b56723a773c8d817a815c5a4a26115df7\"],\"message\"\
-        :\"hello\",\"author_name\":\"GitMate Labs \U0001F47D\",\"author_email\":\"\
-        naveendarknight@gmail.com\",\"authored_date\":\"2018-04-26T09:33:14.000Z\"\
-        ,\"committer_name\":\"GitMate Labs \U0001F47D\",\"committer_email\":\"naveendarknight@gmail.com\"\
-        ,\"committed_date\":\"2018-04-26T09:33:14.000Z\"},{\"id\":\"3f49e40b56723a773c8d817a815c5a4a26115df7\"\
-        ,\"short_id\":\"3f49e40b\",\"title\":\"Test commit title\",\"created_at\"\
-        :\"2018-01-12T17:44:37.000Z\",\"parent_ids\":[\"66fd5d82d0b9ed923e69198082222877611c8bce\"\
-        ,\"2dfdc8f236fd5a4683ac52addb9d92b2920d6cfe\"],\"message\":\"Test commit title\\\
-        nTest commit body\",\"author_name\":\"GitMate Labs \U0001F47D\",\"author_email\"\
-        :\"naveendarknight@gmail.com\",\"authored_date\":\"2018-01-12T17:44:37.000Z\"\
-        ,\"committer_name\":\"GitMate Labs \U0001F47D\",\"committer_email\":\"naveendarknight@gmail.com\"\
-        ,\"committed_date\":\"2018-01-12T17:44:37.000Z\"},{\"id\":\"2dfdc8f236fd5a4683ac52addb9d92b2920d6cfe\"\
-        ,\"short_id\":\"2dfdc8f2\",\"title\":\"Update temp1\",\"created_at\":\"2018-01-12T17:42:33.000Z\"\
-        ,\"parent_ids\":[\"07434f75e2508d4e24f83f09c1735010b0c7e0b6\"],\"message\"\
-        :\"Update temp1\",\"author_name\":\"Andrew Dassonville\",\"author_email\"\
-        :\"andrew@andrewda.me\",\"authored_date\":\"2018-01-12T17:42:33.000Z\",\"\
-        committer_name\":\"Andrew Dassonville\",\"committer_email\":\"andrew@andrewda.me\"\
-        ,\"committed_date\":\"2018-01-12T17:42:33.000Z\"},{\"id\":\"66fd5d82d0b9ed923e69198082222877611c8bce\"\
-        ,\"short_id\":\"66fd5d82\",\"title\":\"Merge branch 'b2' into 'master'\",\"\
-        created_at\":\"2018-01-08T23:12:41.000Z\",\"parent_ids\":[\"bd407435f5c16ee05f61aac5841e4cebe47f57a7\"\
-        ,\"07434f75e2508d4e24f83f09c1735010b0c7e0b6\"],\"message\":\"Merge branch\
-        \ 'b2' into 'master'\\n\\nUpdate temp1\\n\\nSee merge request gitmate-test-user/test!74\"\
-        ,\"author_name\":\"GitMate Labs \U0001F47D\",\"author_email\":\"naveendarknight@gmail.com\"\
-        ,\"authored_date\":\"2018-01-08T23:12:41.000Z\",\"committer_name\":\"GitMate\
-        \ Labs \U0001F47D\",\"committer_email\":\"naveendarknight@gmail.com\",\"committed_date\"\
-        :\"2018-01-08T23:12:41.000Z\"},{\"id\":\"07434f75e2508d4e24f83f09c1735010b0c7e0b6\"\
-        ,\"short_id\":\"07434f75\",\"title\":\"Update temp1\",\"created_at\":\"2018-01-08T22:51:52.000Z\"\
-        ,\"parent_ids\":[\"bd407435f5c16ee05f61aac5841e4cebe47f57a7\"],\"message\"\
-        :\"Update temp1\",\"author_name\":\"Andrew Dassonville\",\"author_email\"\
-        :\"andrew@andrewda.me\",\"authored_date\":\"2018-01-08T22:51:52.000Z\",\"\
-        committer_name\":\"Andrew Dassonville\",\"committer_email\":\"andrew@andrewda.me\"\
-        ,\"committed_date\":\"2018-01-08T22:51:52.000Z\"},{\"id\":\"bd407435f5c16ee05f61aac5841e4cebe47f57a7\"\
-        ,\"short_id\":\"bd407435\",\"title\":\"Merge branch 'be-my-guest' into 'master'\"\
-        ,\"created_at\":\"2017-12-20T23:32:20.000Z\",\"parent_ids\":[\"69e17e536092754e98aafbe5da0ee2be5fea81fb\"\
-        ,\"ef46ed87766da84667570f28e04097fc3662ca86\"],\"message\":\"Merge branch\
-        \ 'be-my-guest' into 'master'\\n\\nBe my guest\\n\\nCloses nkprince007/test#1\\\
-        n\\nSee merge request gitmate-test-user/test!69\",\"author_name\":\"Naveen\
-        \ Kumar Sangi\",\"author_email\":\"naveenkumarsangi@protonmail.com\",\"authored_date\"\
-        :\"2017-12-20T23:32:20.000Z\",\"committer_name\":\"Naveen Kumar Sangi\",\"\
-        committer_email\":\"naveenkumarsangi@protonmail.com\",\"committed_date\":\"\
-        2017-12-20T23:32:20.000Z\"},{\"id\":\"ef46ed87766da84667570f28e04097fc3662ca86\"\
-        ,\"short_id\":\"ef46ed87\",\"title\":\"Add new file\",\"created_at\":\"2017-12-20T14:18:48.000Z\"\
-        ,\"parent_ids\":[\"642d56a82f00feea4e63d31092c93f4a80a0273d\"],\"message\"\
-        :\"Add new file\",\"author_name\":\"Naveen Kumar Sangi\",\"author_email\"\
-        :\"naveenkumarsangi@protonmail.com\",\"authored_date\":\"2017-12-20T14:18:48.000Z\"\
-        ,\"committer_name\":\"Naveen Kumar Sangi\",\"committer_email\":\"naveenkumarsangi@protonmail.com\"\
-        ,\"committed_date\":\"2017-12-20T14:18:48.000Z\"},{\"id\":\"642d56a82f00feea4e63d31092c93f4a80a0273d\"\
-        ,\"short_id\":\"642d56a8\",\"title\":\"Merge branch 'head/test-issue-pr-sync'\
-        \ into base/master\",\"created_at\":\"2017-12-20T14:11:11.000Z\",\"parent_ids\"\
-        :[\"69e17e536092754e98aafbe5da0ee2be5fea81fb\",\"33c53a63131beb1b06c10c4d3b2d7591338dbaa0\"\
-        ],\"message\":\"Merge branch 'head/test-issue-pr-sync' into base/master\\\
-        n\",\"author_name\":\"GitMate\",\"author_email\":\"info@gitmate.io\",\"authored_date\"\
-        :\"2017-12-20T14:11:11.000Z\",\"committer_name\":\"GitMate\",\"committer_email\"\
-        :\"info@gitmate.io\",\"committed_date\":\"2017-12-20T14:11:11.000Z\"},{\"\
-        id\":\"69e17e536092754e98aafbe5da0ee2be5fea81fb\",\"short_id\":\"69e17e53\"\
-        ,\"title\":\"Upload tokens.png\",\"created_at\":\"2017-09-28T20:28:10.000Z\"\
-        ,\"parent_ids\":[\"05a9faff56fd9bdb25d18a554bb2f3320de3fc6f\"],\"message\"\
-        :\"Upload tokens.png\",\"author_name\":\"Naveen Kumar Sangi\",\"author_email\"\
-        :\"nkprince007@gmail.com\",\"authored_date\":\"2017-09-28T20:28:10.000Z\"\
-        ,\"committer_name\":\"Naveen Kumar Sangi\",\"committer_email\":\"nkprince007@gmail.com\"\
-        ,\"committed_date\":\"2017-09-28T20:28:10.000Z\"},{\"id\":\"05a9faff56fd9bdb25d18a554bb2f3320de3fc6f\"\
-        ,\"short_id\":\"05a9faff\",\"title\":\"Add .gitlab-ci.yml\",\"created_at\"\
-        :\"2017-09-28T19:45:56.000Z\",\"parent_ids\":[\"7747ee49b7d322e7d82520126ca275115aa67447\"\
-        ],\"message\":\"Add .gitlab-ci.yml\",\"author_name\":\"Naveen Kumar Sangi\"\
-        ,\"author_email\":\"nkprince007@gmail.com\",\"authored_date\":\"2017-09-28T19:45:56.000Z\"\
-        ,\"committer_name\":\"Naveen Kumar Sangi\",\"committer_email\":\"nkprince007@gmail.com\"\
-        ,\"committed_date\":\"2017-09-28T19:45:56.000Z\"},{\"id\":\"7747ee49b7d322e7d82520126ca275115aa67447\"\
-        ,\"short_id\":\"7747ee49\",\"title\":\"Update README\",\"created_at\":\"2017-09-24T12:12:01.000Z\"\
-        ,\"parent_ids\":[\"71a61579cb3aa493e8eadc9f183ff4377be4d1be\"],\"message\"\
-        :\"Update README\",\"author_name\":\"GitMate\",\"author_email\":\"naveendarknight@gmail.com\"\
-        ,\"authored_date\":\"2017-09-24T12:12:01.000Z\",\"committer_name\":\"GitMate\"\
-        ,\"committer_email\":\"naveendarknight@gmail.com\",\"committed_date\":\"2017-09-24T12:12:01.000Z\"\
-        },{\"id\":\"71a61579cb3aa493e8eadc9f183ff4377be4d1be\",\"short_id\":\"71a61579\"\
-        ,\"title\":\"Delete file\",\"created_at\":\"2017-09-24T12:11:50.000Z\",\"\
-        parent_ids\":[\"d6fe46331fcc32ac73c9308f94350d5822ce717d\"],\"message\":\"\
-        Delete file\",\"author_name\":\"GitMate\",\"author_email\":\"naveendarknight@gmail.com\"\
-        ,\"authored_date\":\"2017-09-24T12:11:50.000Z\",\"committer_name\":\"GitMate\"\
-        ,\"committer_email\":\"naveendarknight@gmail.com\",\"committed_date\":\"2017-09-24T12:11:50.000Z\"\
-        },{\"id\":\"d6fe46331fcc32ac73c9308f94350d5822ce717d\",\"short_id\":\"d6fe4633\"\
-        ,\"title\":\"hello\",\"created_at\":\"2017-09-24T12:11:42.000Z\",\"parent_ids\"\
-        :[\"515280bfe8488e1b403e0dd95c41a404355ca184\"],\"message\":\"hello\",\"author_name\"\
-        :\"GitMate\",\"author_email\":\"naveendarknight@gmail.com\",\"authored_date\"\
-        :\"2017-09-24T12:11:42.000Z\",\"committer_name\":\"GitMate\",\"committer_email\"\
-        :\"naveendarknight@gmail.com\",\"committed_date\":\"2017-09-24T12:11:42.000Z\"\
-        },{\"id\":\"33c53a63131beb1b06c10c4d3b2d7591338dbaa0\",\"short_id\":\"33c53a63\"\
-        ,\"title\":\"Update test.txt\",\"created_at\":\"2017-08-04T21:44:37.000Z\"\
-        ,\"parent_ids\":[\"8ee108037431d696ec764859924475f5a0b42ad9\"],\"message\"\
-        :\"Update test.txt\",\"author_name\":\"Naveen Kumar Sangi\",\"author_email\"\
-        :\"nkprince007@gmail.com\",\"authored_date\":\"2017-08-04T21:44:37.000Z\"\
-        ,\"committer_name\":\"Naveen Kumar Sangi\",\"committer_email\":\"nkprince007@gmail.com\"\
-        ,\"committed_date\":\"2017-08-04T21:44:37.000Z\"},{\"id\":\"8ee108037431d696ec764859924475f5a0b42ad9\"\
-        ,\"short_id\":\"8ee10803\",\"title\":\"Update test.txt\",\"created_at\":\"\
-        2017-08-01T13:40:27.000Z\",\"parent_ids\":[\"99ba5b443787a2e5556136caabc91bfbdcb59780\"\
-        ],\"message\":\"Update test.txt\\n\\nFixes https://gitlab.com/nkprince007/test/issues/1\"\
-        ,\"author_name\":\"Naveen Kumar Sangi\",\"author_email\":\"nkprince007@gmail.com\"\
-        ,\"authored_date\":\"2017-08-01T13:40:27.000Z\",\"committer_name\":\"Naveen\
-        \ Kumar Sangi\",\"committer_email\":\"nkprince007@gmail.com\",\"committed_date\"\
-        :\"2017-08-01T13:40:27.000Z\"},{\"id\":\"99ba5b443787a2e5556136caabc91bfbdcb59780\"\
-        ,\"short_id\":\"99ba5b44\",\"title\":\"Add new file\",\"created_at\":\"2017-08-01T13:34:28.000Z\"\
-        ,\"parent_ids\":[\"198dd16f8249ea98ed41876efe27d068b69fa215\"],\"message\"\
-        :\"Add new file\",\"author_name\":\"Naveen Kumar Sangi\",\"author_email\"\
-        :\"nkprince007@gmail.com\",\"authored_date\":\"2017-08-01T13:34:28.000Z\"\
-        ,\"committer_name\":\"Naveen Kumar Sangi\",\"committer_email\":\"nkprince007@gmail.com\"\
-        ,\"committed_date\":\"2017-08-01T13:34:28.000Z\"},{\"id\":\"515280bfe8488e1b403e0dd95c41a404355ca184\"\
-        ,\"short_id\":\"515280bf\",\"title\":\"Update README\",\"created_at\":\"2017-07-19T14:57:58.000Z\"\
-        ,\"parent_ids\":[\"e3d12312ee8e4ba8e60ed009cf64fb3a1007b2c3\"],\"message\"\
-        :\"Update README\",\"author_name\":\"GitMate\",\"author_email\":\"naveendarknight@gmail.com\"\
-        ,\"authored_date\":\"2017-07-19T14:57:58.000Z\",\"committer_name\":\"GitMate\"\
-        ,\"committer_email\":\"naveendarknight@gmail.com\",\"committed_date\":\"2017-07-19T14:57:58.000Z\"\
-        },{\"id\":\"e3d12312ee8e4ba8e60ed009cf64fb3a1007b2c3\",\"short_id\":\"e3d12312\"\
-        ,\"title\":\"Delete file\",\"created_at\":\"2017-07-19T14:57:48.000Z\",\"\
-        parent_ids\":[\"6371fe50a92fa2147dcde0ce011db726b35b2646\"],\"message\":\"\
-        Delete file\",\"author_name\":\"GitMate\",\"author_email\":\"naveendarknight@gmail.com\"\
-        ,\"authored_date\":\"2017-07-19T14:57:48.000Z\",\"committer_name\":\"GitMate\"\
-        ,\"committer_email\":\"naveendarknight@gmail.com\",\"committed_date\":\"2017-07-19T14:57:48.000Z\"\
-        },{\"id\":\"6371fe50a92fa2147dcde0ce011db726b35b2646\",\"short_id\":\"6371fe50\"\
-        ,\"title\":\"hello\",\"created_at\":\"2017-07-19T14:57:42.000Z\",\"parent_ids\"\
-        :[\"ed5fb0a1cc38a078a6f72b3523b6bce8c14be9b8\"],\"message\":\"hello\",\"author_name\"\
-        :\"GitMate\",\"author_email\":\"naveendarknight@gmail.com\",\"authored_date\"\
-        :\"2017-07-19T14:57:42.000Z\",\"committer_name\":\"GitMate\",\"committer_email\"\
-        :\"naveendarknight@gmail.com\",\"committed_date\":\"2017-07-19T14:57:42.000Z\"\
-        },{\"id\":\"ed5fb0a1cc38a078a6f72b3523b6bce8c14be9b8\",\"short_id\":\"ed5fb0a1\"\
-        ,\"title\":\"Delete file\",\"created_at\":\"2017-07-19T14:53:12.000Z\",\"\
-        parent_ids\":[\"dd52e331780d30b58da030f9341abd07ba4ce31e\"],\"message\":\"\
-        Delete file\",\"author_name\":\"GitMate\",\"author_email\":\"naveendarknight@gmail.com\"\
-        ,\"authored_date\":\"2017-07-19T14:53:12.000Z\",\"committer_name\":\"GitMate\"\
-        ,\"committer_email\":\"naveendarknight@gmail.com\",\"committed_date\":\"2017-07-19T14:53:12.000Z\"\
-        },{\"id\":\"dd52e331780d30b58da030f9341abd07ba4ce31e\",\"short_id\":\"dd52e331\"\
-        ,\"title\":\"hello\",\"created_at\":\"2017-07-19T14:53:06.000Z\",\"parent_ids\"\
-        :[\"cb9aa1c8964b3bcb0c542b281e06b339ddcc015f\"],\"message\":\"hello\",\"author_name\"\
-        :\"GitMate\",\"author_email\":\"naveendarknight@gmail.com\",\"authored_date\"\
-        :\"2017-07-19T14:53:06.000Z\",\"committer_name\":\"GitMate\",\"committer_email\"\
-        :\"naveendarknight@gmail.com\",\"committed_date\":\"2017-07-19T14:53:06.000Z\"\
-        },{\"id\":\"cb9aa1c8964b3bcb0c542b281e06b339ddcc015f\",\"short_id\":\"cb9aa1c8\"\
-        ,\"title\":\"hello\",\"created_at\":\"2017-07-19T14:53:00.000Z\",\"parent_ids\"\
-        :[\"198dd16f8249ea98ed41876efe27d068b69fa215\"],\"message\":\"hello\",\"author_name\"\
-        :\"GitMate\",\"author_email\":\"naveendarknight@gmail.com\",\"authored_date\"\
-        :\"2017-07-19T14:53:00.000Z\",\"committer_name\":\"GitMate\",\"committer_email\"\
-        :\"naveendarknight@gmail.com\",\"committed_date\":\"2017-07-19T14:53:00.000Z\"\
-        },{\"id\":\"198dd16f8249ea98ed41876efe27d068b69fa215\",\"short_id\":\"198dd16f\"\
-        ,\"title\":\"Update README.md\",\"created_at\":\"2017-06-06T00:18:11.000Z\"\
-        ,\"parent_ids\":[\"645961c0841a84c1dd2a58535aa70ad45be48c46\"],\"message\"\
-        :\"Update README.md\",\"author_name\":\"GitMate\",\"author_email\":\"naveendarknight@gmail.com\"\
-        ,\"authored_date\":\"2017-06-06T00:18:11.000Z\",\"committer_name\":\"GitMate\"\
-        ,\"committer_email\":\"naveendarknight@gmail.com\",\"committed_date\":\"2017-06-06T00:18:11.000Z\"\
-        },{\"id\":\"645961c0841a84c1dd2a58535aa70ad45be48c46\",\"short_id\":\"645961c0\"\
-        ,\"title\":\"Updated README.md\",\"created_at\":\"2016-02-29T15:07:54.000Z\"\
-        ,\"parent_ids\":[\"674498fd415cfadc35c5eb28b8951e800f357c6f\"],\"message\"\
-        :\"Updated README.md\",\"author_name\":\"Lasse Schuirmann\",\"author_email\"\
-        :\"lasse@schuirmann.net\",\"authored_date\":\"2016-02-29T15:07:54.000Z\",\"\
-        committer_name\":\"Lasse Schuirmann\",\"committer_email\":\"lasse@schuirmann.net\"\
-        ,\"committed_date\":\"2016-02-29T15:07:54.000Z\"},{\"id\":\"674498fd415cfadc35c5eb28b8951e800f357c6f\"\
-        ,\"short_id\":\"674498fd\",\"title\":\"Initial commit\",\"created_at\":\"\
-        2016-01-13T07:56:15.000Z\",\"parent_ids\":[],\"message\":\"Initial commit\"\
-        ,\"author_name\":\"gitmate-test-user\",\"author_email\":\"hostmaster@gitmate.io\"\
-        ,\"authored_date\":\"2016-01-13T07:56:15.000Z\",\"committer_name\":\"gitmate-test-user\"\
-        ,\"committer_email\":\"hostmaster@gitmate.io\",\"committed_date\":\"2016-01-13T07:56:15.000Z\"\
-        }]"}
+    body: {string: ''}
     headers:
       Cache-Control: ['max-age=0, private, must-revalidate']
-      Content-Length: ['12339']
-      Content-Type: [application/json]
-      Date: ['Mon, 07 May 2018 10:08:19 GMT']
+      Date: ['Tue, 20 Nov 2018 04:30:12 GMT']
       Etag: [W/"2d1270b280f8748eb70cf9f97397b50b"]
       Link: ['<https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/repository/commits?id=gitmate-test-user%2Ftest&page=1&per_page=100>;
           rel="first", <https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/repository/commits?id=gitmate-test-user%2Ftest&page=1&per_page=100>;
@@ -285,8 +107,8 @@ interactions:
       RateLimit-Limit: ['600']
       RateLimit-Observed: ['1']
       RateLimit-Remaining: ['599']
-      RateLimit-Reset: ['1525687759']
-      RateLimit-ResetTime: ['Tue, 07 May 2018 10:09:19 GMT']
+      RateLimit-Reset: ['1542688272']
+      RateLimit-ResetTime: ['Wed, 20 Nov 2018 04:31:12 GMT']
       Server: [nginx]
       Strict-Transport-Security: [max-age=31536000]
       Vary: [Origin]
@@ -296,11 +118,11 @@ interactions:
       X-Page: ['1']
       X-Per-Page: ['100']
       X-Prev-Page: ['']
-      X-Request-Id: [0bbab464-3ea3-49fe-ae7b-a65bedc5716c]
-      X-Runtime: ['0.341213']
+      X-Request-Id: [LfjTC1ISKj4]
+      X-Runtime: ['0.044311']
       X-Total: ['26']
       X-Total-Pages: ['1']
-    status: {code: 200, message: OK}
+    status: {code: 304, message: Not Modified}
 - request:
     body: '{}'
     headers:
@@ -318,16 +140,16 @@ interactions:
       Cache-Control: ['max-age=0, private, must-revalidate']
       Content-Length: ['217']
       Content-Type: [application/json]
-      Date: ['Mon, 07 May 2018 10:08:24 GMT']
+      Date: ['Tue, 20 Nov 2018 04:30:14 GMT']
       Etag: [W/"a37e5bb674e0601b24ce96829f3ce168"]
       Link: ['<https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=sils&with_custom_attributes=false>;
           rel="first", <https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=sils&with_custom_attributes=false>;
           rel="last"']
       RateLimit-Limit: ['600']
-      RateLimit-Observed: ['1']
-      RateLimit-Remaining: ['599']
-      RateLimit-Reset: ['1525687764']
-      RateLimit-ResetTime: ['Tue, 07 May 2018 10:09:24 GMT']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1542688274']
+      RateLimit-ResetTime: ['Wed, 20 Nov 2018 04:31:14 GMT']
       Server: [nginx]
       Strict-Transport-Security: [max-age=31536000]
       Vary: [Origin]
@@ -337,9 +159,50 @@ interactions:
       X-Page: ['1']
       X-Per-Page: ['100']
       X-Prev-Page: ['']
-      X-Request-Id: [953f1515-4eb6-4ba0-9294-f864c6b3d594]
-      X-Runtime: ['0.223762']
+      X-Request-Id: [WRkP05Mtke3]
+      X-Runtime: ['0.024468']
       X-Total: ['1']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Fempty/repository/commits?per_page=100
+  response:
+    body: {string: '[]'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      Date: ['Tue, 20 Nov 2018 04:30:16 GMT']
+      Etag: [W/"d751713988987e9331980363e24189ce"]
+      Link: ['<https://gitlab.com/api/v4/projects/gitmate-test-user%2Fempty/repository/commits?id=gitmate-test-user%2Fempty&page=1&per_page=100>;
+          rel="first", <https://gitlab.com/api/v4/projects/gitmate-test-user%2Fempty/repository/commits?id=gitmate-test-user%2Fempty&page=1&per_page=100>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['3']
+      RateLimit-Remaining: ['597']
+      RateLimit-Reset: ['1542688276']
+      RateLimit-ResetTime: ['Wed, 20 Nov 2018 04:31:16 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [4vJueef0uz2]
+      X-Runtime: ['0.056116']
+      X-Total: ['0']
       X-Total-Pages: ['1']
     status: {code: 200, message: OK}
 - request:
@@ -358,16 +221,16 @@ interactions:
     body: {string: ''}
     headers:
       Cache-Control: ['max-age=0, private, must-revalidate']
-      Date: ['Mon, 07 May 2018 10:08:27 GMT']
+      Date: ['Tue, 20 Nov 2018 04:30:18 GMT']
       Etag: [W/"d751713988987e9331980363e24189ce"]
       Link: ['<https://gitlab.com/api/v4/projects/gitmate-test-user%2Fempty/repository/commits?id=gitmate-test-user%2Fempty&page=1&per_page=100>;
           rel="first", <https://gitlab.com/api/v4/projects/gitmate-test-user%2Fempty/repository/commits?id=gitmate-test-user%2Fempty&page=1&per_page=100>;
           rel="last"']
       RateLimit-Limit: ['600']
-      RateLimit-Observed: ['1']
-      RateLimit-Remaining: ['599']
-      RateLimit-Reset: ['1525687767']
-      RateLimit-ResetTime: ['Tue, 07 May 2018 10:09:27 GMT']
+      RateLimit-Observed: ['4']
+      RateLimit-Remaining: ['596']
+      RateLimit-Reset: ['1542688278']
+      RateLimit-ResetTime: ['Wed, 20 Nov 2018 04:31:18 GMT']
       Server: [nginx]
       Strict-Transport-Security: [max-age=31536000]
       Vary: [Origin]
@@ -377,53 +240,11 @@ interactions:
       X-Page: ['1']
       X-Per-Page: ['100']
       X-Prev-Page: ['']
-      X-Request-Id: [97f46d19-269a-4aa2-ba21-09a891f0e4e8]
-      X-Runtime: ['0.753884']
+      X-Request-Id: [hQXErohkpb6]
+      X-Runtime: ['0.040528']
       X-Total: ['0']
       X-Total-Pages: ['1']
     status: {code: 304, message: Not Modified}
-- request:
-    body: '{}'
-    headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Length: ['2']
-      Content-Type: [application/json]
-      If-None-Match: [W/"a37e5bb674e0601b24ce96829f3ce168"]
-      User-Agent: [IGitt]
-    method: GET
-    uri: https://gitlab.com/api/v4/users?per_page=100&username=nonenone
-  response:
-    body: {string: '[]'}
-    headers:
-      Cache-Control: ['max-age=0, private, must-revalidate']
-      Content-Length: ['2']
-      Content-Type: [application/json]
-      Date: ['Mon, 07 May 2018 10:08:32 GMT']
-      Etag: [W/"d751713988987e9331980363e24189ce"]
-      Link: ['<https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=nonenone&with_custom_attributes=false>;
-          rel="first", <https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=nonenone&with_custom_attributes=false>;
-          rel="last"']
-      RateLimit-Limit: ['600']
-      RateLimit-Observed: ['2']
-      RateLimit-Remaining: ['598']
-      RateLimit-Reset: ['1525687772']
-      RateLimit-ResetTime: ['Tue, 07 May 2018 10:09:32 GMT']
-      Server: [nginx]
-      Strict-Transport-Security: [max-age=31536000]
-      Vary: [Origin]
-      X-Content-Type-Options: [nosniff]
-      X-Frame-Options: [SAMEORIGIN]
-      X-Next-Page: ['']
-      X-Page: ['1']
-      X-Per-Page: ['100']
-      X-Prev-Page: ['']
-      X-Request-Id: [d9514121-2469-4558-916f-b8c87dc98b1d]
-      X-Runtime: ['0.132423']
-      X-Total: ['0']
-      X-Total-Pages: ['1']
-    status: {code: 200, message: OK}
 - request:
     body: '{}'
     headers:
@@ -440,7 +261,7 @@ interactions:
     body: {string: ''}
     headers:
       Cache-Control: ['max-age=0, private, must-revalidate']
-      Date: ['Tue, 08 May 2018 17:54:31 GMT']
+      Date: ['Tue, 20 Nov 2018 04:31:42 GMT']
       Etag: [W/"a37e5bb674e0601b24ce96829f3ce168"]
       Link: ['<https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=sils&with_custom_attributes=false>;
           rel="first", <https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=sils&with_custom_attributes=false>;
@@ -448,8 +269,8 @@ interactions:
       RateLimit-Limit: ['600']
       RateLimit-Observed: ['1']
       RateLimit-Remaining: ['599']
-      RateLimit-Reset: ['1525802131']
-      RateLimit-ResetTime: ['Wed, 08 May 2018 17:55:31 GMT']
+      RateLimit-Reset: ['1542688362']
+      RateLimit-ResetTime: ['Wed, 20 Nov 2018 04:32:42 GMT']
       Server: [nginx]
       Strict-Transport-Security: [max-age=31536000]
       Vary: [Origin]
@@ -459,8 +280,8 @@ interactions:
       X-Page: ['1']
       X-Per-Page: ['100']
       X-Prev-Page: ['']
-      X-Request-Id: [f0535e6f-c70d-4acc-9ac7-f175371bf179]
-      X-Runtime: ['0.105262']
+      X-Request-Id: [WlFuN8Yrx74]
+      X-Runtime: ['0.035404']
       X-Total: ['1']
       X-Total-Pages: ['1']
     status: {code: 304, message: Not Modified}
@@ -480,16 +301,16 @@ interactions:
     body: {string: ''}
     headers:
       Cache-Control: ['max-age=0, private, must-revalidate']
-      Date: ['Tue, 08 May 2018 17:54:33 GMT']
+      Date: ['Tue, 20 Nov 2018 04:31:44 GMT']
       Etag: [W/"d751713988987e9331980363e24189ce"]
       Link: ['<https://gitlab.com/api/v4/projects/gitmate-test-user%2Fempty/repository/commits?id=gitmate-test-user%2Fempty&page=1&per_page=100>;
           rel="first", <https://gitlab.com/api/v4/projects/gitmate-test-user%2Fempty/repository/commits?id=gitmate-test-user%2Fempty&page=1&per_page=100>;
           rel="last"']
       RateLimit-Limit: ['600']
-      RateLimit-Observed: ['2']
-      RateLimit-Remaining: ['598']
-      RateLimit-Reset: ['1525802133']
-      RateLimit-ResetTime: ['Wed, 08 May 2018 17:55:33 GMT']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1542688364']
+      RateLimit-ResetTime: ['Wed, 20 Nov 2018 04:32:44 GMT']
       Server: [nginx]
       Strict-Transport-Security: [max-age=31536000]
       Vary: [Origin]
@@ -499,9 +320,51 @@ interactions:
       X-Page: ['1']
       X-Per-Page: ['100']
       X-Prev-Page: ['']
-      X-Request-Id: [cdac1d86-0aad-4ef4-8c77-a13cc42af28e]
-      X-Runtime: ['0.365975']
+      X-Request-Id: [AUlUcEggq11]
+      X-Runtime: ['0.067548']
       X-Total: ['0']
       X-Total-Pages: ['1']
     status: {code: 304, message: Not Modified}
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"a37e5bb674e0601b24ce96829f3ce168"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/users?per_page=100&username=thisisarandomusernamewhichwillneverexist%23killmeifitdoes
+  response:
+    body: {string: '[]'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      Date: ['Tue, 20 Nov 2018 04:32:43 GMT']
+      Etag: [W/"d751713988987e9331980363e24189ce"]
+      Link: ['<https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=thisisarandomusernamewhichwillneverexist%23killmeifitdoes&with_custom_attributes=false>;
+          rel="first", <https://gitlab.com/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=100&skip_ldap=false&username=thisisarandomusernamewhichwillneverexist%23killmeifitdoes&with_custom_attributes=false>;
+          rel="last"']
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['2']
+      RateLimit-Remaining: ['598']
+      RateLimit-Reset: ['1542688423']
+      RateLimit-ResetTime: ['Wed, 20 Nov 2018 04:33:43 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Next-Page: ['']
+      X-Page: ['1']
+      X-Per-Page: ['100']
+      X-Prev-Page: ['']
+      X-Request-Id: [JJjfWCMfIba]
+      X-Runtime: ['0.036007']
+      X-Total: ['0']
+      X-Total-Pages: ['1']
+    status: {code: 200, message: OK}
 version: 1

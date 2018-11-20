@@ -33,6 +33,10 @@ class GitHubRepositoryTest(IGittTestCase):
         repo = GitHubRepository(self.token, 49558751)
         self.assertEqual(repo.full_name, 'gitmate-test-user/test')
 
+    def test_last_pushed_at(self):
+        self.assertEqual(self.repo.last_pushed_at,
+                         datetime(2018, 6, 5, 10, 1, 36))
+
     def test_top_level_org(self):
         self.assertEqual(self.repo.top_level_org.name, 'gitmate-test-user')
 
