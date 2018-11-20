@@ -18,6 +18,10 @@ class GitHubCommitTest(IGittTestCase):
     def test_sha(self):
         self.assertIn('645961c', self.commit.sha)
 
+    def test_pushed_at(self):
+        with self.assertRaises(NotImplementedError):
+            _ = self.commit.pushed_at
+
     def test_message(self):
         self.assertEqual(self.commit.message, 'Updated README.md')
 

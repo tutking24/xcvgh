@@ -1,3 +1,4 @@
+from datetime import datetime
 import os
 
 from IGitt.GitLab import GitLabOAuthToken
@@ -18,6 +19,10 @@ class GitLabCommitTest(IGittTestCase):
 
     def test_sha(self):
         self.assertIn('3fc4b86', self.commit.sha)
+
+    def test_pushed_at(self):
+        self.assertEqual(self.commit.pushed_at,
+                         datetime(2016, 1, 24, 17, 49, 12))
 
     def test_message(self):
         self.assertEqual(self.commit.message, 'Update README.md')

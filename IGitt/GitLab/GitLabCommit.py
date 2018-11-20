@@ -1,6 +1,7 @@
 """
 Contains the abstraction for a commit in GitLab.
 """
+from datetime import datetime
 from typing import Optional
 from typing import Set
 from typing import Union
@@ -63,6 +64,17 @@ class GitLabCommit(GitLabMixin, Commit):
         self._branch = branch
         self._url = '/projects/{id}/repository/commits/{sha}'.format(
             id=quote_plus(repository), sha=sha if sha else branch)
+
+    @property
+    def pushed_at(self) -> datetime:
+        """
+        Returns the time this commit was pushed at.
+
+        :return: A datetime object.
+        """
+        print(self.data['created_at'])
+        return datetime.strptime(self.data['created_at'],
+                                 '%Y-%m-%dT%H:%M:%S.%fZ')
 
     @property
     def message(self) -> str:

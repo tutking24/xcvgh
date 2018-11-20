@@ -1,6 +1,7 @@
 """
 Contains the abstraction for a commit in GitHub.
 """
+from datetime import datetime
 from typing import Optional
 from typing import Set
 
@@ -110,6 +111,15 @@ class GitHubCommit(GitHubMixin, Commit):
         self._repository = repository
         self._sha = sha
         self._url = '/repos/' + repository + '/commits/' + sha
+
+    @property
+    def pushed_at(self) -> datetime:
+        """
+        Returns the time this commit was pushed at.
+
+        :return: A datetime object.
+        """
+        raise NotImplementedError
 
     @property
     def message(self) -> str:

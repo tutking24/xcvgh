@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      If-None-Match: [W/"200566843747fb3d1f91b0292d0f6eae"]
+      User-Agent: [IGitt]
+    method: GET
+    uri: https://gitlab.com/api/v4/projects/gitmate-test-user%2Ftest/repository/commits/3fc4b860e0a2c17819934d678decacd914271e5c?per_page=100
+  response:
+    body: {string: '{"id":"3fc4b860e0a2c17819934d678decacd914271e5c","short_id":"3fc4b860","title":"Update
+        README.md","created_at":"2016-01-24T17:49:12.000Z","parent_ids":["674498fd415cfadc35c5eb28b8951e800f357c6f"],"message":"Update
+        README.md","author_name":"gitmate-test-user","author_email":"hostmaster@gitmate.io","authored_date":"2016-01-24T17:49:12.000Z","committer_name":"gitmate-test-user","committer_email":"hostmaster@gitmate.io","committed_date":"2016-01-24T17:49:12.000Z","stats":{"additions":2,"deletions":0,"total":2},"status":"failed","last_pipeline":{"id":8768624,"sha":"3fc4b860e0a2c17819934d678decacd914271e5c","ref":"gitmate-test-user-patch-1","status":"failed","web_url":"https://gitlab.com/gitmate-test-user/test/pipelines/8768624"},"project_id":3439658}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Content-Length: ['755']
+      Content-Type: [application/json]
+      Date: ['Tue, 20 Nov 2018 04:17:04 GMT']
+      Etag: [W/"57669b7fbd4339ac56fea4f045be9735"]
+      RateLimit-Limit: ['600']
+      RateLimit-Observed: ['1']
+      RateLimit-Remaining: ['599']
+      RateLimit-Reset: ['1542687484']
+      RateLimit-ResetTime: ['Wed, 20 Nov 2018 04:18:04 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=31536000]
+      Vary: [Origin]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Request-Id: [Jc1YTuI0NW2]
+      X-Runtime: ['0.048766']
+    status: {code: 200, message: OK}
+version: 1

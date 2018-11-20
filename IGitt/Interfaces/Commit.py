@@ -1,6 +1,7 @@
 """
 This module contains the actual commit object.
 """
+from datetime import datetime
 from typing import Optional
 from typing import Set
 from typing import List
@@ -166,6 +167,15 @@ class Commit(IGittObject):
         Retrieves the sha of the commit.
 
         :return: A string holding the SHA of the commit.
+        """
+        raise NotImplementedError
+
+    @property
+    def pushed_at(self) -> datetime:
+        """
+        Returns the time this commit was pushed at.
+
+        :return: A datetime object.
         """
         raise NotImplementedError
 
