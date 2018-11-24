@@ -7,3 +7,4 @@ PyJWT~=1.6.4
 backoff~=1.4.3
 beautifulsoup4~=4.6.0
 pytz~=2018.4
+git-url-parse~=1.1.0
